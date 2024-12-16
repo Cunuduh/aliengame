@@ -1,15 +1,15 @@
-[gd_scene load_steps=24 format=3 uid="uid://cyqi64cjtpnjp"]
+[gd_scene load_steps=24 format=3 uid="uid://bohdbrb6k05qd"]
 
-[ext_resource type="Shader" path="res://assets/shaders/dissolve.gdshader" id="3_gwhrs"]
-[ext_resource type="Script" path="res://assets/scripts/enemy/enemy_base.gd" id="3_paca2"]
-[ext_resource type="Script" path="res://assets/scripts/characters/character_stats.gd" id="4_6035u"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="4_uvwxy"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/parallel_state.gd" id="5_abcde"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="6_fghij"]
-[ext_resource type="Texture2D" uid="uid://bwp1o4byq7vvq" path="res://assets/sprites/npcs/crewmate.png" id="6_j06p2"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="7_klmno"]
-[ext_resource type="Texture2D" uid="uid://bv3d852edjjva" path="res://assets/sprites/effects/dissolve_particle.png" id="7_ordh8"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="8_iinhv"]
+[ext_resource type="Script" path="res://assets/scripts/enemy/cthulhuan_enemy.gd" id="1_8cmd8"]
+[ext_resource type="Script" path="res://assets/scripts/characters/character_stats.gd" id="2_agsxa"]
+[ext_resource type="Shader" path="res://assets/shaders/dissolve.gdshader" id="2_nih54"]
+[ext_resource type="Texture2D" uid="uid://f225skk78xj0" path="res://assets/sprites/npcs/cthuluan_alien.png" id="3_i6lgg"]
+[ext_resource type="Texture2D" uid="uid://bv3d852edjjva" path="res://assets/sprites/effects/dissolve_particle.png" id="5_gsq2c"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="6_soynk"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/parallel_state.gd" id="7_6co6a"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="8_gsar3"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="9_v5dpf"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="10_gi7ic"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jdn5g"]
 size = Vector2(20, 42)
@@ -26,9 +26,9 @@ generate_mipmaps = false
 normalize = false
 noise = SubResource("FastNoiseLite_snygp")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_aslhk"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jksqm"]
 resource_local_to_scene = true
-shader = ExtResource("3_gwhrs")
+shader = ExtResource("2_nih54")
 shader_parameter/noise_tiling = 1.0
 shader_parameter/progress = 0.0
 shader_parameter/edge_thickness = 0.025
@@ -191,22 +191,26 @@ color_ramp = SubResource("GradientTexture1D_wj7tl")
 turbulence_noise_strength = 6.0
 turbulence_noise_speed_random = 1.0
 
-[node name="EnemyBase" type="CharacterBody2D" node_paths=PackedStringArray("dissolve_particles") groups=["enemy"]]
+[node name="CthulhuanEnemy" type="CharacterBody2D" node_paths=PackedStringArray("dissolve_particles") groups=["enemy"]]
 z_index = 69
 y_sort_enabled = true
 collision_layer = 4
 collision_mask = 2
 motion_mode = 1
-script = ExtResource("3_paca2")
+script = ExtResource("1_8cmd8")
 dissolve_particles = NodePath("DissolveParticles")
+follow_speed = 45.0
+desired_distance = 280.0
+attack_interval = 10.0
+movement_switch_interval = 1.0
 
 [node name="CharacterStats" type="Node" parent="."]
-script = ExtResource("4_6035u")
-max_health = 100
-max_attack = 1
+script = ExtResource("2_agsxa")
+max_health = 50
+max_attack = 2
 max_defense = 1
-health = 100
-attack = 1
+health = 50
+attack = 2
 defense = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -215,9 +219,10 @@ shape = SubResource("RectangleShape2D_jdn5g")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-material = SubResource("ShaderMaterial_aslhk")
-texture = ExtResource("6_j06p2")
+material = SubResource("ShaderMaterial_jksqm")
+texture = ExtResource("3_i6lgg")
 hframes = 2
+vframes = 2
 frame = 1
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
@@ -229,9 +234,9 @@ metadata/_aseprite_wizard_config_ = {
 "only_visible": false,
 "player": "AnimationPlayer",
 "slice": "",
-"source": "res://assets/sprites/npcs/crewmate.aseprite"
+"source": "res://assets/sprites/npcs/cthuluan_alien.aseprite"
 }
-metadata/_aseprite_wizard_source_file_hash_ = "f3f94c579e44a7ddc1c711f9ba07911a"
+metadata/_aseprite_wizard_source_file_hash_ = "9c6a699a5efcd51d73f4073bf410cb12"
 metadata/_aseprite_wizard_interface_config_ = {
 "output_section": true
 }
@@ -245,78 +250,78 @@ libraries = {
 emitting = false
 amount = 128
 process_material = SubResource("ParticleProcessMaterial_hhtr1")
-texture = ExtResource("7_ordh8")
+texture = ExtResource("5_gsq2c")
 one_shot = true
 explosiveness = 0.5
 randomness = 1.0
 fixed_fps = 60
 
 [node name="StateChart" type="Node" parent="."]
-script = ExtResource("4_uvwxy")
+script = ExtResource("6_soynk")
 
 [node name="Root" type="Node" parent="StateChart"]
-script = ExtResource("5_abcde")
+script = ExtResource("7_6co6a")
 
 [node name="Movement" type="Node" parent="StateChart/Root"]
-script = ExtResource("6_fghij")
+script = ExtResource("8_gsar3")
 initial_state = NodePath("Waiting")
 
 [node name="Orbiting" type="Node" parent="StateChart/Root/Movement"]
-script = ExtResource("7_klmno")
+script = ExtResource("9_v5dpf")
 
 [node name="ToWaiting" type="Node" parent="StateChart/Root/Movement/Orbiting"]
-script = ExtResource("8_iinhv")
+script = ExtResource("10_gi7ic")
 to = NodePath("../../Waiting")
 event = &"stop_movement"
 
 [node name="ToBlocking" type="Node" parent="StateChart/Root/Movement/Orbiting"]
-script = ExtResource("8_iinhv")
+script = ExtResource("10_gi7ic")
 to = NodePath("../../Blocking")
 event = &"to_blocking"
 
 [node name="Blocking" type="Node" parent="StateChart/Root/Movement"]
-script = ExtResource("7_klmno")
+script = ExtResource("9_v5dpf")
 
 [node name="ToWaiting" type="Node" parent="StateChart/Root/Movement/Blocking"]
-script = ExtResource("8_iinhv")
+script = ExtResource("10_gi7ic")
 to = NodePath("../../Waiting")
 event = &"stop_movement"
 
 [node name="ToOrbiting" type="Node" parent="StateChart/Root/Movement/Blocking"]
-script = ExtResource("8_iinhv")
+script = ExtResource("10_gi7ic")
 to = NodePath("../../Orbiting")
 event = &"to_orbiting"
 
 [node name="Waiting" type="Node" parent="StateChart/Root/Movement"]
-script = ExtResource("7_klmno")
+script = ExtResource("9_v5dpf")
 
 [node name="ToBlocking" type="Node" parent="StateChart/Root/Movement/Waiting"]
-script = ExtResource("8_iinhv")
+script = ExtResource("10_gi7ic")
 to = NodePath("../../Blocking")
 event = &"to_blocking"
 
 [node name="ToOrbiting" type="Node" parent="StateChart/Root/Movement/Waiting"]
-script = ExtResource("8_iinhv")
+script = ExtResource("10_gi7ic")
 to = NodePath("../../Orbiting")
 event = &"to_orbiting"
 
 [node name="Attack" type="Node" parent="StateChart/Root"]
-script = ExtResource("6_fghij")
+script = ExtResource("8_gsar3")
 initial_state = NodePath("Waiting")
 
 [node name="Waiting" type="Node" parent="StateChart/Root/Attack"]
-script = ExtResource("7_klmno")
+script = ExtResource("9_v5dpf")
 
 [node name="ToAttacking" type="Node" parent="StateChart/Root/Attack/Waiting"]
-script = ExtResource("8_iinhv")
+script = ExtResource("10_gi7ic")
 to = NodePath("../../Attacking")
 event = &"attack_interval"
 
 [node name="Attacking" type="Node" parent="StateChart/Root/Attack"]
-script = ExtResource("7_klmno")
+script = ExtResource("9_v5dpf")
 
 [node name="Waiting" type="Node" parent="StateChart/Root/Attack/Attacking"]
-script = ExtResource("8_iinhv")
+script = ExtResource("10_gi7ic")
 to = NodePath("../../Waiting")
 event = &"attack_complete"
 

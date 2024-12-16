@@ -7,8 +7,8 @@ var target: Combatant
 
 var orbit_speed := PI / 2.0
 @export var follow_speed := 60.0
-var desired_distance := 140.0 + randf_range(-70.0, 70.0)
-@export var attack_interval := 5.0 + randf_range(0.0, 5.0)
+@export var desired_distance := 140.0
+@export var attack_interval := 5.0
 var attack_timer := 0.0
 
 var random_offset := 0.0
@@ -30,6 +30,8 @@ const PERCEPTION_DELAY := 0.5
 var movement_switch_timer := movement_switch_interval
 
 func _ready() -> void:
+  desired_distance += randi() % 20
+  attack_interval += randf() * 2.0
   animation_player.play("idle")
   collision_mask = 1 << 1
   stats.stat_changed.connect(_check_dissolve)

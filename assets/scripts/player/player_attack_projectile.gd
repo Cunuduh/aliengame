@@ -38,7 +38,7 @@ func _process(delta: float) -> void:
     query.transform = global_transform
     var result := direct_space_state.intersect_shape(query, 1)
     if result.size() > 0 and result[0]["collider"].is_in_group("enemy"):
-      result[0]["collider"].stats.health -= 10
+      result[0]["collider"].stats.health -= Globals.player.stats.attack
       await destroy()
 
 func destroy() -> void:

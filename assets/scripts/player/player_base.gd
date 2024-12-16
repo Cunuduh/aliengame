@@ -74,16 +74,19 @@ func _on_chilling_state_processing(_delta: float) -> void:
   process_collisions()
 
 func _on_idling_state_entered() -> void:
-  animation_player.play("battle_stance")
+  if stats.health > 0:
+    animation_player.play("battle_stance")
 
 func _on_idling_state_exited() -> void:
   animation_player.play()
 
 func _on_idling_state_processing(_delta: float) -> void:
-  if Input.get_vector("left", "right", "up", "down") != Vector2.ZERO:
+  if Input.get_vector("left", "right", "up", "down") != Vector2.ZERO and stats.health > 0:
     state_chart.send_event("walk")
 
 func _on_walking_state_processing(_delta: float) -> void:
+  if stats.health <= 0:
+    return
   _handle_movement()
   _flip_player_sprite()
   if Input.get_vector("left", "right", "up", "down") == Vector2.ZERO:
@@ -125,6 +128,9 @@ func _on_battling_state_processing(_delta: float) -> void:
   if Globals.encountered_enemies.size() == 0:
     state_chart.send_event("battle_finished")
     return
+  if stats.health <= 0:
+    state_chart.send_event("battle_finished")
+    return
 
   _handle_movement()
   _flip_player_sprite()
@@ -162,8 +168,11 @@ func _on_battling_state_exited() -> void:
 
   soul.visible = false
   battle_collision.set_deferred("disabled", true)
-  Globals.deconstruct_battle_scene()
-
+  if stats.health > 0:
+    Globals.deconstruct_battle_scene()
+  else:
+    animation_player.play("death")
+    Globals.die()
   overworld_collision.set_deferred("disabled", false)
   overworld_query.collision_mask = 1 << 2
   enemy_search_query.collision_mask = 1 << 2

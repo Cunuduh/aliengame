@@ -31,7 +31,7 @@ var animation_speed: float
 @onready var direct_space_state := get_world_2d().direct_space_state
 
 func _ready() -> void:
-  z_index = 69
+  z_index = 100
 
   positions.resize(pool_size)
   directions.resize(pool_size)

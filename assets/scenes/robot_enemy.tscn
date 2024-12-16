@@ -199,6 +199,7 @@ motion_mode = 1
 script = ExtResource("2_bijvf")
 dissolve_particles = NodePath("DissolveParticles")
 follow_speed = 50.0
+desired_distance = 200.0
 blocking_weight = 0.9
 
 [node name="CharacterStats" type="Node" parent="."]

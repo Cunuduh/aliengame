@@ -58,6 +58,9 @@ func _pre_ability_2() -> void:
   ability_2(override_velocity)
 
 func ability_2(override_velocity: Vector2 = Vector2.ZERO) -> void:
+  if state_chart.get_node("Root/Battling/Attack/Active").active and not Input.is_action_pressed("attack"):
+    state_chart.send_event("end_attack")
+
   var dash_distance := 150.0
   var dash_speed := 750.0
   var direction := velocity.normalized() if override_velocity == Vector2.ZERO else override_velocity.normalized()

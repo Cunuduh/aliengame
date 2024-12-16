@@ -1,8 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://cy7o8s575kcm7"]
+[gd_scene load_steps=33 format=3 uid="uid://cy7o8s575kcm7"]
 
 [ext_resource type="Script" path="res://assets/scripts/player/player.gd" id="1_f1yva"]
 [ext_resource type="Shape2D" uid="uid://bm6ceilf2274y" path="res://assets/resources/enemy_search_area.tres" id="2_lv00q"]
-[ext_resource type="Texture2D" uid="uid://u6crvepxi6e" path="res://assets/sprites/player/player.png" id="2_rixek"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/state_is_active_guard.gd" id="3_4ghoi"]
 [ext_resource type="Shape2D" uid="uid://3s8mf8iaro7c" path="res://assets/resources/overworld_collision.tres" id="3_pnf8u"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/guard.gd" id="3_wjwpk"]
@@ -17,6 +16,8 @@
 [ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="11_ph4dl"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/parallel_state.gd" id="12_t65dr"]
 [ext_resource type="Script" path="res://assets/scripts/characters/character_stats.gd" id="17_0o1c8"]
+[ext_resource type="Texture2D" uid="uid://u6crvepxi6e" path="res://assets/sprites/player/player.png" id="18_4atas"]
+[ext_resource type="Texture2D" uid="uid://clxob7y8vxs21" path="res://assets/sprites/player/player_dead.png" id="18_h2gj7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1cp25"]
 shader = ExtResource("5_oso62")
@@ -53,6 +54,57 @@ guards = Array[ExtResource("3_wjwpk")]([SubResource("Resource_7oqbn"), SubResour
 [sub_resource type="Resource" id="Resource_g0m2g"]
 script = ExtResource("4_yi3tq")
 guard = SubResource("Resource_ydh00")
+
+[sub_resource type="Animation" id="Animation_jbex4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("18_4atas")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_nor4p"]
 length = 0.3
@@ -163,13 +215,103 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 1]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("18_4atas")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_pbm5c"]
+resource_name = "death"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("18_h2gj7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 10)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d4hp3"]
 _data = {
+"RESET": SubResource("Animation_jbex4"),
 "attack_action": SubResource("Animation_nor4p"),
 "attack_transition": SubResource("Animation_g5dbm"),
 "attack_wait": SubResource("Animation_jw8n8"),
-"battle_stance": SubResource("Animation_qjrgo")
+"battle_stance": SubResource("Animation_qjrgo"),
+"death": SubResource("Animation_pbm5c")
 }
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("overworld_collision", "battle_collision", "soul") groups=["player"]]
@@ -193,10 +335,9 @@ disabled = true
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
 material = SubResource("ShaderMaterial_1cp25")
-texture = ExtResource("2_rixek")
+texture = ExtResource("18_4atas")
 hframes = 4
 vframes = 4
-frame = 7
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": true,

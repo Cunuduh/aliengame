@@ -1,4 +1,5 @@
 extends Node
+class_name BulletPatterns
 
 func spawn_spiral_bullet_pattern(center_position: Vector2, num_bullets: int, spiral_turns: int, bullet_speed: float, spawn_gap: float = 0.0, bullet_gap: float = 0.0, initial_angle_offset: float = 0.0) -> void:
   var angle_step := (2.0 * PI * spiral_turns) / num_bullets

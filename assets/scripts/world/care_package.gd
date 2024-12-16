@@ -65,21 +65,21 @@ func _apply_cooldown_upgrade() -> void:
   var attack_node = player.state_chart.get_node("Root/Battling/Attack/Cooldown/Refresh")
   var ability1_node = player.state_chart.get_node("Root/Battling/Ability1/Cooldown/Refresh")
   var ability2_node = player.state_chart.get_node("Root/Battling/Ability2/Cooldown/Refresh")
-  attack_node.delay_seconds = max(0.1, original_cooldowns[0] - applied_upgrades_count["cooldown"] * 0.1)
-  ability1_node.delay_seconds = max(0.1, original_cooldowns[1] - applied_upgrades_count["cooldown"] * 0.1)
-  ability2_node.delay_seconds = max(0.1, original_cooldowns[2] - applied_upgrades_count["cooldown"] * 0.1)
+  attack_node.delay_seconds = max(0.1, original_cooldowns[0] - applied_upgrades_count["cooldown"] * 0.05)
+  ability1_node.delay_seconds = max(0.1, original_cooldowns[1] - applied_upgrades_count["cooldown"] * 0.05)
+  ability2_node.delay_seconds = max(0.1, original_cooldowns[2] - applied_upgrades_count["cooldown"] * 0.05)
   applied_upgrades_count["cooldown"] += 1
 
 func _apply_health_upgrade() -> void:
   var player = Globals.player
-  player.stats.max_health += 5
-  player.stats.health += 5
+  player.stats.max_health += 2
+  player.stats.health += 2
   applied_upgrades_count["health"] += 1
 
 func _apply_damage_upgrade() -> void:
   var player = Globals.player
-  player.stats.attack += 2
   player.stats.max_attack += 2
+  player.stats.attack += 2
   applied_upgrades_count["damage"] += 1
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -90,12 +90,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_cooldown_area_2d_body_entered(_body: Node2D) -> void:
   player_in_cooldown = true
-  label.text = "-10% COOLDOWN"
+  label.text = "-5% COOLDOWN"
   label.visible = true
 
 func _on_health_area_2d_body_entered(_body: Node2D) -> void:
   player_in_health = true
-  label.text = "+5 HEALTH" 
+  label.text = "+2 HEALTH" 
   label.visible = true
 
 func _on_damage_area_2d_body_entered(_body: Node2D) -> void:
@@ -106,14 +106,14 @@ func _on_damage_area_2d_body_entered(_body: Node2D) -> void:
 func _on_cooldown_area_2d_body_exited(_body: Node2D) -> void:
   player_in_cooldown = false
   if not (player_in_health or player_in_damage):
-    label.text = "CHOOSE AN UPGRADE"
+    label.text = "Z TO CHOOSE UPGRADE"
 
 func _on_health_area_2d_body_exited(_body: Node2D) -> void:
   player_in_health = false
   if not (player_in_cooldown or player_in_damage):
-    label.text = "CHOOSE AN UPGRADE"
+    label.text = "Z TO CHOOSE UPGRADE"
 
 func _on_damage_area_2d_body_exited(_body: Node2D) -> void:
   player_in_damage = false
   if not (player_in_cooldown or player_in_health):
-    label.text = "CHOOSE AN UPGRADE"
+    label.text = "Z TO CHOOSE UPGRADE"

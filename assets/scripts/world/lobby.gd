@@ -9,7 +9,7 @@ func refresh_package() -> void:
   care_package.refresh()
 
 func _on_next_area_body_entered(body: Node2D) -> void:
-  if body.is_in_group("player") and care_package.opened:
+  if body.is_in_group("player") and care_package.opened and not care_package.visible:
     var player = Globals.player
     player.global_position.x = player.sprite.texture.get_width() / player.sprite.hframes / 2
     Globals.construct_battle_scene()
