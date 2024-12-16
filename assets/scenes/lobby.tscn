@@ -1,0 +1,155 @@
+[gd_scene load_steps=18 format=3 uid="uid://boss0elbx5bkd"]
+
+[ext_resource type="Script" path="res://assets/scripts/world/lobby.gd" id="1_c8kjx"]
+[ext_resource type="Shader" path="res://assets/shaders/space_effect.gdshader" id="1_td76n"]
+[ext_resource type="Texture2D" uid="uid://bm0f5injvb83i" path="res://assets/sprites/backgrounds/planet.png" id="2_01cdn"]
+[ext_resource type="PackedScene" uid="uid://cy7o8s575kcm7" path="res://assets/scenes/player.tscn" id="2_fbo41"]
+[ext_resource type="PackedScene" uid="uid://b3v2al4narphk" path="res://assets/scenes/care_package.tscn" id="3_kf8d5"]
+[ext_resource type="PackedScene" uid="uid://bcwkugn6v3oy7" path="res://addons/godot_state_charts/utilities/state_chart_debugger.tscn" id="6_lgy4c"]
+[ext_resource type="Theme" uid="uid://c0n2wvfps0c6m" path="res://assets/themes/standard_theme.tres" id="7_21ett"]
+[ext_resource type="Texture2D" uid="uid://bfce7dwnbmk7r" path="res://assets/sprites/ui/next.png" id="8_wrl2q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sjlfm"]
+shader = ExtResource("1_td76n")
+shader_parameter/time_scale = 0.1
+shader_parameter/star_density = 128.0
+shader_parameter/quantize_resolution = Vector2(480, 270)
+shader_parameter/direction = Vector2(-1, 1)
+shader_parameter/background_colour = Color(0, 0, 0, 1)
+shader_parameter/use_texture = true
+shader_parameter/monochromatic = true
+shader_parameter/background_texture = ExtResource("2_01cdn")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wy8fe"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jfdlv"]
+b = Vector2(0, 270)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wp7fb"]
+a = Vector2(480, 0)
+b = Vector2(0, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ypipq"]
+a = Vector2(480, 0)
+b = Vector2(480, 270)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bpnd8"]
+a = Vector2(0, 270)
+b = Vector2(480, 270)
+
+[sub_resource type="Animation" id="Animation_j8vg7"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(413, 119), Vector2(403, 119), Vector2(413, 119)]
+}
+
+[sub_resource type="Animation" id="Animation_hmgap"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(413, 119)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_87kp5"]
+_data = {
+"RESET": SubResource("Animation_hmgap"),
+"idle": SubResource("Animation_j8vg7")
+}
+
+[node name="Lobby" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c8kjx")
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_sjlfm")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_wy8fe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_jfdlv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_wp7fb")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_ypipq")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_bpnd8")
+
+[node name="CarePackage" parent="." instance=ExtResource("3_kf8d5")]
+position = Vector2(344, 139)
+
+[node name="Player" parent="." instance=ExtResource("2_fbo41")]
+position = Vector2(62, 137)
+
+[node name="StateChartDebugger" parent="." instance=ExtResource("6_lgy4c")]
+visible = false
+top_level = true
+layout_mode = 1
+offset_left = 220.0
+offset_top = 2.0
+offset_right = 56.0
+offset_bottom = 2.0
+theme = ExtResource("7_21ett")
+enabled = false
+initial_node_to_watch = NodePath("../Player")
+
+[node name="Next" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("8_wrl2q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Next"]
+libraries = {
+"": SubResource("AnimationLibrary_87kp5")
+}
+
+[node name="NextArea" type="Area2D" parent="."]
+position = Vector2(-3, 0)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextArea"]
+shape = SubResource("SegmentShape2D_ypipq")
+
+[connection signal="body_entered" from="NextArea" to="." method="_on_next_area_body_entered"]

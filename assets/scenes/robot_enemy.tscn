@@ -1,0 +1,327 @@
+[gd_scene load_steps=24 format=3 uid="uid://bjptk35p5s344"]
+
+[ext_resource type="Shader" path="res://assets/shaders/dissolve.gdshader" id="2_83qrr"]
+[ext_resource type="Script" path="res://assets/scripts/enemy/robot_enemy.gd" id="2_bijvf"]
+[ext_resource type="Script" path="res://assets/scripts/characters/character_stats.gd" id="2_qvypf"]
+[ext_resource type="Texture2D" uid="uid://dib3oqp8ll1c4" path="res://assets/sprites/npcs/robot_alien.png" id="4_7bbua"]
+[ext_resource type="Texture2D" uid="uid://bv3d852edjjva" path="res://assets/sprites/effects/dissolve_particle.png" id="5_quqke"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="6_c67xs"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/parallel_state.gd" id="7_tbptk"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="8_bonpa"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="9_th81e"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="10_uyws4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dimsh"]
+size = Vector2(35, 29.5)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_snygp"]
+noise_type = 3
+domain_warp_enabled = true
+domain_warp_type = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4fcm6"]
+width = 82
+height = 78
+generate_mipmaps = false
+normalize = false
+noise = SubResource("FastNoiseLite_snygp")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mnain"]
+resource_local_to_scene = true
+shader = ExtResource("2_83qrr")
+shader_parameter/noise_tiling = 1.0
+shader_parameter/progress = 0.0
+shader_parameter/edge_thickness = 0.025
+shader_parameter/edge_colour = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(82, 78)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_4fcm6")
+
+[sub_resource type="Animation" id="Animation_rmlry"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_xdjb2"]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_k6i2p"]
+resource_name = "damaged"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.25),
+"transitions": PackedFloat32Array(0.277393, 1, 2.73208, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(7, 0), Vector2(-5, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_xfn25"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_p2cjj"]
+length = 0.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ogkg5"]
+_data = {
+"RESET": SubResource("Animation_rmlry"),
+"attack": SubResource("Animation_xdjb2"),
+"damaged": SubResource("Animation_k6i2p"),
+"default": SubResource("Animation_xfn25"),
+"idle": SubResource("Animation_p2cjj")
+}
+
+[sub_resource type="Gradient" id="Gradient_ife2x"]
+offsets = PackedFloat32Array(0.565574, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+metadata/_snap_count = 4
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wj7tl"]
+gradient = SubResource("Gradient_ife2x")
+width = 3
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hhtr1"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(12, 16, 1)
+gravity = Vector3(0, 98, 0)
+color_ramp = SubResource("GradientTexture1D_wj7tl")
+turbulence_noise_strength = 6.0
+turbulence_noise_speed_random = 1.0
+
+[node name="RobotEnemy" type="CharacterBody2D" node_paths=PackedStringArray("dissolve_particles") groups=["enemy"]]
+z_index = 69
+y_sort_enabled = true
+collision_layer = 4
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("2_bijvf")
+dissolve_particles = NodePath("DissolveParticles")
+follow_speed = 50.0
+blocking_weight = 0.9
+
+[node name="CharacterStats" type="Node" parent="."]
+script = ExtResource("2_qvypf")
+max_health = 100
+max_attack = 1
+max_defense = 1
+health = 100
+attack = 1
+defense = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 5.25)
+shape = SubResource("RectangleShape2D_dimsh")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_mnain")
+texture = ExtResource("4_7bbua")
+hframes = 2
+vframes = 2
+frame = 1
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://assets/sprites/npcs",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "res://assets/sprites/npcs/robot_alien.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "5b17ecd689823fed8f11d296fbd6627b"
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ogkg5")
+}
+
+[node name="DissolveParticles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 128
+process_material = SubResource("ParticleProcessMaterial_hhtr1")
+texture = ExtResource("5_quqke")
+one_shot = true
+explosiveness = 0.5
+randomness = 1.0
+fixed_fps = 60
+
+[node name="StateChart" type="Node" parent="."]
+script = ExtResource("6_c67xs")
+
+[node name="Root" type="Node" parent="StateChart"]
+script = ExtResource("7_tbptk")
+
+[node name="Movement" type="Node" parent="StateChart/Root"]
+script = ExtResource("8_bonpa")
+initial_state = NodePath("Waiting")
+
+[node name="Orbiting" type="Node" parent="StateChart/Root/Movement"]
+script = ExtResource("9_th81e")
+
+[node name="ToWaiting" type="Node" parent="StateChart/Root/Movement/Orbiting"]
+script = ExtResource("10_uyws4")
+to = NodePath("../../Waiting")
+event = &"stop_movement"
+
+[node name="ToBlocking" type="Node" parent="StateChart/Root/Movement/Orbiting"]
+script = ExtResource("10_uyws4")
+to = NodePath("../../Blocking")
+event = &"to_blocking"
+
+[node name="Blocking" type="Node" parent="StateChart/Root/Movement"]
+script = ExtResource("9_th81e")
+
+[node name="ToWaiting" type="Node" parent="StateChart/Root/Movement/Blocking"]
+script = ExtResource("10_uyws4")
+to = NodePath("../../Waiting")
+event = &"stop_movement"
+
+[node name="ToOrbiting" type="Node" parent="StateChart/Root/Movement/Blocking"]
+script = ExtResource("10_uyws4")
+to = NodePath("../../Orbiting")
+event = &"to_orbiting"
+
+[node name="Waiting" type="Node" parent="StateChart/Root/Movement"]
+script = ExtResource("9_th81e")
+
+[node name="ToBlocking" type="Node" parent="StateChart/Root/Movement/Waiting"]
+script = ExtResource("10_uyws4")
+to = NodePath("../../Blocking")
+event = &"to_blocking"
+
+[node name="ToOrbiting" type="Node" parent="StateChart/Root/Movement/Waiting"]
+script = ExtResource("10_uyws4")
+to = NodePath("../../Orbiting")
+event = &"to_orbiting"
+
+[node name="Attack" type="Node" parent="StateChart/Root"]
+script = ExtResource("8_bonpa")
+initial_state = NodePath("Waiting")
+
+[node name="Waiting" type="Node" parent="StateChart/Root/Attack"]
+script = ExtResource("9_th81e")
+
+[node name="ToAttacking" type="Node" parent="StateChart/Root/Attack/Waiting"]
+script = ExtResource("10_uyws4")
+to = NodePath("../../Attacking")
+event = &"attack_interval"
+
+[node name="Attacking" type="Node" parent="StateChart/Root/Attack"]
+script = ExtResource("9_th81e")
+
+[node name="Waiting" type="Node" parent="StateChart/Root/Attack/Attacking"]
+script = ExtResource("10_uyws4")
+to = NodePath("../../Waiting")
+event = &"attack_complete"
+
+[connection signal="state_processing" from="StateChart/Root/Movement/Orbiting" to="." method="_on_orbiting_state_processing"]
+[connection signal="state_processing" from="StateChart/Root/Movement/Blocking" to="." method="_on_blocking_state_processing"]
+[connection signal="state_entered" from="StateChart/Root/Attack/Attacking" to="." method="_on_attacking_state_entered"]

@@ -1,0 +1,372 @@
+[gd_scene load_steps=30 format=3 uid="uid://cy7o8s575kcm7"]
+
+[ext_resource type="Script" path="res://assets/scripts/player/player.gd" id="1_f1yva"]
+[ext_resource type="Shape2D" uid="uid://bm6ceilf2274y" path="res://assets/resources/enemy_search_area.tres" id="2_lv00q"]
+[ext_resource type="Texture2D" uid="uid://u6crvepxi6e" path="res://assets/sprites/player/player.png" id="2_rixek"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_is_active_guard.gd" id="3_4ghoi"]
+[ext_resource type="Shape2D" uid="uid://3s8mf8iaro7c" path="res://assets/resources/overworld_collision.tres" id="3_pnf8u"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/guard.gd" id="3_wjwpk"]
+[ext_resource type="Shape2D" uid="uid://b1r0ovh577d5c" path="res://assets/resources/battle_collision.tres" id="4_g85kv"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/not_guard.gd" id="4_yi3tq"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/any_of_guard.gd" id="5_fwwt2"]
+[ext_resource type="Shader" path="res://assets/shaders/palette_swap.gdshader" id="5_oso62"]
+[ext_resource type="Texture2D" uid="uid://bbrk85csq0ngt" path="res://assets/sprites/ui/battle/soul.png" id="7_4e6wa"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="8_d0x1w"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="9_fukul"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="10_f7bv0"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="11_ph4dl"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/parallel_state.gd" id="12_t65dr"]
+[ext_resource type="Script" path="res://assets/scripts/characters/character_stats.gd" id="17_0o1c8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1cp25"]
+shader = ExtResource("5_oso62")
+shader_parameter/original_colour1 = Color(0, 0, 0, 1)
+shader_parameter/replacement_colour1 = Color(0, 0, 0, 1)
+shader_parameter/original_colour2 = null
+shader_parameter/replacement_colour2 = null
+shader_parameter/original_colour3 = null
+shader_parameter/replacement_colour3 = null
+shader_parameter/original_colour4 = null
+shader_parameter/replacement_colour4 = null
+shader_parameter/tolerance = 0.05
+
+[sub_resource type="Resource" id="Resource_7oqbn"]
+script = ExtResource("3_4ghoi")
+state = NodePath("../../Active")
+
+[sub_resource type="Resource" id="Resource_e8oxt"]
+script = ExtResource("3_4ghoi")
+state = NodePath("../../../Ability2/Active")
+
+[sub_resource type="Resource" id="Resource_r8up5"]
+script = ExtResource("5_fwwt2")
+guards = Array[ExtResource("3_wjwpk")]([SubResource("Resource_7oqbn"), SubResource("Resource_e8oxt")])
+
+[sub_resource type="Resource" id="Resource_dcyg6"]
+script = ExtResource("4_yi3tq")
+guard = SubResource("Resource_r8up5")
+
+[sub_resource type="Resource" id="Resource_ydh00"]
+script = ExtResource("5_fwwt2")
+guards = Array[ExtResource("3_wjwpk")]([SubResource("Resource_7oqbn"), SubResource("Resource_e8oxt")])
+
+[sub_resource type="Resource" id="Resource_g0m2g"]
+script = ExtResource("4_yi3tq")
+guard = SubResource("Resource_ydh00")
+
+[sub_resource type="Animation" id="Animation_nor4p"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [11, 12, 13]
+}
+
+[sub_resource type="Animation" id="Animation_g5dbm"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_jw8n8"]
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10]
+}
+
+[sub_resource type="Animation" id="Animation_qjrgo"]
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d4hp3"]
+_data = {
+"attack_action": SubResource("Animation_nor4p"),
+"attack_transition": SubResource("Animation_g5dbm"),
+"attack_wait": SubResource("Animation_jw8n8"),
+"battle_stance": SubResource("Animation_qjrgo")
+}
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("overworld_collision", "battle_collision", "soul") groups=["player"]]
+y_sort_enabled = true
+motion_mode = 1
+script = ExtResource("1_f1yva")
+overworld_collision = NodePath("OverworldCollision")
+battle_collision = NodePath("BattleCollision")
+enemy_search_area = ExtResource("2_lv00q")
+soul = NodePath("Soul")
+combatant_name = "Player"
+
+[node name="OverworldCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 14.5)
+shape = ExtResource("3_pnf8u")
+
+[node name="BattleCollision" type="CollisionShape2D" parent="."]
+shape = ExtResource("4_g85kv")
+disabled = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_1cp25")
+texture = ExtResource("2_rixek")
+hframes = 4
+vframes = 4
+frame = 7
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": true,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://assets/sprites/player",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "res://assets/sprites/player/player.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": true,
+"layer_section": false,
+"output_section": true,
+"slice_section": false
+}
+metadata/_aseprite_wizard_source_file_hash_ = "d3425a618e91420316be03ec1c96a734"
+
+[node name="Soul" type="Sprite2D" parent="."]
+visible = false
+z_index = 420
+texture = ExtResource("7_4e6wa")
+
+[node name="StateChart" type="Node" parent="."]
+script = ExtResource("8_d0x1w")
+
+[node name="Root" type="Node" parent="StateChart"]
+script = ExtResource("9_fukul")
+initial_state = NodePath("Chilling")
+
+[node name="Chilling" type="Node" parent="StateChart/Root"]
+script = ExtResource("9_fukul")
+initial_state = NodePath("Idling")
+
+[node name="Idling" type="Node" parent="StateChart/Root/Chilling"]
+script = ExtResource("10_f7bv0")
+
+[node name="OnWalk" type="Node" parent="StateChart/Root/Chilling/Idling"]
+script = ExtResource("11_ph4dl")
+to = NodePath("../../Walking")
+event = &"walk"
+
+[node name="Walking" type="Node" parent="StateChart/Root/Chilling"]
+script = ExtResource("10_f7bv0")
+
+[node name="OnIdle" type="Node" parent="StateChart/Root/Chilling/Walking"]
+script = ExtResource("11_ph4dl")
+to = NodePath("../../Idling")
+event = &"idle"
+
+[node name="OnEnemyCollision" type="Node" parent="StateChart/Root/Chilling"]
+script = ExtResource("11_ph4dl")
+to = NodePath("../../Battling")
+event = &"enemy_collision"
+
+[node name="Battling" type="Node" parent="StateChart/Root"]
+script = ExtResource("12_t65dr")
+
+[node name="Attack" type="Node" parent="StateChart/Root/Battling"]
+script = ExtResource("9_fukul")
+initial_state = NodePath("Available")
+
+[node name="Available" type="Node" parent="StateChart/Root/Battling/Attack"]
+editor_description = "State indicating that the magic skill is available. Entering this state will reset the cooldown on the magic  skill button."
+script = ExtResource("10_f7bv0")
+
+[node name="OnAttack" type="Node" parent="StateChart/Root/Battling/Attack/Available"]
+script = ExtResource("11_ph4dl")
+to = NodePath("../../Active")
+event = &"attack"
+guard = SubResource("Resource_dcyg6")
+
+[node name="Active" type="Node" parent="StateChart/Root/Battling/Attack"]
+script = ExtResource("10_f7bv0")
+
+[node name="EndAttack" type="Node" parent="StateChart/Root/Battling/Attack/Active"]
+script = ExtResource("11_ph4dl")
+to = NodePath("../../Cooldown")
+event = &"end_attack"
+
+[node name="Cooldown" type="Node" parent="StateChart/Root/Battling/Attack"]
+editor_description = "Cooldown state for the magic skill. While the delayed transition is pending, this state will send status updates on the pending transition to the magic skill button. The magic  skill button will then update itself and show the remaining cooldown."
+script = ExtResource("10_f7bv0")
+
+[node name="Refresh" type="Node" parent="StateChart/Root/Battling/Attack/Cooldown"]
+script = ExtResource("11_ph4dl")
+to = NodePath("../../Available")
+delay_seconds = 0.5
+
+[node name="Ability1" type="Node" parent="StateChart/Root/Battling"]
+script = ExtResource("9_fukul")
+initial_state = NodePath("Available")
+
+[node name="Available" type="Node" parent="StateChart/Root/Battling/Ability1"]
+editor_description = "State indicating that the magic skill is available. Entering this state will reset the cooldown on the magic  skill button."
+script = ExtResource("10_f7bv0")
+
+[node name="OnAbility1Use" type="Node" parent="StateChart/Root/Battling/Ability1/Available"]
+script = ExtResource("11_ph4dl")
+to = NodePath("../../Active")
+event = &"ability_1"
+guard = SubResource("Resource_g0m2g")
+
+[node name="Active" type="Node" parent="StateChart/Root/Battling/Ability1"]
+script = ExtResource("10_f7bv0")
+
+[node name="EndAbility1" type="Node" parent="StateChart/Root/Battling/Ability1/Active"]
+script = ExtResource("11_ph4dl")
+to = NodePath("../../Cooldown")
+event = &"end_ability_1"
+
+[node name="Cooldown" type="Node" parent="StateChart/Root/Battling/Ability1"]
+editor_description = "Cooldown state for the magic skill. While the delayed transition is pending, this state will send status updates on the pending transition to the magic skill button. The magic  skill button will then update itself and show the remaining cooldown."
+script = ExtResource("10_f7bv0")
+
+[node name="Refresh" type="Node" parent="StateChart/Root/Battling/Ability1/Cooldown"]
+script = ExtResource("11_ph4dl")
+to = NodePath("../../Available")
+delay_seconds = 10.0
+
+[node name="Ability2" type="Node" parent="StateChart/Root/Battling"]
+script = ExtResource("9_fukul")
+initial_state = NodePath("Available")
+
+[node name="Available" type="Node" parent="StateChart/Root/Battling/Ability2"]
+editor_description = "State indicating that the magic skill is available. Entering this state will reset the cooldown on the magic  skill button."
+script = ExtResource("10_f7bv0")
+
+[node name="OnAbility2Use" type="Node" parent="StateChart/Root/Battling/Ability2/Available"]
+script = ExtResource("11_ph4dl")
+to = NodePath("../../Active")
+event = &"ability_2"
+
+[node name="Active" type="Node" parent="StateChart/Root/Battling/Ability2"]
+script = ExtResource("10_f7bv0")
+
+[node name="EndAbility2" type="Node" parent="StateChart/Root/Battling/Ability2/Active"]
+script = ExtResource("11_ph4dl")
+to = NodePath("../../Cooldown")
+event = &"end_ability_2"
+
+[node name="Cooldown" type="Node" parent="StateChart/Root/Battling/Ability2"]
+editor_description = "Cooldown state for the magic skill. While the delayed transition is pending, this state will send status updates on the pending transition to the magic skill button. The magic  skill button will then update itself and show the remaining cooldown."
+script = ExtResource("10_f7bv0")
+
+[node name="Refresh" type="Node" parent="StateChart/Root/Battling/Ability2/Cooldown"]
+script = ExtResource("11_ph4dl")
+to = NodePath("../../Available")
+delay_seconds = 7.5
+
+[node name="Item" type="Node" parent="StateChart/Root/Battling"]
+script = ExtResource("10_f7bv0")
+
+[node name="OnFinished" type="Node" parent="StateChart/Root/Battling"]
+script = ExtResource("11_ph4dl")
+to = NodePath("../../Chilling")
+event = &"battle_finished"
+
+[node name="CharacterStats" type="Node" parent="."]
+script = ExtResource("17_0o1c8")
+max_health = 20
+max_attack = 10
+max_defense = 10
+health = 20
+attack = 10
+defense = 10
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_d4hp3")
+}

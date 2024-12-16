@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://d3cqv8bc8kxtw"
+path="res://.godot/imported/friendliness_pellet.aseprite-3cdce7d5c751cd0c124b55b3fb91c08a.res"
+
+[deps]
+
+source_file="res://assets/sprites/npcs/friendliness_pellet.aseprite"
+dest_files=["res://.godot/imported/friendliness_pellet.aseprite-3cdce7d5c751cd0c124b55b3fb91c08a.res"]
+
+[params]
+

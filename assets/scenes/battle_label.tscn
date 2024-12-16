@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqj58jx2hwl8n"]
+
+[ext_resource type="FontFile" uid="uid://b1y4t6soa4pk0" path="res://assets/fonts/PixelOperator-Bold.ttf" id="1_8j1vp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ctbpb"]
+line_spacing = 1.0
+font = ExtResource("1_8j1vp")
+
+[node name="BattleLabel" type="Label"]
+offset_right = 36.0
+offset_bottom = 16.0
+label_settings = SubResource("LabelSettings_ctbpb")

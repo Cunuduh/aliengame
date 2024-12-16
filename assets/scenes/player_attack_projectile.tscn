@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://cmqkg0sh3s4it"]
+
+[ext_resource type="Texture2D" uid="uid://bp2d6gsvgda4j" path="res://assets/sprites/player/attack_projectile.png" id="1_q6y1t"]
+[ext_resource type="Script" path="res://assets/scripts/player/player_attack_projectile.gd" id="2_284vj"]
+
+[sub_resource type="Gradient" id="Gradient_1wmu8"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0.623529, 0.811765, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ehoxk"]
+gradient = SubResource("Gradient_1wmu8")
+
+[sub_resource type="Curve" id="Curve_0ujry"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_usmwe"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ea6yj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_j87y8"]
+curve_x = SubResource("Curve_0ujry")
+curve_y = SubResource("Curve_usmwe")
+curve_z = SubResource("Curve_ea6yj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2eotl"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveXYZTexture_j87y8")
+color_ramp = SubResource("GradientTexture1D_ehoxk")
+
+[node name="PlayerAttackProjectile" type="Sprite2D"]
+z_index = 69
+texture = ExtResource("1_q6y1t")
+script = ExtResource("2_284vj")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_2eotl")
+texture = ExtResource("1_q6y1t")

@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://di1os64fl3uvw"]
+
+[ext_resource type="FontFile" uid="uid://clucto1evpsr2" path="res://assets/fonts/CG pixel 4x5.ttf" id="1_ybrqi"]
+
+[resource]
+line_spacing = 1.0
+font = ExtResource("1_ybrqi")
+font_size = 5

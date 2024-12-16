@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://cvafvgdhktqbw"]
+
+[ext_resource type="Script" path="res://assets/scripts/battle/battle_card.gd" id="1_us3no"]
+[ext_resource type="Texture2D" uid="uid://ts4ogpek0rli" path="res://assets/sprites/ui/battle/player/player_health_bar_background.png" id="3_4lt8a"]
+[ext_resource type="LabelSettings" uid="uid://di1os64fl3uvw" path="res://assets/resources/label_settings_ui.tres" id="3_kni5h"]
+[ext_resource type="Texture2D" uid="uid://dvxa0tancfcs8" path="res://assets/sprites/ui/battle/player/player_health_bar_foreground.png" id="4_m67ix"]
+[ext_resource type="Texture2D" uid="uid://ca252s1w52od7" path="res://assets/sprites/ui/battle/player/player_ability_1_icon.png" id="6_ov76t"]
+[ext_resource type="Shader" path="res://assets/shaders/progress_bar_edge.gdshader" id="6_v74nj"]
+[ext_resource type="Texture2D" uid="uid://ds5pfrb5u8ay7" path="res://assets/sprites/ui/battle/player/player_ability_2_icon.png" id="7_cq70l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2b8gh"]
+shader = ExtResource("6_v74nj")
+shader_parameter/white_edge_width = 0.01
+shader_parameter/edge_offset = 0.1
+shader_parameter/texture_size = Vector2(53, 6)
+shader_parameter/colour_modulation = Color(1, 1, 1, 1)
+
+[node name="BattleContainer" type="VBoxContainer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_right = 53.0
+grow_vertical = 0
+pivot_offset = Vector2(26, 32)
+size_flags_vertical = 3
+theme_override_constants/separation = 1
+script = ExtResource("1_us3no")
+
+[node name="IconContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="AttackIcon" type="TextureRect" parent="IconContainer"]
+layout_mode = 2
+stretch_mode = 4
+
+[node name="Cooldown" type="Label" parent="IconContainer/AttackIcon"]
+layout_mode = 0
+offset_top = -6.0
+offset_right = 17.0
+offset_bottom = -1.0
+label_settings = ExtResource("3_kni5h")
+horizontal_alignment = 1
+
+[node name="Ability1Icon" type="TextureRect" parent="IconContainer"]
+layout_mode = 2
+texture = ExtResource("6_ov76t")
+stretch_mode = 4
+
+[node name="Cooldown" type="Label" parent="IconContainer/Ability1Icon"]
+layout_mode = 0
+offset_top = -6.0
+offset_right = 17.0
+offset_bottom = -1.0
+label_settings = ExtResource("3_kni5h")
+horizontal_alignment = 1
+
+[node name="Ability2Icon" type="TextureRect" parent="IconContainer"]
+layout_mode = 2
+texture = ExtResource("7_cq70l")
+stretch_mode = 4
+
+[node name="Cooldown" type="Label" parent="IconContainer/Ability2Icon"]
+layout_mode = 0
+offset_top = -6.0
+offset_right = 17.0
+offset_bottom = -1.0
+label_settings = ExtResource("3_kni5h")
+horizontal_alignment = 1
+
+[node name="HealthContainer" type="HFlowContainer" parent="."]
+layout_mode = 2
+theme_override_constants/v_separation = 1
+alignment = 1
+
+[node name="HPBar" type="TextureProgressBar" parent="HealthContainer"]
+material = SubResource("ShaderMaterial_2b8gh")
+layout_mode = 2
+max_value = 20.0
+value = 20.0
+rounded = true
+texture_under = ExtResource("3_4lt8a")
+texture_progress = ExtResource("4_m67ix")
+
+[node name="HPLabel" type="Label" parent="HealthContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "20 /"
+label_settings = ExtResource("3_kni5h")
+
+[node name="MaxHPLabel" type="Label" parent="HealthContainer"]
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 4
+text = "20"
+label_settings = ExtResource("3_kni5h")
+text_direction = 2

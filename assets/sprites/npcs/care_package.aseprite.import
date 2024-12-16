@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://vst23uqwuuyr"
+path="res://.godot/imported/care_package.aseprite-58ed89629128b05cd3a6e34c4b211258.res"
+
+[deps]
+
+source_file="res://assets/sprites/npcs/care_package.aseprite"
+dest_files=["res://.godot/imported/care_package.aseprite-58ed89629128b05cd3a6e34c4b211258.res"]
+
+[params]
+

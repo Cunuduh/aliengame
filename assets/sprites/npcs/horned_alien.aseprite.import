@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://csqbich8nb72p"
+path="res://.godot/imported/horned_alien.aseprite-2c6bbffdc652a68c867291e55ed9d8aa.res"
+
+[deps]
+
+source_file="res://assets/sprites/npcs/horned_alien.aseprite"
+dest_files=["res://.godot/imported/horned_alien.aseprite-2c6bbffdc652a68c867291e55ed9d8aa.res"]
+
+[params]
+

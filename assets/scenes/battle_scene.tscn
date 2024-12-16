@@ -1,0 +1,139 @@
+[gd_scene load_steps=16 format=3 uid="uid://cj3e2kkxnkyr8"]
+
+[ext_resource type="Theme" uid="uid://c0n2wvfps0c6m" path="res://assets/themes/standard_theme.tres" id="1_igx5o"]
+[ext_resource type="Script" path="res://assets/scripts/battle/battle_scene.gd" id="2_tv61w"]
+[ext_resource type="Texture2D" uid="uid://ts4ogpek0rli" path="res://assets/sprites/ui/battle/player/player_health_bar_background.png" id="4_2uy8e"]
+[ext_resource type="Shader" path="res://assets/shaders/progress_bar_edge.gdshader" id="4_5ca6v"]
+[ext_resource type="Shader" path="res://assets/shaders/battle_background_generic.gdshader" id="5_3ioyi"]
+[ext_resource type="Texture2D" uid="uid://dvxa0tancfcs8" path="res://assets/sprites/ui/battle/player/player_health_bar_foreground.png" id="5_gn72v"]
+[ext_resource type="LabelSettings" uid="uid://di1os64fl3uvw" path="res://assets/resources/label_settings_ui.tres" id="7_wuipy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ld8b"]
+shader = ExtResource("5_3ioyi")
+shader_parameter/background_colour = Color(0, 0, 0, 1)
+shader_parameter/colour_modulation = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+shader_parameter/grid_spacing = 48.0
+shader_parameter/grid_colour = Color(0, 0.107549, 0.107548, 1)
+shader_parameter/speed = 10.0
+shader_parameter/second_line_thickness = 1.0
+shader_parameter/second_grid_spacing = 48.0
+shader_parameter/second_grid_colour = Color(0, 0.0453483, 0.0453482, 1)
+shader_parameter/second_speed = 10.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqiny"]
+size = Vector2(480, 32)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kbyle"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mcldn"]
+b = Vector2(0, 270)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_f65u4"]
+a = Vector2(480, 0)
+b = Vector2(0, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_nyrk6"]
+a = Vector2(480, 0)
+b = Vector2(480, 270)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hqiwl"]
+a = Vector2(0, 270)
+b = Vector2(480, 270)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_miobp"]
+shader = ExtResource("4_5ca6v")
+shader_parameter/white_edge_width = 0.055
+shader_parameter/edge_offset = -0.05
+shader_parameter/texture_size = Vector2(480, 6)
+shader_parameter/colour_modulation = Color(1, 1, 1, 1)
+
+[node name="BattleScene" type="Control"]
+y_sort_enabled = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_igx5o")
+script = ExtResource("2_tv61w")
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_1ld8b")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BattleCardContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="VisibilityArea" type="Area2D" parent="CanvasLayer/BattleCardContainer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/BattleCardContainer/VisibilityArea"]
+position = Vector2(240, 16)
+shape = SubResource("RectangleShape2D_eqiny")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_kbyle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_mcldn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_f65u4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_nyrk6")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_hqiwl")
+
+[node name="TotalHealth" type="TextureProgressBar" parent="."]
+z_index = 69
+material = SubResource("ShaderMaterial_miobp")
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 6.0
+grow_horizontal = 2
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_right = 3
+texture_under = ExtResource("4_2uy8e")
+texture_progress = ExtResource("5_gn72v")
+
+[node name="Label" type="Label" parent="TotalHealth"]
+z_index = 69
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0%"
+label_settings = ExtResource("7_wuipy")
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="CanvasLayer/BattleCardContainer/VisibilityArea" to="." method="_on_visibility_area_body_entered"]
+[connection signal="body_exited" from="CanvasLayer/BattleCardContainer/VisibilityArea" to="." method="_on_visibility_area_body_exited"]

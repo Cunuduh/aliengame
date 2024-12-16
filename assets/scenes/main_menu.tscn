@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcxmbwn7cnrbx"]
+
+[ext_resource type="Script" path="res://assets/scripts/world/main_menu.gd" id="1_b0aoo"]
+[ext_resource type="Texture2D" uid="uid://dfyo7gwd8jjh2" path="res://assets/sprites/ui/start.png" id="2_s745y"]
+[ext_resource type="Shader" path="res://assets/shaders/space_effect.gdshader" id="2_swdbi"]
+[ext_resource type="Texture2D" uid="uid://bm0f5injvb83i" path="res://assets/sprites/backgrounds/planet.png" id="3_8qbws"]
+[ext_resource type="Texture2D" uid="uid://ib52nug7e7ad" path="res://assets/sprites/ui/title.png" id="3_qc0xy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rqlaf"]
+shader = ExtResource("2_swdbi")
+shader_parameter/time_scale = 0.5
+shader_parameter/star_density = 128.0
+shader_parameter/quantize_resolution = Vector2(480, 270)
+shader_parameter/direction = Vector2(0, -0.02)
+shader_parameter/background_colour = Color(0, 0, 0, 1)
+shader_parameter/use_texture = true
+shader_parameter/monochromatic = true
+shader_parameter/background_texture = ExtResource("3_8qbws")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pwmgw"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b0aoo")
+
+[node name="Background" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_rqlaf")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_pwmgw")
+
+[node name="Start" type="TextureButton" parent="Background"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -166.0
+offset_right = 36.0
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("2_s745y")
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.0
+offset_top = 34.0
+offset_right = 95.0
+offset_bottom = 52.0
+grow_horizontal = 2
+texture = ExtResource("3_qc0xy")
+
+[connection signal="pressed" from="Background/Start" to="." method="_on_start_pressed"]
