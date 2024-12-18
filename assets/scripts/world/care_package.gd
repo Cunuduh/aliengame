@@ -65,9 +65,9 @@ func _apply_cooldown_upgrade() -> void:
   var attack_node = player.state_chart.get_node("Root/Battling/Attack/Cooldown/Refresh")
   var ability1_node = player.state_chart.get_node("Root/Battling/Ability1/Cooldown/Refresh")
   var ability2_node = player.state_chart.get_node("Root/Battling/Ability2/Cooldown/Refresh")
-  attack_node.delay_seconds = max(0.1, original_cooldowns[0] - applied_upgrades_count["cooldown"] * 0.05)
-  ability1_node.delay_seconds = max(0.1, original_cooldowns[1] - applied_upgrades_count["cooldown"] * 0.05)
-  ability2_node.delay_seconds = max(0.1, original_cooldowns[2] - applied_upgrades_count["cooldown"] * 0.05)
+  attack_node.delay_seconds = max(0.1, original_cooldowns[0] - applied_upgrades_count["cooldown"] * 0.05 * original_cooldowns[0])
+  ability1_node.delay_seconds = max(0.1, original_cooldowns[1] - applied_upgrades_count["cooldown"] * 0.05 * original_cooldowns[1])
+  ability2_node.delay_seconds = max(0.1, original_cooldowns[2] - applied_upgrades_count["cooldown"] * 0.05 * original_cooldowns[2])
   applied_upgrades_count["cooldown"] += 1
 
 func _apply_health_upgrade() -> void:
