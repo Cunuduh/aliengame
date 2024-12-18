@@ -8,7 +8,7 @@ var original_environment: Lobby
 var original_environment_children: Array[CanvasItem]
 var current_battle_scene: BattleScene
 var levels_completed := 0
-  
+var dead := false
 func construct_battle_scene():
   var battle_scene = preload("res://assets/scenes/battle_scene.tscn").instantiate()
   player.state_chart.send_event("enemy_collision")
@@ -48,8 +48,12 @@ func deconstruct_battle_scene():
   battle_scene.queue_free()
   current_battle_scene = null
   levels_completed += 1
+  original_environment.levels_cleared.text = str(Globals.levels_completed) + " LEVELS CLEARED"
 
 func die():
+  if dead:
+    return
+  dead = true
   var death_scene := preload("res://assets/scenes/death_screen.tscn").instantiate()
   original_environment.add_child(death_scene)
   player.get_parent().remove_child(player)
@@ -65,22 +69,33 @@ func generate_enemies():
   var base_count := 1 + floori(levels_completed / 2.0)
   
   match levels_completed:
-    0, 1: # Early rounds - single enemy types to learn patterns
+    0, 1:
       _spawn_enemies("robot", base_count)
     
-    2, 3: # Introduce horned enemies
+    2, 3:
       _spawn_enemies("robot", base_count)
       _spawn_enemies("horned", base_count)
     
-    4, 5: # Introduce cthulhuans
+    4, 5:
       _spawn_enemies("robot", base_count)
-      _spawn_enemies("horned", base_count)
+      _spawn_enemies("horned", base_count) 
       _spawn_enemies("cthulhuan", 1)
-    
-    _: # Later rounds - balanced mix that gets progressively harder
+    6:
+      _spawn_enemies("teeth", 1)
+    _:
       var robot_count := base_count + 1
       var horned_count := base_count + 2
       var cthulhuan_count := 1 + floori(levels_completed / 4.0)
+      
+      # Add 5% chance for teeth enemy at round 7+
+      var spawn_teeth := levels_completed >= 7 and randf() <= 0.05
+      
+      if spawn_teeth:
+        _spawn_enemies("teeth", 1)
+        # Reduce other enemy counts if teeth enemy spawns
+        robot_count = ceili(robot_count / 3.0)
+        horned_count = ceili(horned_count / 3.0) 
+        cthulhuan_count = ceili(cthulhuan_count / 3.0)
       
       _spawn_enemies("robot", robot_count)
       _spawn_enemies("horned", horned_count)
@@ -95,6 +110,8 @@ func _spawn_enemies(type: String, count: int) -> void:
       scene = preload("res://assets/scenes/horned_enemy.tscn")
     "cthulhuan":
       scene = preload("res://assets/scenes/cthulhuan_enemy.tscn")
+    "teeth":
+      scene = preload("res://assets/scenes/teeth_enemy.tscn")
   
   const MARGIN := 80.0
   const ARENA_WIDTH := 480.0

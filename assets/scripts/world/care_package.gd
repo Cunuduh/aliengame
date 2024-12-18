@@ -11,7 +11,7 @@ var looted := false
 var player_in_cooldown := false
 var player_in_health := false 
 var player_in_damage := false
-var original_cooldowns: Array[float] = [0.5, 3.0, 7.5]
+var original_cooldowns: Array[float] = [0.5, 10.0, 7.5]
 var applied_upgrades_count: Dictionary = {
   "cooldown": 0,
   "health": 0,

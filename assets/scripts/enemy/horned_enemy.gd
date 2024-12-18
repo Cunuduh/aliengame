@@ -18,6 +18,6 @@ func _attack():
       animation_player.play("attack")
       await animation_player.animation_finished
       animation_player.play("idle")
-
+  await get_tree().create_timer(1.0).timeout
   movement_switch_timer = movement_switch_interval - 1.0
   state_chart.send_event("attack_complete")

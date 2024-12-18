@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://boss0elbx5bkd"]
+[gd_scene load_steps=20 format=3 uid="uid://boss0elbx5bkd"]
 
 [ext_resource type="Script" path="res://assets/scripts/world/lobby.gd" id="1_c8kjx"]
 [ext_resource type="Shader" path="res://assets/shaders/space_effect.gdshader" id="1_td76n"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bcwkugn6v3oy7" path="res://addons/godot_state_charts/utilities/state_chart_debugger.tscn" id="6_lgy4c"]
 [ext_resource type="Theme" uid="uid://c0n2wvfps0c6m" path="res://assets/themes/standard_theme.tres" id="7_21ett"]
 [ext_resource type="Texture2D" uid="uid://bfce7dwnbmk7r" path="res://assets/sprites/ui/next.png" id="8_wrl2q"]
+[ext_resource type="FontFile" uid="uid://b1y4t6soa4pk0" path="res://assets/fonts/PixelOperator-Bold.ttf" id="9_v0nqq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sjlfm"]
 shader = ExtResource("1_td76n")
@@ -73,6 +74,10 @@ _data = {
 "RESET": SubResource("Animation_hmgap"),
 "idle": SubResource("Animation_j8vg7")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_q62oi"]
+line_spacing = 1.0
+font = ExtResource("9_v0nqq")
 
 [node name="Lobby" type="Control"]
 layout_mode = 3
@@ -151,5 +156,12 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextArea"]
 shape = SubResource("SegmentShape2D_ypipq")
+
+[node name="LevelsCleared" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0 LEVELS CLEARED"
+label_settings = SubResource("LabelSettings_q62oi")
 
 [connection signal="body_entered" from="NextArea" to="." method="_on_next_area_body_entered"]

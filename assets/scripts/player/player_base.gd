@@ -172,6 +172,7 @@ func _on_battling_state_exited() -> void:
     Globals.deconstruct_battle_scene()
   else:
     animation_player.play("death")
+    BulletPool.clear_bullets()
     Globals.die()
   overworld_collision.set_deferred("disabled", false)
   overworld_query.collision_mask = 1 << 2

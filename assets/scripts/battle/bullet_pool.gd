@@ -46,6 +46,7 @@ func _ready() -> void:
   query.shape = SHAPE
 
   var atlas_texture: Texture2D = SPRITE_FRAMES.get_frame_texture(&"default", 0).atlas
+
   frame_width = SPRITE_FRAMES.get_frame_texture(&"default", 0).region.size.x
   frame_height = SPRITE_FRAMES.get_frame_texture(&"default", 0).region.size.y
   animation_speed = SPRITE_FRAMES.get_animation_speed(&"default")
@@ -112,3 +113,9 @@ func _process(delta: float) -> void:
       var uv_x := (frame_index % frames_per_row) * frame_width / texture_width
       var uv_y := (frame_index / frames_per_row) * frame_height / texture_height
       multimesh.set_instance_custom_data(i, Color(uv_x, uv_y, 1.0, 0.0))
+
+func clear_bullets() -> void:
+  for i in range(pool_size):
+    if visibilities[i] == 1:
+      visibilities[i] = 0
+      multimesh.set_instance_custom_data(i, COLOUR_OFF)

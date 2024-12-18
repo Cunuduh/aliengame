@@ -316,7 +316,7 @@ _data = {
 radius = 150.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s7a7o"]
-radius = 30.0
+radius = 25.0
 
 [node name="CarePackage" type="Sprite2D"]
 y_sort_enabled = true
@@ -383,9 +383,9 @@ shape = SubResource("CircleShape2D_s7a7o")
 
 [node name="Label" type="Label" parent="."]
 visible = false
-offset_left = -21.0
+offset_left = 36.0
 offset_top = -3.0
-offset_right = 60.0
+offset_right = 117.0
 offset_bottom = 2.0
 text = "CHOOSE AN UPGRADE"
 label_settings = ExtResource("6_7hy67")

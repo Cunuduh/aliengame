@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5q4fd733blky"]
+
+[ext_resource type="Texture2D" uid="uid://cn1sltmnj6fx7" path="res://assets/sprites/effects/explosion.png" id="1_ia64x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvlb5"]
+atlas = ExtResource("1_ia64x")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sahu"]
+atlas = ExtResource("1_ia64x")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_305xc"]
+atlas = ExtResource("1_ia64x")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cnrg"]
+atlas = ExtResource("1_ia64x")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5u6y"]
+atlas = ExtResource("1_ia64x")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whhk3"]
+atlas = ExtResource("1_ia64x")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8371"]
+atlas = ExtResource("1_ia64x")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yi874"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvlb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sahu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_305xc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cnrg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5u6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whhk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8371")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Explosion" type="AnimatedSprite2D"]
+z_index = 420
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_yi874")
+frame = 5
+frame_progress = 0.298779
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://assets/sprites/effects",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://assets/sprites/effects/explosion.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "3f524726a3030aad02ae2a2ef5644586"

@@ -41,10 +41,12 @@ func _ready() -> void:
   target = Globals.player
   perceived_target_position = target.global_position
   perceived_target_velocity = target.velocity
-
-func _process(delta: float) -> void:
-  if target and target.in_battle and stats.health > 0:
+func check_flip() -> void:
+  if target:
     sprite.flip_h = global_position.x > target.global_position.x
+func _process(delta: float) -> void:
+  check_flip()
+  if target and target.in_battle and stats.health > 0:
     update_perceived_player_info(delta)
 
     movement_switch_timer += delta

@@ -31,6 +31,7 @@ func _ready() -> void:
   await tween.finished
 
 func fade_out() -> void:
+  BulletPool.clear_bullets()
   var tween := get_tree().create_tween().set_parallel(true)
   tween.tween_property($CanvasLayer/BattleCardContainer, "position", Vector2($CanvasLayer/BattleCardContainer.position.x, $CanvasLayer/BattleCardContainer.position.y + 100), 0.5) \
     .set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)

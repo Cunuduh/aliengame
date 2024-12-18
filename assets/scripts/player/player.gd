@@ -25,7 +25,7 @@ func _ready() -> void:
 func _pre_attack() -> void:
   _attack_charge = speed
   animation_player.play("attack_transition")
-  await animation_player.animation_finished
+  await get_tree().create_timer(animation_player.get_animation("attack_transition").length).timeout
   animation_player.play("attack_wait")
   # wait for key release
   while Input.is_action_pressed("attack"):
@@ -43,11 +43,26 @@ func attack() -> void:
   await get_tree().create_timer(animation_player.get_animation("attack_action").length).timeout
   animation_player.play("battle_stance")
 
+
 func _pre_ability_1() -> void:
   ability_1()
 
 func ability_1() -> void:
-  pass
+  var explosion = preload("res://assets/scenes/explosion.tscn").instantiate()
+  Globals.current_battle_scene.add_child(explosion)
+  explosion.global_position = global_position
+  explosion.visible = true
+  explosion.frame = 0
+  explosion.play("default") # Play the default explosion animation
+  
+  var enemies = Globals.encountered_enemies
+  for enemy in enemies:
+    enemy.stats.health -= 10 + stats.attack
+      
+  await get_tree().create_timer(0.6).timeout
+  explosion.queue_free()
+  
+  state_chart.send_event("end_ability_1")
 
 func _pre_ability_2() -> void:
   var override_velocity := Vector2.ZERO
@@ -58,9 +73,6 @@ func _pre_ability_2() -> void:
   ability_2(override_velocity)
 
 func ability_2(override_velocity: Vector2 = Vector2.ZERO) -> void:
-  if state_chart.get_node("Root/Battling/Attack/Active").active and not Input.is_action_pressed("attack"):
-    state_chart.send_event("end_attack")
-
   var dash_distance := 150.0
   var dash_speed := 750.0
   var direction := velocity.normalized() if override_velocity == Vector2.ZERO else override_velocity.normalized()

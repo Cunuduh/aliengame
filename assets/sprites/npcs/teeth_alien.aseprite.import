@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bpp5e68sp4ney"
+path="res://.godot/imported/teeth_alien.aseprite-64549db0366abae706edadd3f81181fc.res"
+
+[deps]
+
+source_file="res://assets/sprites/npcs/teeth_alien.aseprite"
+dest_files=["res://.godot/imported/teeth_alien.aseprite-64549db0366abae706edadd3f81181fc.res"]
+
+[params]
+
