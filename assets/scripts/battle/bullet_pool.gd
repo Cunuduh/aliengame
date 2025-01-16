@@ -100,7 +100,7 @@ func _process(delta: float) -> void:
 
       collision_result = direct_space_state.intersect_shape(query, 1)
       if collision_result and collision_result[0]["collider"].is_in_group("player") and not collision_result[0]["collider"].invincibility:
-        var player: PlayerBase = collision_result[0]["collider"]
+        var player: Player = collision_result[0]["collider"]
         player.collision_count += 1
         player.stats.health += 1 if player.heal_from_damage else -1
       if lifetimes[i] > BULLET_LIFETIME or collision_result:

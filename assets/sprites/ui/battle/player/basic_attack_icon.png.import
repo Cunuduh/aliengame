@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8u8ydkc1d6io"
-path="res://.godot/imported/main_menu_lake.png-dd49e8dd37f488c400210a70350a32a0.ctex"
+uid="uid://g1416o3qhgmr"
+path="res://.godot/imported/basic_attack_icon.png-099697d5e94fd47db5040afafdbd3170.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/backgrounds/main_menu_lake.png"
-dest_files=["res://.godot/imported/main_menu_lake.png-dd49e8dd37f488c400210a70350a32a0.ctex"]
+source_file="res://assets/sprites/ui/battle/player/basic_attack_icon.png"
+dest_files=["res://.godot/imported/basic_attack_icon.png-099697d5e94fd47db5040afafdbd3170.ctex"]
 
 [params]
 

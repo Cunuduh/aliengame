@@ -316,7 +316,7 @@ _data = {
 radius = 150.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s7a7o"]
-radius = 25.0
+radius = 22.0
 
 [node name="CarePackage" type="Sprite2D"]
 y_sort_enabled = true

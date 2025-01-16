@@ -145,13 +145,17 @@ func _on_attacking_state_entered() -> void:
   _attack()
 
 func _check_dissolve(stat: CharacterStats.StatType, value: int):
+  var current_animation = animation_player.current_animation
+  # if current animation is not looping, play idle instead
+  if animation_player.get_animation(current_animation).loop_mode == Animation.LoopMode.LOOP_NONE:
+    current_animation = "idle"
   if stat == CharacterStats.StatType.HEALTH:
     if value <= 0:
       dissolve()
     else:
       animation_player.play("damaged")
       await animation_player.animation_finished
-      animation_player.play("idle")
+      animation_player.play(current_animation)
 
 func dissolve() -> void:
   Globals.encountered_enemies.erase(self)

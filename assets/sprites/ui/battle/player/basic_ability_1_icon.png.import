@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g1416o3qhgmr"
-path="res://.godot/imported/player_attack_icon.png-1d55c3863fa57890936eec169fbb16ad.ctex"
+uid="uid://ca252s1w52od7"
+path="res://.godot/imported/basic_ability_1_icon.png-fcb6337730596f18888fc8745e49e2eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/battle/player/player_attack_icon.png"
-dest_files=["res://.godot/imported/player_attack_icon.png-1d55c3863fa57890936eec169fbb16ad.ctex"]
+source_file="res://assets/sprites/ui/battle/player/basic_ability_1_icon.png"
+dest_files=["res://.godot/imported/basic_ability_1_icon.png-fcb6337730596f18888fc8745e49e2eb.ctex"]
 
 [params]
 

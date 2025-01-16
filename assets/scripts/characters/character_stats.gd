@@ -6,24 +6,20 @@ signal stat_changed(stat: int, value: int)
 enum StatType {
   HEALTH,
   ATTACK,
-  DEFENSE,
 }
 enum MaxStatType {
   HEALTH,
   ATTACK,
-  DEFENSE,
 }
 var level := 1
 var experience := 0
 var _stats: Dictionary = {
   "health": 20,
   "attack": 1,
-  "defense": 1,
 }
 var _max_stats = {
   "health": 20,
   "attack": 1,
-  "defense": 1,
 }
 @export var max_health: int:
   get:
@@ -37,12 +33,6 @@ var _max_stats = {
   set(value):
     _max_stats["attack"] = value
     emit_signal("stat_changed", StatType.ATTACK, value)
-@export var max_defense: int:
-  get:
-    return _max_stats["defense"]
-  set(value):
-    _max_stats["defense"] = value
-    emit_signal("stat_changed", StatType.DEFENSE, value)
 @export var health: int:
   get:
     return _stats["health"]
@@ -57,13 +47,6 @@ var _max_stats = {
     var v := clampi(value, 0, max_attack)
     _stats["attack"] = v
     emit_signal("stat_changed", StatType.ATTACK, v)
-@export var defense: int:
-  get:
-    return _stats["defense"]
-  set(value):
-    var v := clampi(value, 0, max_defense)
-    _stats["defense"] = v
-    emit_signal("stat_changed", StatType.DEFENSE, v)
 
 func calculate_max_health() -> int:
   return 20 + (level * 16)

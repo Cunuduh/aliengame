@@ -9,7 +9,7 @@ func _attack() -> void:
       var direction := (target.global_position - global_position)
       if abs(direction.length()) < 2:
         direction = Vector2.ZERO
-      velocity = direction.normalized() * follow_speed
+      velocity = direction.normalized() * follow_speed * 1.5
       move_and_slide()
       await get_tree().process_frame
     
@@ -18,13 +18,25 @@ func _attack() -> void:
         
     # Second phase - bite attack with bullet circle
     animation_player.play("attack")
-    spawn_bullet_circle(global_position, 16, 200.0)
-    await animation_player.animation_finished
+    var attack_time := Time.get_ticks_msec()
+    # Keep moving during attack animation
+    while Time.get_ticks_msec() - attack_time < animation_player.get_animation("attack").length * 1000 - 200 and stats.health > 0:
+      var direction := (target.global_position - global_position)
+      if abs(direction.length()) < 2:
+        direction = Vector2.ZERO
+      velocity = direction.normalized() * follow_speed * 0.75 # Slower movement during attack
+      move_and_slide()
+      await get_tree().process_frame
+      
+    spawn_bullet_circle(global_position, 32, 200.0)
+    await get_tree().create_timer(0.5).timeout
     animation_player.play("idle")
 
     state_chart.send_event("attack_complete")
+
 func check_flip() -> void:
   pass
+
 func spawn_bullet_circle(center_position: Vector2, num_bullets: int, bullet_speed: float) -> void:
   var angle_step := (2.0 * PI) / num_bullets
   var current_angle = 0.0

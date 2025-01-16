@@ -7,13 +7,14 @@ var encountered_enemies: Array[Combatant] = []
 var original_environment: Lobby
 var original_environment_children: Array[CanvasItem]
 var current_battle_scene: BattleScene
-var levels_completed := 0
+var levels_completed := 6
 var dead := false
 func construct_battle_scene():
   var battle_scene = preload("res://assets/scenes/battle_scene.tscn").instantiate()
   player.state_chart.send_event("enemy_collision")
   original_environment = player.get_parent()
-  generate_enemies()
+  if encountered_enemies.size() == 0:
+    generate_enemies()
   for child in original_environment.get_children():
     if child not in [player] + Globals.encountered_enemies and child.name != "StateChartDebugger":
       child.set_process(false)
@@ -25,6 +26,9 @@ func construct_battle_scene():
   battle_scene.set_position(Vector2(0, 0))
   var nodes_to_reparent = [player] + encountered_enemies
   for node in nodes_to_reparent:
+    if node == null:
+      encountered_enemies.erase(node)
+      continue
     if node.visible:
       node.get_parent().call_deferred("remove_child", node)
       battle_scene.call_deferred("add_child", node)
@@ -45,6 +49,7 @@ func deconstruct_battle_scene():
   original_environment_children.clear()
   original_environment.refresh_package()
   await battle_scene.fade_out()
+  encountered_enemies.clear()
   battle_scene.queue_free()
   current_battle_scene = null
   levels_completed += 1
@@ -66,7 +71,7 @@ func die():
   levels_completed = 0
 
 func generate_enemies():
-  var base_count := 1 + floori(levels_completed / 2.0)
+  var base_count := 1 + ceili(levels_completed / 2.0)
   
   match levels_completed:
     0, 1:

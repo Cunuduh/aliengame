@@ -8,6 +8,9 @@ extends Node
 ## The the remote debugger
 const DebuggerRemote = preload("utilities/editor_debugger/editor_debugger_remote.gd")
 
+## The state chart utility class.
+const StateChartUtil = preload("utilities/state_chart_util.gd")
+
 ## Emitted when the state chart receives an event. This will be 
 ## emitted no matter which state is currently active and can be 
 ## useful to trigger additional logic elsewhere in the game 
@@ -20,9 +23,25 @@ const DebuggerRemote = preload("utilities/editor_debugger/editor_debugger_remote
 ## while another is still processing, it will be enqueued.
 signal event_received(event:StringName)
 
+@export_group("Debugging")
 ## Flag indicating if this state chart should be tracked by the 
 ## state chart debugger in the editor.
 @export var track_in_editor:bool = false
+
+## If set, the state chart will issue a warning when trying to
+## send an event that is not configured for any transition of 
+## the state chart. It is usually a good idea to leave this
+## enabled, but in certain cases this may get in the way so
+## you can disable it here.
+@export var warn_on_sending_unknown_events:bool = true
+
+@export_group("")
+## Initial values for the expression properties. These properties can be used in expressions, e.g
+## for guards or transition delays. It is recommended to set an initial value for each property
+## you use in an expression to ensure that this expression is always valid. If you don't set
+## an initial value, some expressions may fail to be evaluated if they use a property that has
+## not been set yet.
+@export var initial_expression_properties:Dictionary = {}
 
 ## The root state of the state chart.
 var _state:StateChartState = null
@@ -47,6 +66,7 @@ var _queued_transitions:Array[Dictionary] = []
 var _transitions_processing_active:bool = false
 
 var _debugger_remote:DebuggerRemote = null
+var _valid_event_names:Array[StringName] = []
 
 
 func _ready() -> void:
@@ -63,6 +83,20 @@ func _ready() -> void:
 	if not child is StateChartState:
 		push_error("StateMachine's child must be a State")
 		return
+		
+	# in debug builds, collect a list of valid event names
+	# to warn the developer when using an event that doesn't
+	# exist.
+	if OS.is_debug_build():
+		_valid_event_names = StateChartUtil.events_of(self)
+	
+	# set the initial expression properties
+	if initial_expression_properties != null:
+		for key in initial_expression_properties.keys():
+			if not key is String and not key is StringName:
+				push_error("Expression property names must be strings. Ignoring initial expression property with key ", key)
+				continue
+			_expression_properties[key] = initial_expression_properties[key]
 
 	# initialize the state machine
 	_state = child as StateChartState
@@ -90,6 +124,9 @@ func send_event(event:StringName) -> void:
 	if not is_instance_valid(_state):
 		push_error("State chart has no root state. Ignoring call to `send_event`.")
 		return
+		
+	if warn_on_sending_unknown_events and event != "" and OS.is_debug_build() and not _valid_event_names.has(event):
+		push_warning("State chart does not have an event '", event , "' defined. Sending this event will do nothing.")
 	
 	_queued_events.append(event)
 	_run_changes()
@@ -111,7 +148,13 @@ func set_expression_property(name:StringName, value) -> void:
 	_property_change_pending = true
 	_run_changes()
 		
-		
+
+## Returns the value of a previously set expression property. If the property does not exist, the default value
+## will be returned.
+func get_expression_property(name:StringName, default:Variant = null) -> Variant:
+	return _expression_properties.get(name, default)
+
+
 func _run_changes() -> void:
 	if _locked_down:
 		return
@@ -152,13 +195,20 @@ func _run_transition(transition:Transition, source:StateChartState) -> void:
 	# if for some reason the state no longer is active, ignore the transition	
 	_do_run_transition(transition, source)
 	
+	var execution_count := 1
+	
 	# if we still have transitions
 	while _queued_transitions.size() > 0:
 		var next_transition_entry = _queued_transitions.pop_front()
 		var next_transition = next_transition_entry.keys()[0]
 		var next_transition_source = next_transition_entry[next_transition]
 		_do_run_transition(next_transition, next_transition_source)
-
+		execution_count += 1
+	
+		if execution_count > 100:
+			push_error("Infinite loop detected in transitions. Aborting. The state chart is now in an invalid state and no longer usable.")
+			break
+	
 	_transitions_processing_active = false
 
 ## Runs the transition. Used internally by the state chart, do not call this directly.	

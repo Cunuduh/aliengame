@@ -11,7 +11,7 @@ var looted := false
 var player_in_cooldown := false
 var player_in_health := false 
 var player_in_damage := false
-var original_cooldowns: Array[float] = [0.5, 10.0, 7.5]
+var original_cooldowns: Array[float] = []
 var applied_upgrades_count: Dictionary = {
   "cooldown": 0,
   "health": 0,
@@ -59,16 +59,19 @@ func _apply_upgrade(sprite: Sprite2D, upgrade_func: Callable) -> void:
   next.visible = true
   next.get_node("AnimationPlayer").play("idle")
   visible = false
-
 func _apply_cooldown_upgrade() -> void:
   var player = Globals.player
-  var attack_node = player.state_chart.get_node("Root/Battling/Attack/Cooldown/Refresh")
-  var ability1_node = player.state_chart.get_node("Root/Battling/Ability1/Cooldown/Refresh")
-  var ability2_node = player.state_chart.get_node("Root/Battling/Ability2/Cooldown/Refresh")
-  attack_node.delay_seconds = max(0.1, original_cooldowns[0] - applied_upgrades_count["cooldown"] * 0.05 * original_cooldowns[0])
-  ability1_node.delay_seconds = max(0.1, original_cooldowns[1] - applied_upgrades_count["cooldown"] * 0.05 * original_cooldowns[1])
-  ability2_node.delay_seconds = max(0.1, original_cooldowns[2] - applied_upgrades_count["cooldown"] * 0.05 * original_cooldowns[2])
   applied_upgrades_count["cooldown"] += 1
+  for i in player.abilities.size():
+    if applied_upgrades_count["cooldown"] == 1:
+      original_cooldowns.append(float(player.abilities[i].cooldown))
+    var ability = player.abilities[i]
+    var ability_node = player.state_chart.get_node("Root/Battling/%s/Cooldown/Refresh" % ability.name.to_pascal_case())
+    var original_cooldown = original_cooldowns[i]
+    var reduction = applied_upgrades_count["cooldown"] * 0.05 * original_cooldown
+    var new_cooldown = max(0.1, original_cooldown - reduction)
+    ability_node.delay_in_seconds = str(new_cooldown)
+    print("Reduced %s cooldown by %s seconds" % [ability.name, reduction])
 
 func _apply_health_upgrade() -> void:
   var player = Globals.player
@@ -78,8 +81,8 @@ func _apply_health_upgrade() -> void:
 
 func _apply_damage_upgrade() -> void:
   var player = Globals.player
-  player.stats.max_attack += 2
-  player.stats.attack += 2
+  player.stats.max_attack += 1
+  player.stats.attack += 1
   applied_upgrades_count["damage"] += 1
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -100,7 +103,7 @@ func _on_health_area_2d_body_entered(_body: Node2D) -> void:
 
 func _on_damage_area_2d_body_entered(_body: Node2D) -> void:
   player_in_damage = true
-  label.text = "+2 DAMAGE"
+  label.text = "+1 DAMAGE"
   label.visible = true
 
 func _on_cooldown_area_2d_body_exited(_body: Node2D) -> void:

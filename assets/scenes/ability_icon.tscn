@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg1e2rjt2nsxi"]
+
+[ext_resource type="LabelSettings" uid="uid://di1os64fl3uvw" path="res://assets/resources/label_settings_ui.tres" id="1_mpgac"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hho60"]
+size = Vector2(17, 17)
+
+[node name="AbilityIcon" type="TextureRect"]
+offset_right = 17.0
+offset_bottom = 17.0
+texture = SubResource("PlaceholderTexture2D_hho60")
+stretch_mode = 4
+
+[node name="Cooldown" type="Label" parent="."]
+layout_mode = 0
+offset_top = -6.0
+offset_right = 17.0
+offset_bottom = -1.0
+label_settings = ExtResource("1_mpgac")
+horizontal_alignment = 1

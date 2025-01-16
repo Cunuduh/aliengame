@@ -117,6 +117,7 @@ position = Vector2(344, 139)
 
 [node name="Player" parent="." instance=ExtResource("2_fbo41")]
 position = Vector2(62, 137)
+abilities = null
 
 [node name="StateChartDebugger" parent="." instance=ExtResource("6_lgy4c")]
 visible = false
