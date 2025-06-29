@@ -1,15 +1,15 @@
 [gd_scene load_steps=24 format=3 uid="uid://bjptk35p5s344"]
 
-[ext_resource type="Shader" path="res://assets/shaders/dissolve.gdshader" id="2_83qrr"]
-[ext_resource type="Script" path="res://assets/scripts/enemy/robot_enemy.gd" id="2_bijvf"]
-[ext_resource type="Script" path="res://assets/scripts/characters/character_stats.gd" id="2_qvypf"]
+[ext_resource type="Shader" uid="uid://d2tfkj0vys23w" path="res://assets/shaders/dissolve.gdshader" id="2_83qrr"]
+[ext_resource type="Script" uid="uid://hg4hnk1yqib5" path="res://assets/scripts/enemy/robot_enemy.gd" id="2_bijvf"]
+[ext_resource type="Script" uid="uid://cjkbvly834ypq" path="res://assets/scripts/characters/character_stats.gd" id="2_qvypf"]
 [ext_resource type="Texture2D" uid="uid://dib3oqp8ll1c4" path="res://assets/sprites/npcs/robot_alien.png" id="4_7bbua"]
 [ext_resource type="Texture2D" uid="uid://bv3d852edjjva" path="res://assets/sprites/effects/dissolve_particle.png" id="5_quqke"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="6_c67xs"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/parallel_state.gd" id="7_tbptk"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="8_bonpa"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="9_th81e"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="10_uyws4"]
+[ext_resource type="Script" uid="uid://dpmgd3hx3ar5y" path="res://addons/godot_state_charts/state_chart.gd" id="6_c67xs"]
+[ext_resource type="Script" uid="uid://d2s1pwit5pfye" path="res://addons/godot_state_charts/parallel_state.gd" id="7_tbptk"]
+[ext_resource type="Script" uid="uid://dv730vr2jnpps" path="res://addons/godot_state_charts/compound_state.gd" id="8_bonpa"]
+[ext_resource type="Script" uid="uid://c4jlw4b1jj3pg" path="res://addons/godot_state_charts/atomic_state.gd" id="9_th81e"]
+[ext_resource type="Script" uid="uid://mv5qfbpp3fig" path="res://addons/godot_state_charts/transition.gd" id="10_uyws4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dimsh"]
 size = Vector2(35, 29.5)
@@ -29,12 +29,12 @@ noise = SubResource("FastNoiseLite_snygp")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mnain"]
 resource_local_to_scene = true
 shader = ExtResource("2_83qrr")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_4fcm6")
 shader_parameter/noise_tiling = 1.0
 shader_parameter/progress = 0.0
 shader_parameter/edge_thickness = 0.025
 shader_parameter/edge_colour = Color(1, 1, 1, 1)
 shader_parameter/texture_size = Vector2(82, 78)
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_4fcm6")
 
 [sub_resource type="Animation" id="Animation_rmlry"]
 length = 0.001
@@ -153,11 +153,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ogkg5"]
 _data = {
-"RESET": SubResource("Animation_rmlry"),
-"attack": SubResource("Animation_xdjb2"),
-"damaged": SubResource("Animation_k6i2p"),
-"default": SubResource("Animation_xfn25"),
-"idle": SubResource("Animation_p2cjj")
+&"RESET": SubResource("Animation_rmlry"),
+&"attack": SubResource("Animation_xdjb2"),
+&"damaged": SubResource("Animation_k6i2p"),
+&"default": SubResource("Animation_xfn25"),
+&"idle": SubResource("Animation_p2cjj")
 }
 
 [sub_resource type="Gradient" id="Gradient_ife2x"]

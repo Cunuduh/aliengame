@@ -1,22 +1,22 @@
 [gd_scene load_steps=60 format=3 uid="uid://cy7o8s575kcm7"]
 
-[ext_resource type="Script" path="res://assets/scripts/player/player.gd" id="1_f1yva"]
+[ext_resource type="Script" uid="uid://7cjfr53wjqjs" path="res://assets/scripts/player/player.gd" id="1_f1yva"]
 [ext_resource type="Shape2D" uid="uid://bm6ceilf2274y" path="res://assets/resources/enemy_search_area.tres" id="2_lv00q"]
-[ext_resource type="Script" path="res://assets/scripts/player/abilities/ability.gd" id="2_qcxl3"]
-[ext_resource type="Script" path="res://assets/scripts/player/abilities/basic_attack_ability.gd" id="3_hk66x"]
+[ext_resource type="Script" uid="uid://bsm1p7h4p5i3q" path="res://assets/scripts/player/abilities/ability.gd" id="2_qcxl3"]
+[ext_resource type="Script" uid="uid://oykae3gjh2nd" path="res://assets/scripts/player/abilities/basic_attack_ability.gd" id="3_hk66x"]
 [ext_resource type="Shape2D" uid="uid://3s8mf8iaro7c" path="res://assets/resources/overworld_collision.tres" id="3_pnf8u"]
-[ext_resource type="Script" path="res://assets/scripts/player/abilities/basic_ability_1.gd" id="4_coh7a"]
+[ext_resource type="Script" uid="uid://dynfyet10ksbt" path="res://assets/scripts/player/abilities/basic_ability_1.gd" id="4_coh7a"]
 [ext_resource type="Shape2D" uid="uid://b1r0ovh577d5c" path="res://assets/resources/battle_collision.tres" id="4_g85kv"]
-[ext_resource type="Script" path="res://assets/scripts/player/abilities/basic_ability_2.gd" id="5_1bqhh"]
-[ext_resource type="Shader" path="res://assets/shaders/palette_swap.gdshader" id="5_oso62"]
+[ext_resource type="Script" uid="uid://cwns6ni7kinlh" path="res://assets/scripts/player/abilities/basic_ability_2.gd" id="5_1bqhh"]
+[ext_resource type="Shader" uid="uid://dmg24gossf45s" path="res://assets/shaders/palette_swap.gdshader" id="5_oso62"]
 [ext_resource type="Texture2D" uid="uid://bbrk85csq0ngt" path="res://assets/sprites/ui/battle/soul.png" id="7_4e6wa"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="8_d0x1w"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="9_fukul"]
+[ext_resource type="Script" uid="uid://dpmgd3hx3ar5y" path="res://addons/godot_state_charts/state_chart.gd" id="8_d0x1w"]
+[ext_resource type="Script" uid="uid://dv730vr2jnpps" path="res://addons/godot_state_charts/compound_state.gd" id="9_fukul"]
 [ext_resource type="Texture2D" uid="uid://cxkx70v2tjalo" path="res://assets/sprites/player/animation.png" id="10_17up7"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="10_f7bv0"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="11_ph4dl"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/parallel_state.gd" id="12_t65dr"]
-[ext_resource type="Script" path="res://assets/scripts/characters/character_stats.gd" id="17_0o1c8"]
+[ext_resource type="Script" uid="uid://c4jlw4b1jj3pg" path="res://addons/godot_state_charts/atomic_state.gd" id="10_f7bv0"]
+[ext_resource type="Script" uid="uid://mv5qfbpp3fig" path="res://addons/godot_state_charts/transition.gd" id="11_ph4dl"]
+[ext_resource type="Script" uid="uid://d2s1pwit5pfye" path="res://addons/godot_state_charts/parallel_state.gd" id="12_t65dr"]
+[ext_resource type="Script" uid="uid://cjkbvly834ypq" path="res://assets/scripts/characters/character_stats.gd" id="17_0o1c8"]
 
 [sub_resource type="Resource" id="Resource_x4l06"]
 script = ExtResource("3_hk66x")
@@ -34,12 +34,12 @@ script = ExtResource("3_hk66x")
 shader = ExtResource("5_oso62")
 shader_parameter/original_colour1 = Color(0, 0, 0, 1)
 shader_parameter/replacement_colour1 = Color(0, 0, 0, 1)
-shader_parameter/original_colour2 = null
-shader_parameter/replacement_colour2 = null
-shader_parameter/original_colour3 = null
-shader_parameter/replacement_colour3 = null
-shader_parameter/original_colour4 = null
-shader_parameter/replacement_colour4 = null
+shader_parameter/original_colour2 = Color(0, 0, 0, 1)
+shader_parameter/replacement_colour2 = Color(0, 0, 0, 1)
+shader_parameter/original_colour3 = Color(0, 0, 0, 1)
+shader_parameter/replacement_colour3 = Color(0, 0, 0, 1)
+shader_parameter/original_colour4 = Color(0, 0, 0, 1)
+shader_parameter/replacement_colour4 = Color(0, 0, 0, 1)
 shader_parameter/tolerance = 0.05
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h0x7e"]
@@ -169,6 +169,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [38, 39, 40, 39]
+}
+
+[sub_resource type="Animation" id="Animation_el73r"]
+length = 0.996
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.083, 0.166, 0.249, 0.332, 0.415, 0.498, 0.581, 0.664, 0.747, 0.83, 0.913),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 }
 
 [sub_resource type="Animation" id="Animation_5s78v"]
@@ -417,47 +445,19 @@ tracks/1/keys = {
 "values": [36, 37]
 }
 
-[sub_resource type="Animation" id="Animation_el73r"]
-length = 0.996
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = false
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.083, 0.166, 0.249, 0.332, 0.415, 0.498, 0.581, 0.664, 0.747, 0.83, 0.913),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tlwrn"]
 _data = {
-"basic_attack_loop": SubResource("Animation_lnq3t"),
-"battle_stance": SubResource("Animation_el73r"),
-"idle": SubResource("Animation_5s78v"),
-"walk_left_in": SubResource("Animation_j8iyf"),
-"walk_left_loop": SubResource("Animation_806ne"),
-"walk_left_out": SubResource("Animation_su2mr"),
-"walk_ltr": SubResource("Animation_s46fe"),
-"walk_right_in": SubResource("Animation_dbshn"),
-"walk_right_loop": SubResource("Animation_5evvb"),
-"walk_right_out": SubResource("Animation_agvjr"),
-"walk_rtl": SubResource("Animation_nx75b")
+&"basic_attack_loop": SubResource("Animation_lnq3t"),
+&"battle_stance": SubResource("Animation_el73r"),
+&"idle": SubResource("Animation_5s78v"),
+&"walk_left_in": SubResource("Animation_j8iyf"),
+&"walk_left_loop": SubResource("Animation_806ne"),
+&"walk_left_out": SubResource("Animation_su2mr"),
+&"walk_ltr": SubResource("Animation_s46fe"),
+&"walk_right_in": SubResource("Animation_dbshn"),
+&"walk_right_loop": SubResource("Animation_5evvb"),
+&"walk_right_out": SubResource("Animation_agvjr"),
+&"walk_rtl": SubResource("Animation_nx75b")
 }
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree", "overworld_collision", "battle_collision", "soul") groups=["player"]]
@@ -485,7 +485,7 @@ material = SubResource("ShaderMaterial_1cp25")
 texture = ExtResource("10_17up7")
 hframes = 7
 vframes = 6
-frame = 23
+frame = 12
 metadata/_aseprite_wizard_config_ = {
 "i_mode": 0,
 "keep_anim_length": true,
@@ -567,5 +567,5 @@ anim_player = NodePath("../AnimationPlayer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_tlwrn")
+&"": SubResource("AnimationLibrary_tlwrn")
 }

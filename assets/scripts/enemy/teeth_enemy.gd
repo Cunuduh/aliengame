@@ -28,7 +28,7 @@ func _attack() -> void:
       move_and_slide()
       await get_tree().process_frame
       
-    spawn_bullet_circle(global_position, 32, 200.0)
+    spawn_bullet_circle(global_position, 64, 200.0)
     await get_tree().create_timer(0.5).timeout
     animation_player.play("idle")
 
@@ -37,12 +37,12 @@ func _attack() -> void:
 func check_flip() -> void:
   pass
 
-func spawn_bullet_circle(center_position: Vector2, num_bullets: int, bullet_speed: float) -> void:
+func spawn_bullet_circle(center_position: Vector2, num_bullets: int, bullet_speed: float, bullet_type: String = "") -> void:
   var angle_step := (2.0 * PI) / num_bullets
-  var current_angle = 0.0
+  var current_angle := 0.0
   for i in range(num_bullets):
     var bullet_index := BulletPool.get_bullet()
     var bullet_transform := Transform2D().rotated(current_angle)
     bullet_transform.origin = center_position
-    BulletPool.fire_bullet(bullet_index, bullet_transform, bullet_speed)
+    BulletPool.fire_bullet(bullet_index, bullet_transform, bullet_speed, bullet_type)
     current_angle += angle_step

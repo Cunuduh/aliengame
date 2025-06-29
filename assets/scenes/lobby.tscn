@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://boss0elbx5bkd"]
 
-[ext_resource type="Script" path="res://assets/scripts/world/lobby.gd" id="1_c8kjx"]
-[ext_resource type="Shader" path="res://assets/shaders/space_effect.gdshader" id="1_td76n"]
+[ext_resource type="Script" uid="uid://x3fxuem1vfb5" path="res://assets/scripts/world/lobby.gd" id="1_c8kjx"]
+[ext_resource type="Shader" uid="uid://dlqmftebtvtws" path="res://assets/shaders/space_effect.gdshader" id="1_td76n"]
 [ext_resource type="Texture2D" uid="uid://bm0f5injvb83i" path="res://assets/sprites/backgrounds/planet.png" id="2_01cdn"]
 [ext_resource type="PackedScene" uid="uid://cy7o8s575kcm7" path="res://assets/scenes/player.tscn" id="2_fbo41"]
 [ext_resource type="PackedScene" uid="uid://b3v2al4narphk" path="res://assets/scenes/care_package.tscn" id="3_kf8d5"]
@@ -17,9 +17,9 @@ shader_parameter/star_density = 128.0
 shader_parameter/quantize_resolution = Vector2(480, 270)
 shader_parameter/direction = Vector2(-1, 1)
 shader_parameter/background_colour = Color(0, 0, 0, 1)
+shader_parameter/background_texture = ExtResource("2_01cdn")
 shader_parameter/use_texture = true
 shader_parameter/monochromatic = true
-shader_parameter/background_texture = ExtResource("2_01cdn")
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wy8fe"]
 
@@ -71,8 +71,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_87kp5"]
 _data = {
-"RESET": SubResource("Animation_hmgap"),
-"idle": SubResource("Animation_j8vg7")
+&"RESET": SubResource("Animation_hmgap"),
+&"idle": SubResource("Animation_j8vg7")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_q62oi"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cmqkg0sh3s4it"]
 
 [ext_resource type="Texture2D" uid="uid://bp2d6gsvgda4j" path="res://assets/sprites/player/attack_projectile.png" id="1_q6y1t"]
-[ext_resource type="Script" path="res://assets/scripts/player/player_attack_projectile.gd" id="2_284vj"]
+[ext_resource type="Script" uid="uid://b37l57upiwex0" path="res://assets/scripts/player/player_attack_projectile.gd" id="2_284vj"]
 
 [sub_resource type="Gradient" id="Gradient_1wmu8"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0.623529, 0.811765, 0)

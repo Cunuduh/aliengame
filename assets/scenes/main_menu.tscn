@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bcxmbwn7cnrbx"]
 
-[ext_resource type="Script" path="res://assets/scripts/world/main_menu.gd" id="1_b0aoo"]
+[ext_resource type="Script" uid="uid://dobx1s1x25h6d" path="res://assets/scripts/world/main_menu.gd" id="1_b0aoo"]
 [ext_resource type="Texture2D" uid="uid://dfyo7gwd8jjh2" path="res://assets/sprites/ui/start.png" id="2_s745y"]
-[ext_resource type="Shader" path="res://assets/shaders/space_effect.gdshader" id="2_swdbi"]
+[ext_resource type="Shader" uid="uid://dlqmftebtvtws" path="res://assets/shaders/space_effect.gdshader" id="2_swdbi"]
 [ext_resource type="Texture2D" uid="uid://bm0f5injvb83i" path="res://assets/sprites/backgrounds/planet.png" id="3_8qbws"]
 [ext_resource type="Texture2D" uid="uid://ib52nug7e7ad" path="res://assets/sprites/ui/title.png" id="3_qc0xy"]
 
@@ -13,9 +13,9 @@ shader_parameter/star_density = 128.0
 shader_parameter/quantize_resolution = Vector2(480, 270)
 shader_parameter/direction = Vector2(0, -0.02)
 shader_parameter/background_colour = Color(0, 0, 0, 1)
+shader_parameter/background_texture = ExtResource("3_8qbws")
 shader_parameter/use_texture = true
 shader_parameter/monochromatic = true
-shader_parameter/background_texture = ExtResource("3_8qbws")
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pwmgw"]
 

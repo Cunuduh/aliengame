@@ -12,13 +12,14 @@ config_version=5
 
 config/name="RPG"
 run/main_scene="res://assets/scenes/main_menu.tscn"
-config/features=PackedStringArray("4.3", "Mobile")
+config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Globals="*res://assets/scripts/world/global_vars.gd"
 BulletPool="*res://assets/scripts/battle/bullet_pool.gd"
+BulletManager="*res://assets/scripts/autoload/bullet_manager.gd"
 
 [display]
 
@@ -102,9 +103,9 @@ slow={
 
 [input_devices]
 
+pointing/android/enable_pan_and_scale_gestures=true
 compatibility/legacy_just_pressed_behavior=true
 buffering/agile_event_flushing=true
-pointing/android/enable_pan_and_scale_gestures=true
 
 [layer_names]
 
