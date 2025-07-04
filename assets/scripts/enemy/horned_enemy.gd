@@ -7,14 +7,13 @@ func _attack():
       if stats.health <= 0:
         return
       var bullet_index := BulletPool.get_bullet()
-      var dist_to_target := global_position.distance_to(target.global_position)
-      var time_to_target := dist_to_target / 200.0
-      var predicted_pos := predict_target_position(time_to_target)
+      var speed := 100.0
+      var predicted_pos := predict_intercept_position(speed)
       var direction := (predicted_pos - global_position).normalized()
       
       var bullet_transform := Transform2D().rotated(direction.angle())
       bullet_transform.origin = global_position
-      BulletPool.fire_bullet(bullet_index, bullet_transform, 100.0)
+      BulletPool.fire_bullet(bullet_index, bullet_transform, speed)
       animation_player.play("attack")
       await animation_player.animation_finished
       animation_player.play("idle")

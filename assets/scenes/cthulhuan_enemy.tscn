@@ -23,8 +23,8 @@ domain_warp_type = 1
 width = 64
 height = 100
 generate_mipmaps = false
-normalize = false
 noise = SubResource("FastNoiseLite_snygp")
+normalize = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jksqm"]
 resource_local_to_scene = true
@@ -196,10 +196,8 @@ movement_switch_interval = 1.0
 script = ExtResource("2_agsxa")
 max_health = 50
 max_attack = 2
-max_defense = 1
 health = 50
 attack = 2
-defense = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -231,18 +229,18 @@ metadata/_aseprite_wizard_interface_config_ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ogkg5")
+&"": SubResource("AnimationLibrary_ogkg5")
 }
 
 [node name="DissolveParticles" type="GPUParticles2D" parent="."]
 emitting = false
 amount = 128
-process_material = SubResource("ParticleProcessMaterial_hhtr1")
 texture = ExtResource("5_gsq2c")
 one_shot = true
 explosiveness = 0.5
 randomness = 1.0
 fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_hhtr1")
 
 [node name="StateChart" type="Node" parent="."]
 script = ExtResource("6_soynk")
@@ -261,11 +259,13 @@ script = ExtResource("9_v5dpf")
 script = ExtResource("10_gi7ic")
 to = NodePath("../../Waiting")
 event = &"stop_movement"
+delay_in_seconds = "0.0"
 
 [node name="ToBlocking" type="Node" parent="StateChart/Root/Movement/Orbiting"]
 script = ExtResource("10_gi7ic")
 to = NodePath("../../Blocking")
 event = &"to_blocking"
+delay_in_seconds = "0.0"
 
 [node name="Blocking" type="Node" parent="StateChart/Root/Movement"]
 script = ExtResource("9_v5dpf")
@@ -274,11 +274,13 @@ script = ExtResource("9_v5dpf")
 script = ExtResource("10_gi7ic")
 to = NodePath("../../Waiting")
 event = &"stop_movement"
+delay_in_seconds = "0.0"
 
 [node name="ToOrbiting" type="Node" parent="StateChart/Root/Movement/Blocking"]
 script = ExtResource("10_gi7ic")
 to = NodePath("../../Orbiting")
 event = &"to_orbiting"
+delay_in_seconds = "0.0"
 
 [node name="Waiting" type="Node" parent="StateChart/Root/Movement"]
 script = ExtResource("9_v5dpf")
@@ -287,11 +289,13 @@ script = ExtResource("9_v5dpf")
 script = ExtResource("10_gi7ic")
 to = NodePath("../../Blocking")
 event = &"to_blocking"
+delay_in_seconds = "0.0"
 
 [node name="ToOrbiting" type="Node" parent="StateChart/Root/Movement/Waiting"]
 script = ExtResource("10_gi7ic")
 to = NodePath("../../Orbiting")
 event = &"to_orbiting"
+delay_in_seconds = "0.0"
 
 [node name="Attack" type="Node" parent="StateChart/Root"]
 script = ExtResource("8_gsar3")
@@ -304,6 +308,7 @@ script = ExtResource("9_v5dpf")
 script = ExtResource("10_gi7ic")
 to = NodePath("../../Attacking")
 event = &"attack_interval"
+delay_in_seconds = "0.0"
 
 [node name="Attacking" type="Node" parent="StateChart/Root/Attack"]
 script = ExtResource("9_v5dpf")
@@ -312,6 +317,7 @@ script = ExtResource("9_v5dpf")
 script = ExtResource("10_gi7ic")
 to = NodePath("../../Waiting")
 event = &"attack_complete"
+delay_in_seconds = "0.0"
 
 [connection signal="state_processing" from="StateChart/Root/Movement/Orbiting" to="." method="_on_orbiting_state_processing"]
 [connection signal="state_processing" from="StateChart/Root/Movement/Blocking" to="." method="_on_blocking_state_processing"]

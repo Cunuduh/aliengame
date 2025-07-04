@@ -8,7 +8,7 @@ func _init():
 
 func execute(player: Player) -> void:
   var explosion = preload("res://assets/scenes/explosion.tscn").instantiate()
-  Globals.current_battle_scene.add_child(explosion)
+  BattleManager.battle_scene.add_child(explosion)
   explosion.global_position = player.global_position
   explosion.visible = true
   explosion.frame = 0
@@ -21,4 +21,5 @@ func execute(player: Player) -> void:
   await player.get_tree().create_timer(0.6).timeout
   explosion.queue_free()
   
-  player.state_chart.send_event("end_basic_ability_1")
+  var idx = player.get_ability_index(self)
+  player.state_chart.send_event("end_%s-%d" % [name, idx])

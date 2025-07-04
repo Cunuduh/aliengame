@@ -6,7 +6,7 @@ func _attack() -> void:
     if stats.health <= 0:
       return
     animation_player.play("attack")
-    await spawn_spiral_bullet_pattern(128, 4, 50.0, 0.025)
+    await spawn_spiral_bullet_pattern(12800, 4, 50.0, 0.025)
     animation_player.play("idle")
 
   movement_switch_timer = movement_switch_interval - 1.0

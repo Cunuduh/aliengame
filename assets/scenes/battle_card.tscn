@@ -1,17 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvafvgdhktqbw"]
+[gd_scene load_steps=5 format=3 uid="uid://cvafvgdhktqbw"]
 
 [ext_resource type="Script" uid="uid://1eh3gq6kbjs2" path="res://assets/scripts/battle/battle_card.gd" id="1_us3no"]
 [ext_resource type="Texture2D" uid="uid://ts4ogpek0rli" path="res://assets/sprites/ui/battle/player/player_health_bar_background.png" id="3_4lt8a"]
 [ext_resource type="LabelSettings" uid="uid://di1os64fl3uvw" path="res://assets/resources/label_settings_ui.tres" id="3_kni5h"]
 [ext_resource type="Texture2D" uid="uid://dvxa0tancfcs8" path="res://assets/sprites/ui/battle/player/player_health_bar_foreground.png" id="4_m67ix"]
-[ext_resource type="Shader" uid="uid://b5uou2bcj4evx" path="res://assets/shaders/progress_bar_edge.gdshader" id="6_v74nj"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2b8gh"]
-shader = ExtResource("6_v74nj")
-shader_parameter/white_edge_width = 0.05
-shader_parameter/edge_offset = 0.1
-shader_parameter/texture_size = Vector2(53, 6)
-shader_parameter/colour_modulation = Color(1, 1, 1, 1)
 
 [node name="BattleContainer" type="VBoxContainer"]
 anchors_preset = 2
@@ -37,7 +29,6 @@ theme_override_constants/v_separation = 1
 alignment = 1
 
 [node name="HPBar" type="TextureProgressBar" parent="HealthContainer"]
-material = SubResource("ShaderMaterial_2b8gh")
 layout_mode = 2
 max_value = 20.0
 value = 20.0

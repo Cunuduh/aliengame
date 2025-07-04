@@ -53,4 +53,5 @@ func execute(player: Player) -> void:
     await player.get_tree().create_timer(dash_duration / player.ghost_count).timeout
 
   player.invincibility = false
-  player.state_chart.send_event("end_basic_ability_2")
+  var idx = player.get_ability_index(self)
+  player.state_chart.send_event("end_%s-%d" % [name, idx])

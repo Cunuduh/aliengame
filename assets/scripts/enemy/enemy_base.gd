@@ -30,6 +30,7 @@ const PERCEPTION_DELAY := 0.5
 var movement_switch_timer := movement_switch_interval
 
 func _ready() -> void:
+  add_to_group("enemy")
   desired_distance += randi() % 20
   attack_interval += randf() * 2.0
   animation_player.play("idle")
@@ -113,6 +114,28 @@ func predict_target_position(time_ahead: float) -> Vector2:
     return Vector2.ZERO
   return target.global_position + (target.velocity * time_ahead)
 
+func _get_intercept_time(shooter_pos: Vector2, target_pos: Vector2, target_vel: Vector2, projectile_speed: float) -> float:
+  var r = target_pos - shooter_pos
+  var a = target_vel.dot(target_vel) - projectile_speed * projectile_speed
+  var b = 2.0 * r.dot(target_vel)
+  var c = r.dot(r)
+  var det = b * b - 4.0 * a * c
+  if abs(a) < 0.0001 or det < 0.0:
+    return r.length() / projectile_speed
+  var sqrt_det = sqrt(det)
+  var t1 = (-b + sqrt_det) / (2.0 * a)
+  var t2 = (-b - sqrt_det) / (2.0 * a)
+  var t = t1 if t1 > 0.0 else t2
+  if t < 0.0:
+    return r.length() / projectile_speed
+  return t
+
+func predict_intercept_position(projectile_speed: float) -> Vector2:
+  if not target:
+    return Vector2.ZERO
+  var t = _get_intercept_time(global_position, target.global_position, target.velocity, projectile_speed)
+  return target.global_position + target.velocity * t
+
 func _attack() -> void:
   if target:
     for i in range(3):
@@ -120,14 +143,13 @@ func _attack() -> void:
       if stats.health <= 0:
         return
       var bullet_index := BulletPool.get_bullet()
-      var dist_to_target := global_position.distance_to(target.global_position)
-      var time_to_target := dist_to_target / 200.0
-      var predicted_pos := predict_target_position(time_to_target)
+      var speed := 200.0
+      var predicted_pos := predict_intercept_position(speed)
       var direction := (predicted_pos - global_position).normalized()
       
       var bullet_transform := Transform2D().rotated(direction.angle())
       bullet_transform.origin = global_position
-      BulletPool.fire_bullet(bullet_index, bullet_transform, 200.0)
+      BulletPool.fire_bullet(bullet_index, bullet_transform, speed)
       animation_player.play("attack")
       await animation_player.animation_finished
       animation_player.play("idle")

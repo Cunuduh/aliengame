@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cj3e2kkxnkyr8"]
+[gd_scene load_steps=14 format=3 uid="uid://cj3e2kkxnkyr8"]
 
 [ext_resource type="Theme" uid="uid://c0n2wvfps0c6m" path="res://assets/themes/standard_theme.tres" id="1_igx5o"]
 [ext_resource type="Script" uid="uid://30hinsfwnhu1" path="res://assets/scripts/battle/battle_scene.gd" id="2_tv61w"]
 [ext_resource type="Texture2D" uid="uid://ts4ogpek0rli" path="res://assets/sprites/ui/battle/player/player_health_bar_background.png" id="4_2uy8e"]
-[ext_resource type="Shader" uid="uid://b5uou2bcj4evx" path="res://assets/shaders/progress_bar_edge.gdshader" id="4_5ca6v"]
 [ext_resource type="Shader" uid="uid://dsatjhyg1anaf" path="res://assets/shaders/battle_background_generic.gdshader" id="5_3ioyi"]
 [ext_resource type="Texture2D" uid="uid://dvxa0tancfcs8" path="res://assets/sprites/ui/battle/player/player_health_bar_foreground.png" id="5_gn72v"]
 [ext_resource type="LabelSettings" uid="uid://di1os64fl3uvw" path="res://assets/resources/label_settings_ui.tres" id="7_wuipy"]
@@ -41,14 +40,8 @@ b = Vector2(480, 270)
 a = Vector2(0, 270)
 b = Vector2(480, 270)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_miobp"]
-shader = ExtResource("4_5ca6v")
-shader_parameter/white_edge_width = 0.055
-shader_parameter/edge_offset = -0.05
-shader_parameter/texture_size = Vector2(480, 6)
-shader_parameter/colour_modulation = Color(1, 1, 1, 1)
-
 [node name="BattleScene" type="Control"]
+z_index = 100
 y_sort_enabled = true
 layout_mode = 3
 anchors_preset = 15
@@ -105,7 +98,6 @@ shape = SubResource("SegmentShape2D_hqiwl")
 
 [node name="TotalHealth" type="TextureProgressBar" parent="."]
 z_index = 69
-material = SubResource("ShaderMaterial_miobp")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0

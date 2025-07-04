@@ -39,18 +39,21 @@ func setup_ability_icons() -> void:
   for icon in icons.values():
     icon.queue_free()
   icons.clear()
-  
-  for ability in character.abilities:
-    var icon_name = ability.name
+  # create one icon per ability with unique node_base
+  for i in range(character.abilities.size()):
+    var ability = character.abilities[i]
+    var node_base = "%s-%d" % [ability.name.to_pascal_case(), i]
     var icon = preload("res://assets/scenes/ability_icon.tscn").instantiate()
-    icon.name = "%sIcon" % icon_name.to_pascal_case()
+    icon.name = "%sIcon" % node_base
     icon.texture = ability.icon
     icon_container.add_child(icon)
-    icons[icon_name] = icon
-    
-    character.state_chart.get_node("Root/Battling/" + icon_name.to_pascal_case() + "/Available").state_entered.connect(refresh_icon.bind(icon_name))
-    character.state_chart.get_node("Root/Battling/" + icon_name.to_pascal_case() + "/Cooldown").transition_pending.connect(
-      func(total: float, current: float): gray_out_icon(total, current, icon_name)
+    icons[node_base] = icon
+
+    var avail_node = character.state_chart.get_node("Root/Battling/%s/Available" % node_base)
+    avail_node.state_entered.connect(refresh_icon.bind(node_base))
+    var cd_node = character.state_chart.get_node("Root/Battling/%s/Cooldown" % node_base)
+    cd_node.transition_pending.connect(
+      func(total: float, current: float): gray_out_icon(total, current, node_base)
     )
 
 func _ready() -> void:
@@ -62,14 +65,17 @@ func _ready() -> void:
     _pending_init = false
 
 func _exit_tree() -> void:
-  for ability in character.abilities:
-    var icon_name = ability.name
-    if icons.has(icon_name):
-      character.state_chart.get_node("Root/Battling/" + icon_name.to_pascal_case() + "/Available").state_entered.disconnect(refresh_icon.bind(icon_name))
-      var cooldown_node = character.state_chart.get_node("Root/Battling/" + icon_name.to_pascal_case() + "/Cooldown")
-      for connection in cooldown_node.transition_pending.get_connections():
-        if connection["callable"].get_object() == self:
-          cooldown_node.transition_pending.disconnect(connection["callable"])
+  for i in range(character.abilities.size()):
+    var node_base = "%s-%d" % [character.abilities[i].name.to_pascal_case(), i]
+    var avail_node = character.state_chart.get_node("Root/Battling/%s/Available" % node_base)
+    avail_node.state_entered.disconnect(refresh_icon.bind(node_base))
+    var cd_node = character.state_chart.get_node("Root/Battling/%s/Cooldown" % node_base)
+    for connection in cd_node.transition_pending.get_connections():
+      if connection["callable"].get_object() == self:
+        cd_node.transition_pending.disconnect(connection["callable"])
+  for icon in icons.values():
+    icon.queue_free()
+  icons.clear()
 
 func _process(_delta: float) -> void:
   if Engine.is_editor_hint():
@@ -83,7 +89,6 @@ func _on_stat_changed(stat: CharacterStats.StatType, value: int) -> void:
     CharacterStats.StatType.HEALTH:
       hp_label.text = "%d /" % value
       hp_bar.value = value
-      hp_bar.material.set_shader_parameter("edge_offset", -(1.0 - (value / float(max_hp))))
       hp = value
     CharacterStats.MaxStatType.HEALTH:
       max_hp = value

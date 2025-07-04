@@ -2,3 +2,6 @@
 .godot/
 /android/
 *.uid
+# MacOS specific ignores
+.DS_Store
+**/._*

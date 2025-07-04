@@ -1,14 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://boss0elbx5bkd"]
+[gd_scene load_steps=21 format=3 uid="uid://boss0elbx5bkd"]
 
-[ext_resource type="Script" uid="uid://x3fxuem1vfb5" path="res://assets/scripts/world/lobby.gd" id="1_c8kjx"]
 [ext_resource type="Shader" uid="uid://dlqmftebtvtws" path="res://assets/shaders/space_effect.gdshader" id="1_td76n"]
 [ext_resource type="Texture2D" uid="uid://bm0f5injvb83i" path="res://assets/sprites/backgrounds/planet.png" id="2_01cdn"]
 [ext_resource type="PackedScene" uid="uid://cy7o8s575kcm7" path="res://assets/scenes/player.tscn" id="2_fbo41"]
-[ext_resource type="PackedScene" uid="uid://b3v2al4narphk" path="res://assets/scenes/care_package.tscn" id="3_kf8d5"]
-[ext_resource type="PackedScene" uid="uid://bcwkugn6v3oy7" path="res://addons/godot_state_charts/utilities/state_chart_debugger.tscn" id="6_lgy4c"]
-[ext_resource type="Theme" uid="uid://c0n2wvfps0c6m" path="res://assets/themes/standard_theme.tres" id="7_21ett"]
-[ext_resource type="Texture2D" uid="uid://bfce7dwnbmk7r" path="res://assets/sprites/ui/next.png" id="8_wrl2q"]
-[ext_resource type="FontFile" uid="uid://b1y4t6soa4pk0" path="res://assets/fonts/PixelOperator-Bold.ttf" id="9_v0nqq"]
+[ext_resource type="Script" uid="uid://bsm1p7h4p5i3q" path="res://assets/scripts/player/abilities/ability.gd" id="4_mh50d"]
+[ext_resource type="Script" uid="uid://oykae3gjh2nd" path="res://assets/scripts/player/abilities/basic_attack_ability.gd" id="5_6ddyr"]
+[ext_resource type="Script" uid="uid://cwns6ni7kinlh" path="res://assets/scripts/player/abilities/basic_ability_2.gd" id="6_g4tfb"]
+[ext_resource type="Script" uid="uid://dynfyet10ksbt" path="res://assets/scripts/player/abilities/basic_ability_1.gd" id="7_6ddyr"]
+[ext_resource type="PackedScene" uid="uid://b8jt8dmy21e" path="res://assets/scenes/horned_enemy.tscn" id="7_mh50d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sjlfm"]
 shader = ExtResource("1_td76n")
@@ -38,57 +37,38 @@ b = Vector2(480, 270)
 a = Vector2(0, 270)
 b = Vector2(480, 270)
 
-[sub_resource type="Animation" id="Animation_hmgap"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(413, 119)]
-}
+[sub_resource type="Resource" id="Resource_x4l06"]
+script = ExtResource("5_6ddyr")
 
-[sub_resource type="Animation" id="Animation_j8vg7"]
-resource_name = "idle"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(413, 119), Vector2(403, 119), Vector2(413, 119)]
-}
+[sub_resource type="Resource" id="Resource_7wgpu"]
+script = ExtResource("6_g4tfb")
+metadata/_custom_type_script = "uid://cwns6ni7kinlh"
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_87kp5"]
-_data = {
-&"RESET": SubResource("Animation_hmgap"),
-&"idle": SubResource("Animation_j8vg7")
-}
+[sub_resource type="Resource" id="Resource_q8pmi"]
+script = ExtResource("6_g4tfb")
+metadata/_custom_type_script = "uid://cwns6ni7kinlh"
 
-[sub_resource type="LabelSettings" id="LabelSettings_q62oi"]
-line_spacing = 1.0
-font = ExtResource("9_v0nqq")
+[sub_resource type="Resource" id="Resource_pn6mt"]
+script = ExtResource("6_g4tfb")
+metadata/_custom_type_script = "uid://cwns6ni7kinlh"
 
-[node name="Lobby" type="Control"]
+[sub_resource type="Resource" id="Resource_g4tfb"]
+script = ExtResource("7_6ddyr")
+metadata/_custom_type_script = "uid://dynfyet10ksbt"
+
+[sub_resource type="Resource" id="Resource_dsq77"]
+script = ExtResource("7_6ddyr")
+metadata/_custom_type_script = "uid://dynfyet10ksbt"
+
+[node name="Lobby" type="Control" groups=["world"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_c8kjx")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." groups=["world"]]
 material = SubResource("ShaderMaterial_sjlfm")
 layout_mode = 1
 anchors_preset = 15
@@ -97,72 +77,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["world"]]
 physics_material_override = SubResource("PhysicsMaterial_wy8fe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
 shape = SubResource("SegmentShape2D_jfdlv")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
 shape = SubResource("SegmentShape2D_wp7fb")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
 shape = SubResource("SegmentShape2D_ypipq")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
 shape = SubResource("SegmentShape2D_bpnd8")
 
-[node name="CarePackage" parent="." instance=ExtResource("3_kf8d5")]
-position = Vector2(344, 139)
-
 [node name="Player" parent="." instance=ExtResource("2_fbo41")]
-position = Vector2(62, 137)
-abilities = null
+position = Vector2(61, 137)
+abilities = Array[ExtResource("4_mh50d")]([SubResource("Resource_x4l06"), SubResource("Resource_7wgpu"), SubResource("Resource_q8pmi"), SubResource("Resource_pn6mt"), SubResource("Resource_g4tfb"), SubResource("Resource_dsq77")])
 
-[node name="StateChartDebugger" parent="." instance=ExtResource("6_lgy4c")]
-visible = false
-top_level = true
-layout_mode = 1
-offset_left = 220.0
-offset_top = 2.0
-offset_right = 56.0
-offset_bottom = 2.0
-theme = ExtResource("7_21ett")
-enabled = false
-initial_node_to_watch = NodePath("../Player")
+[node name="HornedEnemy" parent="." instance=ExtResource("7_mh50d")]
+position = Vector2(243, 147)
 
-[node name="Next" type="TextureRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -67.0
-offset_top = -16.0
-offset_bottom = 16.0
-grow_horizontal = 0
-grow_vertical = 2
-texture = ExtResource("8_wrl2q")
+[node name="HornedEnemy2" parent="." instance=ExtResource("7_mh50d")]
+position = Vector2(317, 90)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Next"]
-libraries = {
-"": SubResource("AnimationLibrary_87kp5")
-}
+[node name="HornedEnemy3" parent="." instance=ExtResource("7_mh50d")]
+position = Vector2(188, 94)
 
-[node name="NextArea" type="Area2D" parent="."]
-position = Vector2(-3, 0)
-monitorable = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NextArea"]
-shape = SubResource("SegmentShape2D_ypipq")
-
-[node name="LevelsCleared" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "0 LEVELS CLEARED"
-label_settings = SubResource("LabelSettings_q62oi")
-
-[connection signal="body_entered" from="NextArea" to="." method="_on_next_area_body_entered"]
+[node name="HornedEnemy4" parent="." instance=ExtResource("7_mh50d")]
+position = Vector2(444, 197)
