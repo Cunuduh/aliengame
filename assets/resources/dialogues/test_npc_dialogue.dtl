@@ -1,0 +1,7 @@
+join test left
+test: Hello there, traveler!
+test: Welcome to the testing room.
+test: You can interact with me by pressing the attack button (Z).
+test: This is a demonstration of Dialogic integration.
+test: Hope you're enjoying the game!
+[end_timeline]

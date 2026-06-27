@@ -17,7 +17,7 @@ signal child_state_exited()
 		return initial_state
 	set(value):
 		initial_state = value
-		update_configuration_warnings() 
+		update_configuration_warnings()
 
 
 ## The currently active substate.
@@ -38,18 +38,18 @@ func _init() -> void:
 		child_entered_tree.connect(
 			func(child:Node):
 			# when a child is added in the editor and the child is a state
-			# and we don't have an initial state yet, set the initial state 
+			# and we don't have an initial state yet, set the initial state
 			# to the newly added child
 			if child is StateChartState and initial_state.is_empty():
-				# the newly added node may have a random name now, 
+				# the newly added node may have a random name now,
 				# so we need to defer the call to build a node path
 				# to the next frame, so the editor has time to rename
 				# the node to its final name
 				(func(): initial_state = get_path_to(child)).call_deferred()
 		)
 
-	
-func _state_init():
+
+func _state_init() -> void:
 	super._state_init()
 
 	# check if we have any history states
@@ -68,32 +68,37 @@ func _state_init():
 			child_as_state.state_entered.connect(func(): child_state_entered.emit())
 			child_as_state.state_exited.connect(func(): child_state_exited.emit())
 
-func _state_enter(expect_transition:bool = false):
-	super._state_enter()
-	# activate the initial state _unless_ one of these are true 
-	# - we expect a transition because we are entering this state just to activate child states further down
+func _state_enter(transition_target:StateChartState) -> void:
+	super._state_enter(transition_target)
+
+	# activate the initial state _unless_ one of these are true
+	# - the transition target is a descendant of this state
 	# - we already have an active state because entering the state triggered an immediate transition to a child state
 	# - we are no longer active becasue entering the state triggered an immediate transition to some other state
-	if not expect_transition and not is_instance_valid(_active_state) and _state_active:
+	var target_is_descendant := false
+	if transition_target != null and is_ancestor_of(transition_target):
+		target_is_descendant = true
+
+	if not target_is_descendant and not is_instance_valid(_active_state) and _state_active:
 		if _initial_state != null:
 			if _initial_state is HistoryState:
 				_restore_history_state(_initial_state)
 			else:
 				_active_state = _initial_state
-				_active_state._state_enter()
+				_active_state._state_enter(null)
 		else:
 			push_error("No initial state set for state '" + name + "'.")
 
-func _state_step():
+func _state_step() -> void:
 	super._state_step()
 	if _active_state != null:
 		_active_state._state_step()
 
-func _state_save(saved_state:SavedState, child_levels:int = -1):
+func _state_save(saved_state:SavedState, child_levels:int = -1) -> void:
 	super._state_save(saved_state, child_levels)
 
 	# in addition save all history states, as they are never active and normally would not be saved
-	var parent = saved_state.get_substate_or_null(self)
+	var parent := saved_state.get_substate_or_null(self)
 	if parent == null:
 		push_error("Probably a bug: The state of '" + name + "' was not saved.")
 		return
@@ -101,7 +106,7 @@ func _state_save(saved_state:SavedState, child_levels:int = -1):
 	for history_state in _history_states:
 		history_state._state_save(parent, child_levels)
 
-func _state_restore(saved_state:SavedState, child_levels:int = -1):
+func _state_restore(saved_state:SavedState, child_levels:int = -1) -> void:
 	super._state_restore(saved_state, child_levels)
 
 	# in addition check if we are now active and if so determine the current active state
@@ -112,10 +117,10 @@ func _state_restore(saved_state:SavedState, child_levels:int = -1):
 				_active_state = child
 				break
 
-func _state_exit():
+func _state_exit() -> void:
 	# if we have any history states, we need to save the current active state
 	if _history_states.size() > 0:
-		var saved_state = SavedState.new()
+		var saved_state := SavedState.new()
 		# we save the entire hierarchy if any of the history states needs a deep history
 		# otherwise we only save this level. This way we can save memory and processing time
 		_state_save(saved_state, -1 if _needs_deep_history else 1)
@@ -135,31 +140,31 @@ func _state_exit():
 	super._state_exit()
 
 
-func _process_transitions(event:StringName, property_change:bool = false) -> bool:
+func _process_transitions(trigger_type:StateChart.TriggerType, event:StringName = "") -> bool:
 	if not active:
 		return false
 
 	# forward to the active state
 	if is_instance_valid(_active_state):
-		if _active_state._process_transitions(event, property_change):
-			# emit the event_received signal, unless this is a property change
-			if not property_change:
+		if _active_state._process_transitions(trigger_type, event):
+			# emit the event_received signal when the trigger type is event
+			if trigger_type == StateChart.TriggerType.EVENT:
 				self.event_received.emit(event)
 			return true
 
 	# if the event was not handled by the active state, we handle it here
 	# base class will also emit the event_received signal
-	return super._process_transitions(event, property_change)
+	return super._process_transitions(trigger_type, event)
 
 
-func _handle_transition(transition:Transition, source:StateChartState):
+func _handle_transition(transition:Transition, source:StateChartState) -> void:
 	# print("CompoundState._handle_transition: " + name + " from " + source.name + " to " + str(transition.to))
 	# resolve the target state
-	var target = transition.resolve_target()
-	if not target is StateChartState:
+	var target := transition.resolve_target()
+	if target == null:
 		push_error("The target state '" + str(transition.to) + "' of the transition from '" + source.name + "' is not a state.")
 		return
-	
+
 	# the target state can be
 	# 0. this state. in this case exit this state and re-enter it. This can happen when
 	#    a child state transfers to its parent state.
@@ -174,15 +179,15 @@ func _handle_transition(transition:Transition, source:StateChartState):
 	if target == self:
 		# exit this state and re-enter it
 		_state_exit()
-		_state_enter(false)
+		_state_enter(target)
 		return
 
 	if target in get_children():
 		# all good, now first deactivate the current state
 		if is_instance_valid(_active_state):
 			_active_state._state_exit()
-		
-		# now check if the target is a history state, if this is the 
+
+		# now check if the target is a history state, if this is the
 		# case, we need to restore the saved state
 		if target is HistoryState:
 			_restore_history_state(target)
@@ -190,76 +195,74 @@ func _handle_transition(transition:Transition, source:StateChartState):
 
 		# else, just activate the target state
 		_active_state = target
-		_active_state._state_enter()
+		_active_state._state_enter(target)
 		return
-		
+
 	if self.is_ancestor_of(target):
 		# find the child which is the ancestor of the new target.
 		for child in get_children():
 			if child is StateChartState and child.is_ancestor_of(target):
-				# found it. 
+				# found it.
 				# change active state if necessary
 				if _active_state != child:
 					if is_instance_valid(_active_state):
 						_active_state._state_exit()
 
 					_active_state = child
-					# set the "expect_transition" flag to true because we will send
+					# give the transition target because we will send
 					# the transition to the child state right after we activate it.
 					# this avoids the child needlessly entering the initial state
-					_active_state._state_enter(true)
-					
+					_active_state._state_enter(target)
+
 				# ask child to handle the transition
 				child._handle_transition(transition, source)
 				return
 		return
-	
+
 	# ask the parent
 	get_parent()._handle_transition(transition, source)
 
 
-func _restore_history_state(target:HistoryState):
+func _restore_history_state(target:HistoryState) -> void:
 	# print("Target is history state, restoring saved state.")
-	var saved_state = target.history
+	var saved_state := target.history
 	if saved_state != null:
 		# restore the saved state
 		_state_restore(saved_state, -1 if target.deep else 1)
 		return
 	# print("No history saved so far, activating default state.")
 	# if we don't have history, we just activate the default state
-	var default_state = target.get_node_or_null(target.default_state)
+	var default_state := target.get_node_or_null(target.default_state) as StateChartState
 	if is_instance_valid(default_state):
 		_active_state = default_state
-		_active_state._state_enter()
+		_active_state._state_enter(null)
 		return
 	else:
 		push_error("The default state '" + str(target.default_state) + "' of the history state '" + target.name + "' cannot be found.")
 		return
 
 
-			
-
 func _get_configuration_warnings() -> PackedStringArray:
-	var warnings = super._get_configuration_warnings()
-	
+	var warnings := super._get_configuration_warnings()
+
 	# count the amount of child states
-	var child_count = 0
+	var child_count := 0
 	for child in get_children():
 		if child is StateChartState:
 			child_count += 1
 
 	if child_count < 1:
 		warnings.append("Compound states should have at least one child state.")
-	
+
 	elif child_count < 2:
 		warnings.append("Compound states with only one child state are not very useful. Consider adding more child states or removing this compound state.")
-		
-	var the_initial_state = get_node_or_null(initial_state)
-	
+
+	var the_initial_state := get_node_or_null(initial_state)
+
 	if not is_instance_valid(the_initial_state):
 		warnings.append("Initial state could not be resolved, is the path correct?")
-		
+
 	elif the_initial_state.get_parent() != self:
 		warnings.append("Initial state must be a direct child of this compound state.")
-	
+
 	return warnings

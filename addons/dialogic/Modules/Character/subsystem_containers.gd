@@ -7,6 +7,16 @@ signal position_changed(info: Dictionary)
 
 var transform_regex := r"(?<part>position|pos|size|siz|rotation|rot)\W*=(?<value>((?!(pos|siz|rot)).)*)"
 
+@export_group("State")
+@export var container_info := {}
+
+var debug_draw := false :
+	set(x):
+		debug_draw = x
+		for n in get_tree().get_nodes_in_group(&'dialogic_portrait_con_position'):
+			n.debug_draw = x
+
+
 #region STATE
 ####################################################################################################
 
@@ -18,7 +28,7 @@ var transform_regex := r"(?<part>position|pos|size|siz|rotation|rot)\W*=(?<value
 ####################################################################################################
 
 func get_container(position_id: String) -> DialogicNode_PortraitContainer:
-	for portrait_position:DialogicNode_PortraitContainer in get_tree().get_nodes_in_group(&'dialogic_portrait_con_position'):
+	for portrait_position: DialogicNode_PortraitContainer in get_tree().get_nodes_in_group(&'dialogic_portrait_con_position'):
 		if portrait_position.is_visible_in_tree() and portrait_position.is_container(position_id):
 			return portrait_position
 	return null
@@ -182,16 +192,14 @@ func resize_container(container: DialogicNode_PortraitContainer, rect_size: Vari
 			tween.finished.connect(save_position_container.bind(container))
 	else:
 		container.position = container.position + relative_position_change
-		container.size = final_rect_resize
+		#container.size = final_rect_resize
+		container.set_deferred("size", final_rect_resize)
 		save_position_container(container)
 
 	position_changed.emit({&'change':'resized', &'container_node':container})
 
 
 func save_position_container(container: DialogicNode_PortraitContainer) -> void:
-	if not dialogic.current_state_info.has('portrait_containers'):
-		dialogic.current_state_info['portrait_containers'] = {}
-
 	var info := {
 		"container_ids" : container.container_ids,
 		"position" : container.position,
@@ -210,7 +218,7 @@ func save_position_container(container: DialogicNode_PortraitContainer) -> void:
 		"offset_bottom" : container.offset_bottom,
 	}
 
-	dialogic.current_state_info.portrait_containers[container.container_ids[0]] = info
+	container_info[container.container_ids[0]] = info
 
 
 func load_position_container(position_id: String) -> DialogicNode_PortraitContainer:
@@ -219,10 +227,10 @@ func load_position_container(position_id: String) -> DialogicNode_PortraitContai
 	if container:
 		return container
 
-	if not dialogic.current_state_info.has('portrait_containers') or not dialogic.current_state_info.portrait_containers.has(position_id):
+	if not container_info.has(position_id):
 		return null
 
-	var info: Dictionary = dialogic.current_state_info.portrait_containers[position_id]
+	var info: Dictionary = container_info[position_id]
 	container = add_container(position_id)
 
 	if not container:

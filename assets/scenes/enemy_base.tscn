@@ -219,14 +219,13 @@ color_ramp = SubResource("GradientTexture1D_wj7tl")
 turbulence_noise_strength = 6.0
 turbulence_noise_speed_random = 1.0
 
-[node name="EnemyBase" type="CharacterBody2D" node_paths=PackedStringArray("dissolve_particles") groups=["enemy"]]
+[node name="EnemyBase" type="CharacterBody2D" groups=["enemy"]]
 z_index = 69
 y_sort_enabled = true
 collision_layer = 4
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("3_paca2")
-dissolve_particles = NodePath("DissolveParticles")
 
 [node name="CharacterStats" type="Node" parent="."]
 script = ExtResource("4_6035u")
@@ -267,15 +266,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_ogkg5")
 }
 
-[node name="DissolveParticles" type="GPUParticles2D" parent="."]
-emitting = false
-amount = 128
-texture = ExtResource("7_ordh8")
-one_shot = true
-explosiveness = 0.5
-randomness = 1.0
-fixed_fps = 60
-process_material = SubResource("ParticleProcessMaterial_hhtr1")
 
 [node name="StateChart" type="Node" parent="."]
 script = ExtResource("6_uhu8o")

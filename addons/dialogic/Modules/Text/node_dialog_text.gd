@@ -1,3 +1,4 @@
+@tool
 @icon("node_dialog_text_icon.svg")
 class_name DialogicNode_DialogText
 extends RichTextLabel
@@ -10,11 +11,16 @@ signal finished_revealing_text()
 enum Alignment {LEFT, CENTER, RIGHT}
 
 @export var enabled := true
+@export var identifier := "main"
 @export var alignment := Alignment.LEFT
 @export var textbox_root: Node = self
 
-@export var hide_when_empty := false
+
+## If true, this node will call [method hide_textbox] on the Text subsystem on ready.
+## Note that textbox visiblity is shared by textboxes with the same identifier.
 @export var start_hidden := true
+## If true, dialogic will automatically call [method textbox_update_visibility] when changing the text.
+@export var auto_visibility := true
 
 var revealing := false
 var base_visible_characters := 0
@@ -25,17 +31,6 @@ var active_speed: float = 0.01
 
 var speed_counter: float = 0
 
-func _set(property: StringName, what: Variant) -> bool:
-	if property == 'text' and typeof(what) == TYPE_STRING:
-
-		text = what
-
-		if hide_when_empty:
-			textbox_root.visible = !what.is_empty()
-
-		return true
-	return false
-
 
 func _ready() -> void:
 	# add to necessary
@@ -45,22 +40,28 @@ func _ready() -> void:
 	meta_clicked.connect(_on_meta_clicked)
 	gui_input.connect(on_gui_input)
 	bbcode_enabled = true
+
 	if textbox_root == null:
 		textbox_root = self
 
-	if start_hidden:
-		textbox_root.hide()
 	text = ""
 
+	var custom_bbcode_effects: Array = ProjectSettings.get_setting("dialogic/text/custom_bbcode_effects", "").split(",", false)
+	for i in custom_bbcode_effects:
+		var x: Resource = load(i.strip_edges())
+		if x is RichTextEffect:
+			custom_effects.append(x)
 
-# this is called by the DialogicGameHandler to set text
 
+## This is called by the [subsytem Text] to set text and play the reveal animation according to [member active_speed].
 func reveal_text(_text: String, keep_previous:=false) -> void:
-	if !enabled:
+	if not enabled:
 		return
-	show()
 
-	if !keep_previous:
+	show()
+	custom_fx_reset()
+
+	if not keep_previous:
 		text = _text
 		base_visible_characters = 0
 
@@ -73,6 +74,7 @@ func reveal_text(_text: String, keep_previous:=false) -> void:
 	else:
 		base_visible_characters = len(text)
 		visible_characters = len(get_parsed_text())
+		custom_fx_update()
 		text = text + _text
 
 		# If Auto-Skip is enabled and we append the text (keep_previous),
@@ -113,16 +115,21 @@ func continue_reveal() -> void:
 
 		if visible_characters > -1 and visible_characters <= len(get_parsed_text()):
 			continued_revealing_text.emit(get_parsed_text()[visible_characters-1])
+
+		custom_fx_update()
 	else:
-		finish_text()
+		finish_text(true)
 		# if the text finished organically, add a small input block
 		# this prevents accidental skipping when you expected the text to be longer
 		DialogicUtil.autoload().Inputs.block_input(ProjectSettings.get_setting('dialogic/text/advance_delay', 0.1))
 
 
 ## Reveals the entire text instantly.
-func finish_text() -> void:
+func finish_text(is_organic := false) -> void:
 	visible_ratio = 1
+	custom_fx_update()
+	if not is_organic:
+		custom_fx_skip()
 	DialogicUtil.autoload().Text.execute_effects(-1, self, true)
 	revealing = false
 	DialogicUtil.autoload().current_state = DialogicGameHandler.States.IDLE
@@ -156,3 +163,21 @@ func _on_meta_clicked(_meta:Variant) -> void:
 ## Handle mouse input
 func on_gui_input(event:InputEvent) -> void:
 	DialogicUtil.autoload().Inputs.handle_node_gui_input(event)
+
+
+func custom_fx_update() -> void:
+	for effect in custom_effects:
+		if "visible_characters" in effect:
+			effect.visible_characters = visible_characters
+
+
+func custom_fx_reset() -> void:
+	for effect in custom_effects:
+		if effect.has_method("reset"):
+			effect.reset()
+
+
+func custom_fx_skip() -> void:
+	for effect in custom_effects:
+		if effect.has_method("skip"):
+			effect.skip()

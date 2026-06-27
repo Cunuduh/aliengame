@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2spjyhmhonji"]
+[gd_scene load_steps=6 format=3 uid="uid://c2spjyhmhonji"]
 
 [ext_resource type="Texture2D" uid="uid://dy16vcrhmgbwp" path="res://assets/sprites/maps/tilemap_test.png" id="1_a0oln"]
 [ext_resource type="PackedScene" uid="uid://cy7o8s575kcm7" path="res://assets/scenes/player.tscn" id="2_uhxvr"]
+[ext_resource type="PackedScene" uid="uid://b4u7n8s6h7qkl" path="res://assets/scenes/test_npc.tscn" id="3_npc01"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uhxvr"]
 texture = ExtResource("1_a0oln")
@@ -278,13 +279,14 @@ texture = ExtResource("1_a0oln")
 [sub_resource type="TileSet" id="TileSet_52p2x"]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Road"
-terrain_set_0/terrain_0/color = Color(0.6252953, 0.6583754, 0.69982624, 1)
+terrain_set_0/terrain_0/color = Color(0.625295, 0.658375, 0.699826, 1)
 terrain_set_1/mode = 2
 terrain_set_1/terrain_0/name = "Sidewalk"
 terrain_set_1/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_uhxvr")
 
 [node name="TestingRoom" type="Node2D" groups=["world"]]
+y_sort_enabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-1, 0)
@@ -292,3 +294,6 @@ tile_set = SubResource("TileSet_52p2x")
 
 [node name="Player" parent="." instance=ExtResource("2_uhxvr")]
 position = Vector2(78, 132)
+
+[node name="TestNPC" parent="." instance=ExtResource("3_npc01")]
+position = Vector2(200, 132)

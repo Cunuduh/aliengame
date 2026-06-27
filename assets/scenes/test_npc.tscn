@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4u7n8s6h7qkl"]
+
+[ext_resource type="Script" uid="uid://cct7f64amvvn3" path="res://assets/scripts/npcs/interactable_npc.gd" id="1_npc_script"]
+[ext_resource type="Texture2D" uid="uid://bwp1o4byq7vvq" path="res://assets/sprites/npcs/crewmate.png" id="2_rrcsr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(21, 4.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_interaction"]
+radius = 14.0357
+
+[sub_resource type="LabelSettings" id="LabelSettings_rrcsr"]
+font_size = 13
+shadow_size = 0
+
+[node name="TestNPC" type="CharacterBody2D" groups=["npc"]]
+y_sort_enabled = true
+script = ExtResource("1_npc_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+texture = ExtResource("2_rrcsr")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_body")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+visible = false
+shape = SubResource("CircleShape2D_interaction")
+
+[node name="InteractionLabel" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -35.0
+offset_right = 40.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press Z to talk"
+label_settings = SubResource("LabelSettings_rrcsr")
+horizontal_alignment = 1

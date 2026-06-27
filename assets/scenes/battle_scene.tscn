@@ -1,6 +1,5 @@
-[gd_scene load_steps=14 format=3 uid="uid://cj3e2kkxnkyr8"]
+[gd_scene format=3 uid="uid://cj3e2kkxnkyr8"]
 
-[ext_resource type="Theme" uid="uid://c0n2wvfps0c6m" path="res://assets/themes/standard_theme.tres" id="1_igx5o"]
 [ext_resource type="Script" uid="uid://30hinsfwnhu1" path="res://assets/scripts/battle/battle_scene.gd" id="2_tv61w"]
 [ext_resource type="Texture2D" uid="uid://ts4ogpek0rli" path="res://assets/sprites/ui/battle/player/player_health_bar_background.png" id="4_2uy8e"]
 [ext_resource type="Shader" uid="uid://dsatjhyg1anaf" path="res://assets/shaders/battle_background_generic.gdshader" id="5_3ioyi"]
@@ -21,26 +20,26 @@ shader_parameter/second_grid_colour = Color(0, 0.0453483, 0.0453482, 1)
 shader_parameter/second_speed = 10.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqiny"]
-size = Vector2(480, 32)
+size = Vector2(320, 32)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kbyle"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_mcldn"]
-b = Vector2(0, 270)
+b = Vector2(0, 240)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_f65u4"]
-a = Vector2(480, 0)
+a = Vector2(320, 0)
 b = Vector2(0, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_nyrk6"]
-a = Vector2(480, 0)
-b = Vector2(480, 270)
+a = Vector2(320, 0)
+b = Vector2(320, 240)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hqiwl"]
-a = Vector2(0, 270)
-b = Vector2(480, 270)
+a = Vector2(0, 240)
+b = Vector2(320, 240)
 
-[node name="BattleScene" type="Control"]
+[node name="BattleScene" type="Control" unique_id=2004834906]
 z_index = 100
 y_sort_enabled = true
 layout_mode = 3
@@ -49,10 +48,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_igx5o")
 script = ExtResource("2_tv61w")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=153946859]
 material = SubResource("ShaderMaterial_1ld8b")
 layout_mode = 1
 anchors_preset = 15
@@ -61,9 +59,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=603002978]
 
-[node name="BattleCardContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="BattleCardContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=105995065]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -73,30 +71,30 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 
-[node name="VisibilityArea" type="Area2D" parent="CanvasLayer/BattleCardContainer"]
+[node name="VisibilityArea" type="Area2D" parent="CanvasLayer/BattleCardContainer" unique_id=1937205362]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/BattleCardContainer/VisibilityArea"]
-position = Vector2(240, 16)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/BattleCardContainer/VisibilityArea" unique_id=1769803745]
+position = Vector2(159.5, 16)
 shape = SubResource("RectangleShape2D_eqiny")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=863890666]
 collision_layer = 2
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_kbyle")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2052929940]
 shape = SubResource("SegmentShape2D_mcldn")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=2059969808]
 shape = SubResource("SegmentShape2D_f65u4")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1261989611]
 shape = SubResource("SegmentShape2D_nyrk6")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1366600488]
 shape = SubResource("SegmentShape2D_hqiwl")
 
-[node name="TotalHealth" type="TextureProgressBar" parent="."]
+[node name="TotalHealth" type="TextureProgressBar" parent="." unique_id=1408166035]
 z_index = 69
 layout_mode = 1
 anchors_preset = 10
@@ -110,7 +108,7 @@ stretch_margin_right = 3
 texture_under = ExtResource("4_2uy8e")
 texture_progress = ExtResource("5_gn72v")
 
-[node name="Label" type="Label" parent="TotalHealth"]
+[node name="Label" type="Label" parent="TotalHealth" unique_id=301080990]
 z_index = 69
 layout_mode = 1
 anchors_preset = 7

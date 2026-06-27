@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://bnh22ackgv80s"]
+
+[ext_resource type="FontFile" uid="uid://w2qxj82kbywq" path="res://assets/fonts/DTM-Sans.otf" id="1_e0uh5"]
+
+[resource]
+base_font = ExtResource("1_e0uh5")
+spacing_glyph = 1

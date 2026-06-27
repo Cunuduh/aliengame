@@ -8,36 +8,38 @@ enum Actions {JOIN, LEAVE, UPDATE}
 ### Settings
 
 ## The type of action of this event (JOIN/LEAVE/UPDATE). See [Actions].
-var action :=  Actions.JOIN
+@export var action :=  Actions.JOIN
 ## The character that will join/leave/update.
-var character: DialogicCharacter = null
+@export var character: DialogicCharacter = null
 ## For Join/Update, this will be the portrait of the character that is shown.
 ## Not used on Leave.
 ## If empty, the default portrait will be used.
-var portrait := ""
+@export var portrait := ""
 ## The index of the position this character should move to
-var transform := "center"
+@export var transform := "center"
 
 ## Name of the animation script (extending DialogicAnimation).
 ## On Join/Leave empty (default) will fallback to the animations set in the settings.
 ## On Update empty will mean no animation.
-var animation_name := ""
+@export var animation_name := ""
 ## Length of the animation.
-var animation_length: float = 0.5
+@export var animation_length: float = 0.5
 ## How often the animation is repeated. Only for Update events.
-var animation_repeats: int = 1
+@export var animation_repeats: int = 1
+@export var repeat_forever: bool = false
+
 ## If true, the events waits for the animation to finish before the next event starts.
-var animation_wait := false
+@export var animation_wait := false
 
 ## The fade animation to use. If left empty, the default cross-fade animation AND time will be used.
-var fade_animation := ""
-var fade_length := 0.5
+@export var fade_animation := ""
+@export var fade_length := 0.5
 
 ## For Update only. If bigger then 0, the portrait will tween to the
 ## new position (if changed) in this time (in seconds).
-var transform_time: float = 0.0
-var transform_ease := Tween.EaseType.EASE_IN_OUT
-var transform_trans := Tween.TransitionType.TRANS_SINE
+@export var transform_time: float = 0.0
+@export var transform_ease := Tween.EaseType.EASE_IN_OUT
+@export var transform_trans := Tween.TransitionType.TRANS_SINE
 
 var ease_options := [
 		{'label': 'In', 	 'value': Tween.EASE_IN},
@@ -62,11 +64,11 @@ var trans_options := [
 		]
 
 ## The z_index that the portrait should have.
-var z_index: int = 0
+@export var z_index: int = 0
 ## If true, the portrait will be set to mirrored.
-var mirrored := false
+@export var mirrored := false
 ## If set, will be passed to the portrait scene.
-var extra_data := ""
+@export var extra_data := ""
 
 
 ### Helpers
@@ -82,21 +84,21 @@ var character_identifier: String:
 		if character_identifier == '--All--':
 			return '--All--'
 		if character:
-			var identifier := DialogicResourceUtil.get_unique_identifier(character.resource_path)
+			var identifier := character.get_identifier()
 			if not identifier.is_empty():
 				return identifier
 		return character_identifier
 	set(value):
 		character_identifier = value
 		character = DialogicResourceUtil.get_character_resource(value)
-		if character and not character.portraits.has(portrait):
+		if (not character) or (character and not character.portraits.has(portrait)):
 			portrait = ""
 			ui_update_needed.emit()
 
 var regex := RegEx.create_from_string(r'(?<type>join|update|leave)\s*(")?(?<name>(?(2)[^"\n]*|[^(: \n]*))(?(2)"|)(\W*\((?<portrait>.*)\))?(\s*(?<transform>[^\[]*))?(\s*\[(?<shortcode>.*)\])?')
 
-################################################################################
-## 						EXECUTION
+
+#region EXECUTION
 ################################################################################
 
 func _execute() -> void:
@@ -154,10 +156,10 @@ func _execute() -> void:
 			finish()
 			return
 
-		dialogic.Portraits.change_character_extradata(character, extra_data)
-
 		if set_portrait:
-			dialogic.Portraits.change_character_portrait(character, portrait, fade_animation, fade_length)
+			await dialogic.Portraits.change_character_portrait(character, portrait, fade_animation, fade_length)
+
+		dialogic.Portraits.change_character_extradata(character, extra_data)
 
 		if set_mirrored:
 			dialogic.Portraits.change_character_mirror(character, mirrored)
@@ -181,9 +183,11 @@ func _execute() -> void:
 				animation_name,
 				final_animation_length,
 				final_animation_repetitions,
+				false,
+				repeat_forever
 			)
 
-			if animation_wait:
+			if animation_wait and not repeat_forever:
 				dialogic.current_state = DialogicGameHandler.States.ANIMATING
 				await animation.finished
 				dialogic.current_state = DialogicGameHandler.States.IDLE
@@ -191,21 +195,26 @@ func _execute() -> void:
 
 	finish()
 
+#endregion
+
 
 #region INITIALIZE
 ###############################################################################
 
 func _init() -> void:
 	event_name = "Character"
+	event_description = "Allows joining or leaving a character or updating its portrait, position, mirroring, z-index or animation."
 	set_default_color('Color2')
 	event_category = "Main"
 	event_sorting_index = 2
+	help_page_path = "https://docs.dialogic.pro/event-character.html"
 
 
 func _get_icon() -> Resource:
 	return load(self.get_script().get_path().get_base_dir().path_join('icon.svg'))
 
 #endregion
+
 
 #region SAVING, LOADING, DEFAULTS
 ################################################################################
@@ -225,7 +234,7 @@ func to_text() -> String:
 	if action == Actions.LEAVE and character_identifier == '--All--':
 		result_string += "--All--"
 	elif character:
-		var name := DialogicResourceUtil.get_unique_identifier(character.resource_path)
+		var name := character.get_character_name()
 
 		if name.count(" ") > 0:
 			name = '"' + name + '"'
@@ -302,7 +311,7 @@ func get_shortcode_parameters() -> Dictionary:
 										{'value':Actions.JOIN},
 										'Leave':{'value':Actions.LEAVE},
 										'Update':{'value':Actions.UPDATE}}},
-		"character" 	: {"property": "character_identifier",	"default": "", "custom_stored":true,},
+		"character" 	: {"property": "character_identifier",	"default": "", "custom_stored":true, "ext_file":true},
 		"portrait" 		: {"property": "portrait", 				"default": "", "custom_stored":true,},
 		"transform" 	: {"property": "transform", 			"default": "center", "custom_stored":true,},
 
@@ -310,6 +319,7 @@ func get_shortcode_parameters() -> Dictionary:
 		"length"		: {"property": "animation_length", 			"default": 0.5},
 		"wait" 			: {"property": "animation_wait", 			"default": false},
 		"repeat"		: {"property": "animation_repeats", 		"default": 1},
+		"repeat_forever"		: {"property": "repeat_forever", 		"default": false},
 
 		"z_index" 		: {"property": "z_index", 						"default": 0},
 		"mirrored"		: {"property": "mirrored", 						"default": false},
@@ -331,8 +341,8 @@ func is_valid_event(string:String) -> bool:
 
 #endregion
 
-################################################################################
-## 						EDITOR REPRESENTATION
+
+#region EDITOR REPRESENTATION
 ################################################################################
 
 func build_event_editor() -> void:
@@ -353,7 +363,8 @@ func build_event_editor() -> void:
 				'value': Actions.UPDATE,
 				'icon': load("res://addons/dialogic/Editor/Images/Dropdown/update.svg")
 			}
-		]
+		],
+		"tooltip": "Switch the action: Join/Leave/Update."
 	})
 	add_header_edit('character_identifier', ValueType.DYNAMIC_OPTIONS,
 			{'placeholder'		: 'Character',
@@ -389,7 +400,8 @@ func build_event_editor() -> void:
 			'suggestions_func' 	: get_fade_suggestions,
 			'editor_icon' 			: ["Animation", "EditorIcons"],
 			'placeholder' 			: 'Default',
-			'enable_pretty_name' 	: true},
+			'enable_pretty_name' 	: true,
+			'tooltip'				: "Choose the fading to use when changing to a different portrait."},
 			'should_show_fade_options()')
 	add_body_edit('fade_length', ValueType.NUMBER, {'left_text':'Length:', 'suffix':'s', "min":0},
 			'should_show_fade_options() and !fade_animation.is_empty()')
@@ -399,27 +411,30 @@ func build_event_editor() -> void:
 			'suggestions_func' 	: get_animation_suggestions,
 			'editor_icon' 			: ["Animation", "EditorIcons"],
 			'placeholder' 			: 'Default',
-			'enable_pretty_name' 	: true},
+			'enable_pretty_name' 	: true,
+			'tooltip'				: "Plays an animation on this character."},
 			'should_show_animation_options()')
 	add_body_edit('animation_length', ValueType.NUMBER, {'left_text':'Length:', 'suffix':'s', "min":0},
-			'should_show_animation_options() and !animation_name.is_empty()')
-	add_body_edit('animation_wait', ValueType.BOOL, {'left_text':'Await end:'},
-			'should_show_animation_options() and !animation_name.is_empty()')
-	add_body_edit('animation_repeats', ValueType.NUMBER, {'left_text':'Repeat:', 'mode':1, "min":1},
+			'should_show_animation_options() and !animation_name.is_empty() and not "instant" in animation_name.to_lower()')
+	add_body_edit('repeat_forever', ValueType.BOOL, {'left_text':'Repeat Forever:'},
 			'should_show_animation_options() and !animation_name.is_empty() and action == %s)' %Actions.UPDATE)
+	add_body_edit('animation_repeats', ValueType.NUMBER, {'left_text':'Repeat:', 'mode':1, "min":1},
+			'should_show_animation_options() and !animation_name.is_empty() and action == %s and not repeat_forever' %Actions.UPDATE)
+	add_body_edit('animation_wait', ValueType.BOOL, {'left_text':'Await end:'},
+			'should_show_animation_options() and !animation_name.is_empty() and not repeat_forever and not "instant" in animation_name.to_lower()')
 	add_body_line_break()
-	add_body_edit('transform_time', ValueType.NUMBER, {'left_text':'Movement duration:', "min":0},
+	add_body_edit('transform_time', ValueType.NUMBER, {'left_text':'Movement duration:', "min":0, "tooltip": "When changing the characters position, this is how fast it will happen."},
 			"should_show_transform_options()")
-	add_body_edit("transform_trans", ValueType.FIXED_OPTIONS, {'options':trans_options, 'left_text':"Trans:"}, 'should_show_transform_options() and transform_time > 0')
-	add_body_edit("transform_ease", ValueType.FIXED_OPTIONS, {'options':ease_options, 'left_text':"Ease:"}, 'should_show_transform_options() and transform_time > 0')
+	add_body_edit("transform_trans", ValueType.FIXED_OPTIONS, {'options':trans_options, 'left_text':"Trans:", "tooltip":"The transition type to use for moving the character to its new position."}, 'should_show_transform_options() and transform_time > 0')
+	add_body_edit("transform_ease", ValueType.FIXED_OPTIONS, {'options':ease_options, 'left_text':"Ease:", "tooltip":"The easing to use for moving the character to its new position."}, 'should_show_transform_options() and transform_time > 0')
 
 	add_body_edit('set_z_index', ValueType.BOOL_BUTTON, {'icon':load("res://addons/dialogic/Modules/Character/update_z_index.svg"), 'tooltip':'Change Z-Index'}, "character != null and action == Actions.UPDATE")
-	add_body_edit('z_index', ValueType.NUMBER, {'left_text':'Z-index:', 'mode':1},
+	add_body_edit('z_index', ValueType.NUMBER, {'left_text':'Z-index:', 'mode':1, "tooltip": "The Z-Index controls the visual order of characters. Higher z-index makes a character appear further in front."},
 			'action != %s and (action != Actions.UPDATE or set_z_index)' %Actions.LEAVE)
 	add_body_edit('set_mirrored', ValueType.BOOL_BUTTON, {'icon':load("res://addons/dialogic/Modules/Character/update_mirror.svg"), 'tooltip':'Change Mirroring'}, "character != null and action == Actions.UPDATE")
-	add_body_edit('mirrored', ValueType.BOOL, {'left_text':'Mirrored:'},
+	add_body_edit('mirrored', ValueType.BOOL, {'left_text':'Mirrored:', "tooltip": "Mirrors the character. This applies on top of the mirroring of the portrait and the position container."},
 			'action != %s and (action != Actions.UPDATE or set_mirrored)' %Actions.LEAVE)
-	add_body_edit('extra_data', ValueType.SINGLELINE_TEXT, {'left_text':'Extra Data:'}, 'action != Actions.LEAVE')
+	add_body_edit('extra_data', ValueType.SINGLELINE_TEXT, {'left_text':'Extra Data:', "tooltip": "Data that is given to the portrait. To be used on custom portrait scenes."}, 'action != Actions.LEAVE')
 
 
 func should_show_transform_options() -> bool:
@@ -449,7 +464,7 @@ func get_character_suggestions(search_text:String) -> Dictionary:
 func get_portrait_suggestions(search_text:String) -> Dictionary:
 	var empty_text := "Don't Change"
 	if action == Actions.JOIN:
-		empty_text = "Default portrait"
+		empty_text = "Default"
 	return DialogicUtil.get_portrait_suggestions(search_text, character, true, empty_text)
 
 
@@ -472,14 +487,16 @@ func get_animation_suggestions(search_text:String='') -> Dictionary:
 func get_fade_suggestions(search_text:String='') -> Dictionary:
 	return DialogicPortraitAnimationUtil.get_suggestions(search_text, fade_animation, "Default", DialogicPortraitAnimationUtil.AnimationType.CROSSFADE)
 
+#endregion
 
-####################### CODE COMPLETION ########################################
+
+#region CODE COMPLETION
 ################################################################################
 
 func _get_code_completion(CodeCompletionHelper:Node, TextNode:TextEdit, line:String, _word:String, symbol:String) -> void:
 	var line_until_caret: String = CodeCompletionHelper.get_line_untill_caret(line)
-	if symbol == ' ' and line_until_caret.count(' ') == 1:
-		CodeCompletionHelper.suggest_characters(TextNode, CodeEdit.KIND_MEMBER)
+	if symbol == ' ' and line_until_caret.count(" ") == 1:
+		CodeCompletionHelper.suggest_characters(TextNode, CodeEdit.KIND_MEMBER, self)
 		if line.begins_with('leave'):
 			TextNode.add_code_completion_option(CodeEdit.KIND_MEMBER, 'All', '--All-- ', event_color, TextNode.get_theme_icon("GuiEllipsis", "EditorIcons"))
 
@@ -487,10 +504,11 @@ func _get_code_completion(CodeCompletionHelper:Node, TextNode:TextEdit, line:Str
 		var completion_character := regex.search(line).get_string('name')
 		CodeCompletionHelper.suggest_portraits(TextNode, completion_character)
 
-	elif not '[' in line_until_caret and symbol == ' ':
+	elif not '[' in line_until_caret and symbol == ' ' and line_until_caret.split(" ", false).size() > 1:
 		if not line.begins_with("leave"):
-			for position in get_position_suggestions():
-				TextNode.add_code_completion_option(CodeEdit.KIND_MEMBER, position, position+' ', TextNode.syntax_highlighter.normal_color)
+			if not line_until_caret.split(" ", false)[-1] in get_position_suggestions():
+				for position in get_position_suggestions():
+					TextNode.add_code_completion_option(CodeEdit.KIND_MEMBER, position, position+' ', TextNode.syntax_highlighter.normal_color)
 
 	# Shortcode Part
 	if '[' in line_until_caret:
@@ -504,8 +522,10 @@ func _get_code_completion(CodeCompletionHelper:Node, TextNode:TextEdit, line:Str
 				if line.begins_with('update'):
 					suggest_parameter("repeat", line, TextNode)
 			if line.begins_with("update"):
-				for param in ["move_time", "move_trans", "move_ease"]:
+				for param in ["move_time", "move_trans", "move_ease", "fade"]:
 					suggest_parameter(param, line, TextNode)
+				if "fade=" in line_until_caret:
+					suggest_parameter("fade_length", line, TextNode)
 			if not line.begins_with('leave'):
 				for param in ["mirrored", "z_index", "extra_data"]:
 					suggest_parameter(param, line, TextNode)
@@ -547,8 +567,10 @@ func _get_start_code_completion(_CodeCompletionHelper:Node, TextNode:TextEdit) -
 	TextNode.add_code_completion_option(CodeEdit.KIND_PLAIN_TEXT, 'leave', 'leave ', event_color, load('res://addons/dialogic/Editor/Images/Dropdown/leave.svg'))
 	TextNode.add_code_completion_option(CodeEdit.KIND_PLAIN_TEXT, 'update', 'update ', event_color, load('res://addons/dialogic/Editor/Images/Dropdown/update.svg'))
 
+#endregion
 
-#################### SYNTAX HIGHLIGHTING #######################################
+
+#region SYNTAX HIGHLIGHTING
 ################################################################################
 
 func _get_syntax_highlighting(Highlighter:SyntaxHighlighter, dict:Dictionary, line:String) -> Dictionary:
@@ -576,3 +598,5 @@ func list_to_suggestions(list:Array) -> Dictionary:
 			accum[value.label]["text_alt"] = [value.label.to_lower()]
 			return accum,
 		{})
+
+#endregion

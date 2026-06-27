@@ -1,10 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://bjptk35p5s344"]
+[gd_scene load_steps=20 format=3 uid="uid://bjptk35p5s344"]
 
 [ext_resource type="Shader" uid="uid://d2tfkj0vys23w" path="res://assets/shaders/dissolve.gdshader" id="2_83qrr"]
 [ext_resource type="Script" uid="uid://hg4hnk1yqib5" path="res://assets/scripts/enemy/robot_enemy.gd" id="2_bijvf"]
 [ext_resource type="Script" uid="uid://cjkbvly834ypq" path="res://assets/scripts/characters/character_stats.gd" id="2_qvypf"]
 [ext_resource type="Texture2D" uid="uid://dib3oqp8ll1c4" path="res://assets/sprites/npcs/robot_alien.png" id="4_7bbua"]
-[ext_resource type="Texture2D" uid="uid://bv3d852edjjva" path="res://assets/sprites/effects/dissolve_particle.png" id="5_quqke"]
 [ext_resource type="Script" uid="uid://dpmgd3hx3ar5y" path="res://addons/godot_state_charts/state_chart.gd" id="6_c67xs"]
 [ext_resource type="Script" uid="uid://d2s1pwit5pfye" path="res://addons/godot_state_charts/parallel_state.gd" id="7_tbptk"]
 [ext_resource type="Script" uid="uid://dv730vr2jnpps" path="res://addons/godot_state_charts/compound_state.gd" id="8_bonpa"]
@@ -160,44 +159,23 @@ _data = {
 &"idle": SubResource("Animation_p2cjj")
 }
 
-[sub_resource type="Gradient" id="Gradient_ife2x"]
-offsets = PackedFloat32Array(0.565574, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
-metadata/_snap_count = 4
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_wj7tl"]
-gradient = SubResource("Gradient_ife2x")
-width = 3
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hhtr1"]
-particle_flag_disable_z = true
-emission_shape = 3
-emission_box_extents = Vector3(12, 16, 1)
-gravity = Vector3(0, 98, 0)
-color_ramp = SubResource("GradientTexture1D_wj7tl")
-turbulence_noise_strength = 6.0
-turbulence_noise_speed_random = 1.0
-
-[node name="RobotEnemy" type="CharacterBody2D" node_paths=PackedStringArray("dissolve_particles") groups=["enemy"]]
+[node name="RobotEnemy" type="CharacterBody2D" groups=["enemy"]]
 z_index = 69
 y_sort_enabled = true
 collision_layer = 4
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("2_bijvf")
-dissolve_particles = NodePath("DissolveParticles")
 follow_speed = 50.0
-desired_distance = 200.0
-blocking_weight = 0.9
+desired_distance = 100.0
+blocking_weight = 1.0
 
 [node name="CharacterStats" type="Node" parent="."]
 script = ExtResource("2_qvypf")
 max_health = 100
 max_attack = 1
-max_defense = 1
 health = 100
 attack = 1
-defense = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.5, 5.25)
@@ -229,18 +207,8 @@ metadata/_aseprite_wizard_interface_config_ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ogkg5")
+&"": SubResource("AnimationLibrary_ogkg5")
 }
-
-[node name="DissolveParticles" type="GPUParticles2D" parent="."]
-emitting = false
-amount = 128
-process_material = SubResource("ParticleProcessMaterial_hhtr1")
-texture = ExtResource("5_quqke")
-one_shot = true
-explosiveness = 0.5
-randomness = 1.0
-fixed_fps = 60
 
 [node name="StateChart" type="Node" parent="."]
 script = ExtResource("6_c67xs")
@@ -259,11 +227,13 @@ script = ExtResource("9_th81e")
 script = ExtResource("10_uyws4")
 to = NodePath("../../Waiting")
 event = &"stop_movement"
+delay_in_seconds = "0.0"
 
 [node name="ToBlocking" type="Node" parent="StateChart/Root/Movement/Orbiting"]
 script = ExtResource("10_uyws4")
 to = NodePath("../../Blocking")
 event = &"to_blocking"
+delay_in_seconds = "0.0"
 
 [node name="Blocking" type="Node" parent="StateChart/Root/Movement"]
 script = ExtResource("9_th81e")
@@ -272,11 +242,13 @@ script = ExtResource("9_th81e")
 script = ExtResource("10_uyws4")
 to = NodePath("../../Waiting")
 event = &"stop_movement"
+delay_in_seconds = "0.0"
 
 [node name="ToOrbiting" type="Node" parent="StateChart/Root/Movement/Blocking"]
 script = ExtResource("10_uyws4")
 to = NodePath("../../Orbiting")
 event = &"to_orbiting"
+delay_in_seconds = "0.0"
 
 [node name="Waiting" type="Node" parent="StateChart/Root/Movement"]
 script = ExtResource("9_th81e")
@@ -285,11 +257,13 @@ script = ExtResource("9_th81e")
 script = ExtResource("10_uyws4")
 to = NodePath("../../Blocking")
 event = &"to_blocking"
+delay_in_seconds = "0.0"
 
 [node name="ToOrbiting" type="Node" parent="StateChart/Root/Movement/Waiting"]
 script = ExtResource("10_uyws4")
 to = NodePath("../../Orbiting")
 event = &"to_orbiting"
+delay_in_seconds = "0.0"
 
 [node name="Attack" type="Node" parent="StateChart/Root"]
 script = ExtResource("8_bonpa")
@@ -302,6 +276,7 @@ script = ExtResource("9_th81e")
 script = ExtResource("10_uyws4")
 to = NodePath("../../Attacking")
 event = &"attack_interval"
+delay_in_seconds = "0.0"
 
 [node name="Attacking" type="Node" parent="StateChart/Root/Attack"]
 script = ExtResource("9_th81e")
@@ -310,6 +285,7 @@ script = ExtResource("9_th81e")
 script = ExtResource("10_uyws4")
 to = NodePath("../../Waiting")
 event = &"attack_complete"
+delay_in_seconds = "0.0"
 
 [connection signal="state_processing" from="StateChart/Root/Movement/Orbiting" to="." method="_on_orbiting_state_processing"]
 [connection signal="state_processing" from="StateChart/Root/Movement/Blocking" to="." method="_on_blocking_state_processing"]

@@ -1,9 +1,12 @@
 ## This is the remote part of the editor debugger. It attaches to a state
 ## chart similar to the in-game debugger and forwards signals and debug
 ## information to the editor. 
+extends Node
 
 
 const DebuggerMessage = preload("editor_debugger_message.gd")
+const SettingsPropagator = preload("editor_debugger_settings_propagator.gd")
+
 
 # the state chart we track
 var _state_chart:StateChart 
@@ -15,43 +18,41 @@ var _ignore_events:bool = true
 
 
 ## Sets up the debugger remote to track the given state chart.
-func _init(state_chart:StateChart):
+func _init(state_chart:StateChart) -> void:
+	if not is_instance_valid(state_chart):
+		push_error("Probable bug: State chart is not valid. Please report this bug.")
+		return
 
+	if not state_chart.is_inside_tree():
+		push_error("Probably bug: State chart is not in tree. Please report this bug.")
+		return
+		
 	_state_chart = state_chart
 
-	if not is_instance_valid(_state_chart):
-		push_error("Probable bug: State chart is not valid. Please report this bug.")
 
-	_register_settings_updates()
+func _ready() -> void:
+	# subscribe to settings changes coming from the editor debugger
+	# will auto-unsubscribe when the chart goes away. We do this before
+	# sending state_chart_added, so we get the initial settings update delivered
+	SettingsPropagator.get_instance(get_tree()).settings_updated.connect(_on_settings_updated)
 
 	# send initial state chart
 	DebuggerMessage.state_chart_added(_state_chart)
+	
 	# prepare signals and send initial state of all states
 	_prepare()
 
-func _register_settings_updates():
-	# print("Registering settings updates for ", _state_chart.get_path())
-	if not _state_chart.is_inside_tree():
-		return
-	
-	EngineDebugger.register_message_capture(DebuggerMessage.SETTINGS_UPDATED_MESSAGE + str(_state_chart.get_path()), _on_settings_updated)
 
-func _unregister_settings_updates():
-	# print("Unregistering settings updates for ", _state_chart.get_path())
-	if not _state_chart.is_inside_tree():
-		return
-
-	EngineDebugger.unregister_message_capture(DebuggerMessage.SETTINGS_UPDATED_MESSAGE + str(_state_chart.get_path()))
-
-func _on_settings_updated(key:String, data:Array) -> bool:
-	_ignore_events = data[0]
-	_ignore_transitions = data[1]
-	# print("New settings for " ,  _state_chart.get_path(), ": ignore_events=", _ignore_events, ", ignore_transitions=", _ignore_transitions)
-	return true
+func _on_settings_updated(chart:NodePath, ignore_events:bool, ignore_transitions:bool) -> void:
+	if _state_chart.get_path() != chart:
+		return # doesn't affect this chart
+		
+	_ignore_events = ignore_events
+	_ignore_transitions = ignore_transitions
 
 
 ## Connects all signals from the currently processing state chart
-func _prepare():
+func _prepare() -> void:
 	_state_chart.event_received.connect(_on_event_received)
 
 	# find all state nodes below the state chart and connect their signals
@@ -60,7 +61,7 @@ func _prepare():
 			_prepare_state(child)
 
 
-func _prepare_state(state:StateChartState):
+func _prepare_state(state:StateChartState) -> void:
 	state.state_entered.connect(_on_state_entered.bind(state))
 	state.state_exited.connect(_on_state_exited.bind(state))
 	state.transition_pending.connect(_on_transition_pending.bind(state))
@@ -76,35 +77,24 @@ func _prepare_state(state:StateChartState):
 			child.taken.connect(_on_transition_taken.bind(state, child))
 
 
-func _notification(what):
-	match(what):
-		Node.NOTIFICATION_ENTER_TREE:
-			DebuggerMessage.state_chart_added(_state_chart)
-			_register_settings_updates()
-		Node.NOTIFICATION_UNPARENTED:
-			DebuggerMessage.state_chart_removed(_state_chart)
-			_unregister_settings_updates()
-				
-
-
-func _on_transition_taken(source:StateChartState, transition:Transition):
+func _on_transition_taken(source:StateChartState, transition:Transition) -> void:
 	if _ignore_transitions:
 		return
 	DebuggerMessage.transition_taken(_state_chart, source, transition)
 
 
-func _on_event_received(event:StringName):
+func _on_event_received(event:StringName) -> void:
 	if _ignore_events:
 		return
 	DebuggerMessage.event_received(_state_chart, event)
 	
-func _on_state_entered(state:StateChartState):
+func _on_state_entered(state:StateChartState) -> void:
 	DebuggerMessage.state_entered(_state_chart, state)		
 
-func _on_state_exited(state:StateChartState):
+func _on_state_exited(state:StateChartState) -> void:
 	DebuggerMessage.state_exited(_state_chart, state)
 
-func _on_transition_pending(num1, remaining, state:StateChartState):
+func _on_transition_pending(_ign, remaining, state:StateChartState) -> void:
 	DebuggerMessage.transition_pending(_state_chart, state, state._pending_transition, remaining)
 		
 

@@ -18,7 +18,7 @@ enum VarValueType {
 ## Settings
 
 ## Name/Path of the variable that should be changed.
-var name := "":
+@export var name := "":
 	set(_value):
 		name = _value
 		if Engine.is_editor_hint() and not value:
@@ -33,17 +33,17 @@ var name := "":
 		update_editor_warning()
 
 ## The operation to perform.
-var operation := Operations.SET:
+@export var operation := Operations.SET:
 	set(value):
 		operation = value
-		if operation != Operations.SET and _value_type == VarValueType.STRING:
+		if not (operation == Operations.SET or operation == Operations.ADD) and _value_type == VarValueType.STRING:
 			_value_type = VarValueType.NUMBER
 			ui_update_needed.emit()
 		update_editor_warning()
 
 ## The value that is used. Can be a variable as well.
-var value: Variant = ""
-var _value_type := 0 :
+@export var value: Variant = ""
+@export var _value_type := VarValueType.STRING :
 	set(_value):
 		_value_type = _value
 		if not _suppress_default_value:
@@ -60,87 +60,93 @@ var _value_type := 0 :
 		update_editor_warning()
 
 ## If true, a random number between [random_min] and [random_max] is used instead of [value].
-var random_min: int = 0
-var random_max: int = 100
+@export var random_min: int = 0
+@export var random_max: int = 100
 
 ## Used to suppress _value_type from overwriting value with a default value when the type changes
 ## This is only used when initializing the event_variable.
 var _suppress_default_value := false
 
 
-################################################################################
-## 						EXECUTE
+
+#region EXECUTE
 ################################################################################
 
 func _execute() -> void:
-	if name:
-		var original_value: Variant = dialogic.VAR.get_variable(name, null, operation == Operations.SET and "[" in name)
+	if not name:
+		finish()
+		return
 
-		if value != null and (original_value != null or (operation == Operations.SET and "[" in name)):
+	var original_value: Variant = dialogic.VAR.get_variable(name, null, operation == Operations.SET and "[" in name)
 
-			var interpreted_value: Variant
-			var result: Variant
+	if value != null and (original_value != null or (operation == Operations.SET and "[" in name)):
 
-			match _value_type:
-				VarValueType.STRING:
-					interpreted_value = dialogic.VAR.get_variable('"' + value + '"')
-				VarValueType.VARIABLE:
-					interpreted_value = dialogic.VAR.get_variable('{' + value + '}')
-				VarValueType.NUMBER, VarValueType.BOOL, VarValueType.EXPRESSION, VarValueType.RANDOM_NUMBER:
-					interpreted_value = dialogic.VAR.get_variable(str(value))
+		var interpreted_value: Variant
+		var result: Variant
 
-			if operation != Operations.SET and (not str(original_value).is_valid_float() or not str(interpreted_value).is_valid_float()):
-				printerr("[Dialogic] Set Variable event failed because one value wasn't a float! [", original_value, ", ",interpreted_value,"]")
-				finish()
-				return
+		match _value_type:
+			VarValueType.STRING:
+				interpreted_value = dialogic.VAR.get_variable('"' + value + '"')
+			VarValueType.VARIABLE:
+				interpreted_value = dialogic.VAR.get_variable('{' + value + '}')
+			VarValueType.NUMBER, VarValueType.BOOL, VarValueType.EXPRESSION, VarValueType.RANDOM_NUMBER:
+				interpreted_value = dialogic.VAR.get_variable(str(value))
 
-			if operation == Operations.SET:
-				result = interpreted_value
-
-			else:
-				original_value = float(original_value)
-				interpreted_value = float(interpreted_value)
-
-				match operation:
-					Operations.ADD:
-						result = original_value + interpreted_value
-					Operations.SUBSTRACT:
-						result = original_value - interpreted_value
-					Operations.MULTIPLY:
-						result = original_value * interpreted_value
-					Operations.DIVIDE:
-						result = original_value / interpreted_value
-
-			dialogic.VAR.set_variable(name, result)
-			dialogic.VAR.variable_was_set.emit(
-				{
-					'variable' : name,
-					'value' : interpreted_value,
-					'value_str' : value,
-					'orig_value' : original_value,
-					'new_value' : result,
-				})
-
+		if operation == Operations.SET:
+			result = interpreted_value
+		elif (operation == Operations.ADD and DialogicUtil.get_variable_type(name) == DialogicUtil.VarTypes.STRING and _value_type == VarValueType.STRING and interpreted_value):
+			result = original_value + interpreted_value
+		elif not str(original_value).is_valid_float() or not str(interpreted_value).is_valid_float():
+			printerr("[Dialogic] Set Variable event failed because one value wasn't a float! [", original_value, ", ",interpreted_value,"]")
+			finish()
+			return
 		else:
-			printerr("[Dialogic] Set Variable event failed because one value wasn't set!")
+			original_value = float(original_value)
+			interpreted_value = float(interpreted_value)
+
+			match operation:
+				Operations.ADD:
+					result = original_value + interpreted_value
+				Operations.SUBSTRACT:
+					result = original_value - interpreted_value
+				Operations.MULTIPLY:
+					result = original_value * interpreted_value
+				Operations.DIVIDE:
+					result = original_value / interpreted_value
+
+		dialogic.VAR.set_variable(name, result)
+		dialogic.VAR.variable_was_set.emit(
+			{
+				'variable' : name,
+				'value' : interpreted_value,
+				'value_str' : value,
+				'orig_value' : original_value,
+				'new_value' : result,
+			})
+
+	else:
+		printerr("[Dialogic] Set Variable event failed because one value wasn't set!")
 
 	finish()
 
+#endregion
 
-################################################################################
-## 						INITIALIZE
+
+#region INITIALIZE
 ################################################################################
 
 func _init() -> void:
 	event_name = "Set Variable"
+	event_description = "Changes a dialogic variable or a variable from an autoload."
 	set_default_color('Color6')
 	event_category = "Logic"
 	event_sorting_index = 0
 	help_page_path = "https://docs.dialogic.pro/variables.html#23-set-variable-event"
 
+#endregion
 
-################################################################################
-## 						SAVING/LOADING
+
+#region SAVING/LOADING
 ################################################################################
 
 func to_text() -> String:
@@ -224,8 +230,22 @@ func is_valid_event(string:String) -> bool:
 	return string.begins_with('set')
 
 
-################################################################################
-## 						EDITOR REPRESENTATION
+## Only here to allow setting defaults in the module settings
+func get_shortcode_parameters() -> Dictionary:
+	return {
+		#param_name 	: property_info
+		"name" 			: {"property": "name", 					"default": ""},
+		"operation" 	: {"property": "operation",				"default": Operations.SET},
+		"value" 		: {"property": "value",					"default": ""},
+		"random_min" 	: {"property": "random_min", 			"default": 0},
+		"random_max" 	: {"property": "random_max", 			"default": 100},
+
+	}
+
+#endregion
+
+
+#region EDITOR REPRESENTATION
 ################################################################################
 
 func build_event_editor() -> void:
@@ -303,10 +323,26 @@ func build_event_editor() -> void:
 
 func get_var_suggestions(filter:String) -> Dictionary:
 	var suggestions := {}
-	if filter:
-		suggestions[filter] = {'value':filter, 'editor_icon':["GuiScrollArrowRight", "EditorIcons"]}
 	for var_path in DialogicUtil.list_variables(DialogicUtil.get_default_variables()):
 		suggestions[var_path] = {'value':var_path, 'icon':load("res://addons/dialogic/Editor/Images/Pieces/variable.svg")}
+
+	var autoloads := DialogicUtil.get_autoload_suggestions().keys()
+	var is_autoload := ""
+	for autoload in autoloads:
+		if autoload == filter:
+			is_autoload = autoload
+			break
+		suggestions[autoload] = {'value':autoload, 'editor_icon':["Node", "EditorIcons"]}
+
+	if is_autoload or filter.count(".") == 1 and filter.split(".")[0] in autoloads:
+		var autoload := filter.trim_suffix(".")
+		var properties := DialogicUtil.get_autoload_property_suggestions("", autoload)
+		for property in properties:
+			suggestions["."+property] = {'value':autoload+"."+property, 'editor_icon':["MemberProperty", "EditorIcons"]}
+
+	if not filter in suggestions:
+		suggestions[filter] = {'value':filter, 'editor_icon':["GuiScrollArrowRight", "EditorIcons"]}
+
 	return suggestions
 
 
@@ -325,34 +361,49 @@ func _on_variable_editor_pressed() -> void:
 
 
 func update_editor_warning() -> void:
-	if _value_type == VarValueType.STRING and operation != Operations.SET:
+	if _value_type == VarValueType.STRING and operation != Operations.SET and operation != Operations.ADD:
 		ui_update_warning.emit('You cannot do this operation with a string!')
 	elif operation != Operations.SET:
 		var type := DialogicUtil.get_variable_type(name)
 		if not type in [DialogicUtil.VarTypes.INT, DialogicUtil.VarTypes.FLOAT, DialogicUtil.VarTypes.ANY]:
-			ui_update_warning.emit('The selected variable is not a number!')
-		else:
-			ui_update_warning.emit('')
-	else:
-		ui_update_warning.emit('')
+			if not (type == DialogicUtil.VarTypes.STRING and operation == Operations.ADD and _value_type == VarValueType.STRING):
+				ui_update_warning.emit('The selected variable is not a number!')
+				return
+	ui_update_warning.emit('')
+
+#endregion
 
 
-
-####################### CODE COMPLETION ########################################
+#region CODE COMPLETION
 ################################################################################
 
 func _get_code_completion(CodeCompletionHelper:Node, TextNode:TextEdit, line:String, _word:String, symbol:String) -> void:
-	if CodeCompletionHelper.get_line_untill_caret(line) == 'set ':
+	var autoloads := DialogicUtil.get_autoload_suggestions()
+	var line_until_caret: String = CodeCompletionHelper.get_line_untill_caret(line)
+	if line_until_caret.count(" ") == 1 and not "{" in line and not line_until_caret.ends_with("."):
+
 		TextNode.add_code_completion_option(CodeEdit.KIND_MEMBER, '{', '{', TextNode.syntax_highlighter.variable_color)
-	if symbol == '{':
+		for i in autoloads:
+			TextNode.add_code_completion_option(CodeEdit.KIND_MEMBER, i, i+'.', event_color.lerp(TextNode.syntax_highlighter.normal_color, 0.3), TextNode.get_theme_icon("Node", "EditorIcons"))
+
+	if (line_until_caret.ends_with(".") or symbol == "."):
+		var autoload_name := line_until_caret.split(" ")[-1].split(".")[0]
+		if autoload_name in autoloads:
+			var properties := DialogicUtil.get_autoload_property_suggestions("", autoload_name)
+			for i in properties.keys():
+				TextNode.add_code_completion_option(CodeEdit.KIND_MEMBER, i, i+" ", event_color.lerp(TextNode.syntax_highlighter.normal_color, 0.3), TextNode.get_theme_icon("MemberMethod", "EditorIcons"))
+
+	elif symbol == '{':
 		CodeCompletionHelper.suggest_variables(TextNode)
 
 
 func _get_start_code_completion(_CodeCompletionHelper:Node, TextNode:TextEdit) -> void:
 	TextNode.add_code_completion_option(CodeEdit.KIND_PLAIN_TEXT, 'set', 'set ', event_color.lerp(TextNode.syntax_highlighter.normal_color, 0.5))
 
+#endregion
 
-#################### SYNTAX HIGHLIGHTING #######################################
+
+#region SYNTAX HIGHLIGHTING
 ################################################################################
 
 func _get_syntax_highlighting(Highlighter:SyntaxHighlighter, dict:Dictionary, line:String) -> Dictionary:
@@ -361,3 +412,5 @@ func _get_syntax_highlighting(Highlighter:SyntaxHighlighter, dict:Dictionary, li
 	dict = Highlighter.color_region(dict, Highlighter.string_color, line, '"', '"', line.find('set'))
 	dict = Highlighter.color_region(dict, Highlighter.variable_color, line, '{', '}', line.find('set'))
 	return dict
+
+#endregion

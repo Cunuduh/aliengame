@@ -8,11 +8,16 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="RPG"
 run/main_scene="res://assets/scenes/main_menu.tscn"
-config/features=PackedStringArray("4.5", "Mobile")
+config/features=PackedStringArray("4.7", "Mobile")
+run/max_fps=30
 config/icon="res://icon.svg"
 
 [autoload]
@@ -20,30 +25,75 @@ config/icon="res://icon.svg"
 Globals="*res://assets/scripts/world/global_vars.gd"
 BulletPool="*res://assets/scripts/battle/bullet_pool.gd"
 BattleManager="*res://assets/scripts/world/battle_manager.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+Dialogic="*uid://ds2q0uclmolvu"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=2
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
+directories/dch_directory={
+"test": "res://assets/resources/characters/test.dch"
+}
+directories/dtl_directory={
+"test_npc_dialogue": "res://assets/resources/dialogues/test_npc_dialogue.dtl"
+}
+extensions_folder="res://addons/dialogic_additions"
+text/letter_speed=0.01
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.5
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+audio/max_channels=4.0
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+text/autopauses={}
+layout/style_list=["res://assets/themes/default_dialogue.tres"]
+layout/default_style="res://assets/themes/default_dialogue.tres"
+glossary/default_case_sensitive=true
+variables={}
+layout/style_directory={
+"": "res://assets/themes/default_dialogue.tres",
+"default_dialogue": "res://assets/themes/default_dialogue.tres"
+}
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=270
-window/size/resizable=false
+window/size/viewport_width=320
+window/size/viewport_height=240
 window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
+window/vsync/vsync_mode=0
+
+[dotnet]
+
+project/assembly_name="RPG"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/godot_state_charts/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/godot_state_charts/plugin.cfg")
 
 [global_group]
 
 world=""
+
+[gui]
+
+theme/default_font_antialiasing=0
+theme/custom_font="uid://bnh22ackgv80s"
 
 [input]
 
@@ -122,9 +172,7 @@ slow={
 dialogic_default_action={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
-, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":88,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":90,"physical_keycode":0,"key_label":0,"unicode":122,"location":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
@@ -140,16 +188,10 @@ buffering/agile_event_flushing=true
 2d_physics/layer_2="battle"
 2d_physics/layer_3="enemy"
 
-[physics]
-
-common/physics_ticks_per_second=144
-common/max_physics_steps_per_frame=16
-2d/solver/solver_iterations=1
-
 [rendering]
 
-occlusion_culling/bvh_build_quality=0
 textures/canvas_textures/default_texture_filter=0
+2d/batching/uniform_set_cache_size=16384
 textures/decals/filter=2
 textures/light_projectors/filter=2
 2d/snap/snap_2d_transforms_to_pixel=true

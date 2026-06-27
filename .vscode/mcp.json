@@ -1,0 +1,11 @@
+{
+    "servers": {
+        "godot-mcp": {
+            "type": "stdio",
+            "command": "bun",
+            "args": [
+                "/Volumes/Data/Repositories/godot-mcp/build/index.js"
+            ]
+        }
+    }
+}

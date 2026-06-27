@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="DialogicStyle" format=3 uid="uid://dta4ww55uysho"]
+
+[ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_w5syh"]
+[ext_resource type="PackedScene" uid="uid://cul0fbg0xtjwb" path="res://assets/themes/dialogic/textbox/textbox.tscn" id="2_7xsc4"]
+[ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="9_nhp1k"]
+
+[sub_resource type="Resource" id="Resource_k1ejy"]
+script = ExtResource("1_w5syh")
+overrides = {
+"global_bg_color": "Color(0, 0, 0, 1)",
+"global_font": "\"res://assets/fonts/DTM-Mono.otf\"",
+"global_font_size": "13.0"
+}
+
+[sub_resource type="Resource" id="Resource_ukdrm"]
+script = ExtResource("1_w5syh")
+scene = ExtResource("2_7xsc4")
+overrides = {
+"box_distance": "32.0",
+"box_modulate_custom_color": "Color(1, 1, 1, 1)",
+"box_modulate_global_color": "false",
+"box_panel": "\"res://assets/themes/style_box_normal.tres\"",
+"box_size": "Vector2(360, 64)",
+"portrait_bg_modulate": "Color(0, 0, 0, 0)",
+"portrait_enabled": "false"
+}
+
+[resource]
+script = ExtResource("9_nhp1k")
+name = "default_dialogue"
+layer_list = Array[String](["12"])
+layer_info = {
+"": SubResource("Resource_k1ejy"),
+"12": SubResource("Resource_ukdrm")
+}
+metadata/_latest_layer = ""

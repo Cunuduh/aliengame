@@ -8,6 +8,8 @@ const DebuggerStateInfo = preload("editor_debugger_state_info.gd")
 const DebuggerHistory = preload("../debugger_history.gd")
 ## The debugger message
 const DebuggerMessage = preload("editor_debugger_message.gd")
+## The settings propapagor
+const SettingsPropagator = preload("editor_debugger_settings_propagator.gd")
 
 ## Constants for the settings
 const SETTINGS_ROOT:String = "godot_state_charts/debugger/"
@@ -63,7 +65,7 @@ var _current_chart:NodePath = ""
 var _debounced_maximum_lines:int = -1
 
 ## Initializes the debugger UI using the editor settings.
-func initialize(settings:EditorSettings, session:EditorDebuggerSession):
+func initialize(settings:EditorSettings, session:EditorDebuggerSession) -> void:
 	clear()
 	_settings = settings
 	_session = session
@@ -100,12 +102,12 @@ func _set_setting(key, value) -> void:
 
 
 ## Clears all state charts and state trees.
-func clear():
+func clear() -> void:
 	_clear_all()
 	
 
 ## Clears all state charts and state trees.
-func _clear_all():
+func _clear_all() -> void:
 	_state_infos.clear()
 	_chart_histories.clear()
 	_all_state_charts_tree.clear()
@@ -117,7 +119,7 @@ func _clear_all():
 	_clear_current()
 
 ## Clears all data about the current chart from the ui	
-func _clear_current():
+func _clear_current() -> void:
 	_current_chart = ""
 	_current_state_chart_tree.clear()
 	_history_edit.clear()
@@ -126,14 +128,14 @@ func _clear_current():
 	root.set_selectable(0, false)
 
 ## Adds a new state chart to the debugger.
-func add_chart(path:NodePath):
+func add_chart(path:NodePath) -> void:
 	_state_infos[path] = {}
 	_chart_histories[path] = DebuggerHistory.new()
 	
 	_repaint_charts()
 
 	# push the settings to the new chart remote
-	DebuggerMessage.settings_updated(_session, path, _ignore_events, _ignore_transitions)
+	SettingsPropagator.send_settings_update(_session, path, _ignore_events, _ignore_transitions)
 
 	if _current_chart.is_empty():
 		_current_chart = path
@@ -141,7 +143,7 @@ func add_chart(path:NodePath):
 
 
 ## Removes a state chart from the debugger.
-func remove_chart(path:NodePath):
+func remove_chart(path:NodePath) -> void:
 	_state_infos.erase(path)
 	if _current_chart == path:
 		_clear_current()
@@ -275,7 +277,7 @@ func _free_all(root:TreeItem) -> void:
 ## Adds an item to the tree. Will re-use existing items if possible.
 ## The node path will be used as structure for the tree. The created 
 ## leaf will have the given icon and text.
-func _add_to_tree(tree:Tree, path:NodePath, icon:Texture2D, text:String = ""):
+func _add_to_tree(tree:Tree, path:NodePath, icon:Texture2D, text:String = "") -> void:
 	var ref := tree.get_root()
 	
 	for i in path.get_name_count():
@@ -307,7 +309,7 @@ func _add_to_tree(tree:Tree, path:NodePath, icon:Texture2D, text:String = ""):
 
 
 ## Called when a state chart is selected in the tree.
-func _on_all_state_charts_tree_item_selected():
+func _on_all_state_charts_tree_item_selected() -> void:
 	var item := _all_state_charts_tree.get_selected()
 	if item == null:
 		return
@@ -321,7 +323,7 @@ func _on_all_state_charts_tree_item_selected():
 
 
 ## Called every 0.5 seconds to update the history text edit and the maximum lines setting.	
-func _on_timer_timeout():
+func _on_timer_timeout() -> void:
 	# update the maximum lines setting if it has changed
 	if _debounced_maximum_lines >= 0:
 		_set_setting(SETTINGS_MAXIMUM_LINES, _debounced_maximum_lines)
@@ -345,7 +347,7 @@ func _on_ignore_events_checkbox_toggled(button_pressed:bool) -> void:
 
 	# push the new setting to all remote charts
 	for chart in _state_infos.keys():
-		DebuggerMessage.settings_updated(_session, chart, _ignore_events, _ignore_transitions)
+		SettingsPropagator.send_settings_update(_session, chart, _ignore_events, _ignore_transitions)
 
 ## Called when the ignore state changes checkbox is toggled.
 func _on_ignore_state_changes_checkbox_toggled(button_pressed:bool) -> void:
@@ -359,7 +361,7 @@ func _on_ignore_transitions_checkbox_toggled(button_pressed:bool) -> void:
 
 	# push the new setting to all remote charts
 	for chart in _state_infos.keys():
-		DebuggerMessage.settings_updated(_session, chart, _ignore_events, _ignore_transitions)
+		SettingsPropagator.send_settings_update(_session, chart, _ignore_events, _ignore_transitions)
 
 ## Called when the maximum lines spin box value is changed.
 func _on_maximum_lines_spin_box_value_changed(value:int) -> void:

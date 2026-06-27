@@ -1,19 +1,18 @@
-[gd_scene load_steps=21 format=3 uid="uid://boss0elbx5bkd"]
+[gd_scene load_steps=16 format=3 uid="uid://boss0elbx5bkd"]
 
 [ext_resource type="Shader" uid="uid://dlqmftebtvtws" path="res://assets/shaders/space_effect.gdshader" id="1_td76n"]
 [ext_resource type="Texture2D" uid="uid://bm0f5injvb83i" path="res://assets/sprites/backgrounds/planet.png" id="2_01cdn"]
 [ext_resource type="PackedScene" uid="uid://cy7o8s575kcm7" path="res://assets/scenes/player.tscn" id="2_fbo41"]
-[ext_resource type="Script" uid="uid://bsm1p7h4p5i3q" path="res://assets/scripts/player/abilities/ability.gd" id="4_mh50d"]
-[ext_resource type="Script" uid="uid://oykae3gjh2nd" path="res://assets/scripts/player/abilities/basic_attack_ability.gd" id="5_6ddyr"]
-[ext_resource type="Script" uid="uid://cwns6ni7kinlh" path="res://assets/scripts/player/abilities/basic_ability_2.gd" id="6_g4tfb"]
-[ext_resource type="Script" uid="uid://dynfyet10ksbt" path="res://assets/scripts/player/abilities/basic_ability_1.gd" id="7_6ddyr"]
-[ext_resource type="PackedScene" uid="uid://b8jt8dmy21e" path="res://assets/scenes/horned_enemy.tscn" id="7_mh50d"]
+[ext_resource type="Script" uid="uid://bsm1p7h4p5i3q" path="res://assets/scripts/player/abilities/ability.gd" id="4_6ddyr"]
+[ext_resource type="Script" uid="uid://oykae3gjh2nd" path="res://assets/scripts/player/abilities/basic_attack_ability.gd" id="5_g4tfb"]
+[ext_resource type="Script" uid="uid://cwns6ni7kinlh" path="res://assets/scripts/player/abilities/basic_ability_2.gd" id="6_7wgpu"]
+[ext_resource type="PackedScene" uid="uid://bjptk35p5s344" path="res://assets/scenes/robot_enemy.tscn" id="8_g4tfb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sjlfm"]
 shader = ExtResource("1_td76n")
 shader_parameter/time_scale = 0.1
 shader_parameter/star_density = 128.0
-shader_parameter/quantize_resolution = Vector2(480, 270)
+shader_parameter/quantize_resolution = Vector2(320, 240)
 shader_parameter/direction = Vector2(-1, 1)
 shader_parameter/background_colour = Color(0, 0, 0, 1)
 shader_parameter/background_texture = ExtResource("2_01cdn")
@@ -23,42 +22,26 @@ shader_parameter/monochromatic = true
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wy8fe"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_jfdlv"]
-b = Vector2(0, 270)
+b = Vector2(0, 242)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_wp7fb"]
-a = Vector2(480, 0)
+a = Vector2(320, 0)
 b = Vector2(0, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ypipq"]
 a = Vector2(480, 0)
-b = Vector2(480, 270)
+b = Vector2(480, 244)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_bpnd8"]
 a = Vector2(0, 270)
-b = Vector2(480, 270)
+b = Vector2(320, 270)
 
 [sub_resource type="Resource" id="Resource_x4l06"]
-script = ExtResource("5_6ddyr")
-
-[sub_resource type="Resource" id="Resource_7wgpu"]
-script = ExtResource("6_g4tfb")
-metadata/_custom_type_script = "uid://cwns6ni7kinlh"
+script = ExtResource("5_g4tfb")
 
 [sub_resource type="Resource" id="Resource_q8pmi"]
-script = ExtResource("6_g4tfb")
+script = ExtResource("6_7wgpu")
 metadata/_custom_type_script = "uid://cwns6ni7kinlh"
-
-[sub_resource type="Resource" id="Resource_pn6mt"]
-script = ExtResource("6_g4tfb")
-metadata/_custom_type_script = "uid://cwns6ni7kinlh"
-
-[sub_resource type="Resource" id="Resource_g4tfb"]
-script = ExtResource("7_6ddyr")
-metadata/_custom_type_script = "uid://dynfyet10ksbt"
-
-[sub_resource type="Resource" id="Resource_dsq77"]
-script = ExtResource("7_6ddyr")
-metadata/_custom_type_script = "uid://dynfyet10ksbt"
 
 [node name="Lobby" type="Control" groups=["world"]]
 layout_mode = 3
@@ -87,23 +70,16 @@ shape = SubResource("SegmentShape2D_jfdlv")
 shape = SubResource("SegmentShape2D_wp7fb")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
+position = Vector2(-160, -1)
 shape = SubResource("SegmentShape2D_ypipq")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
+position = Vector2(0, -29)
 shape = SubResource("SegmentShape2D_bpnd8")
 
 [node name="Player" parent="." instance=ExtResource("2_fbo41")]
 position = Vector2(61, 137)
-abilities = Array[ExtResource("4_mh50d")]([SubResource("Resource_x4l06"), SubResource("Resource_7wgpu"), SubResource("Resource_q8pmi"), SubResource("Resource_pn6mt"), SubResource("Resource_g4tfb"), SubResource("Resource_dsq77")])
+abilities = Array[ExtResource("4_6ddyr")]([SubResource("Resource_x4l06"), SubResource("Resource_q8pmi")])
 
-[node name="HornedEnemy" parent="." instance=ExtResource("7_mh50d")]
-position = Vector2(243, 147)
-
-[node name="HornedEnemy2" parent="." instance=ExtResource("7_mh50d")]
-position = Vector2(317, 90)
-
-[node name="HornedEnemy3" parent="." instance=ExtResource("7_mh50d")]
-position = Vector2(188, 94)
-
-[node name="HornedEnemy4" parent="." instance=ExtResource("7_mh50d")]
-position = Vector2(444, 197)
+[node name="RobotEnemy" parent="." instance=ExtResource("8_g4tfb")]
+position = Vector2(136, 157)

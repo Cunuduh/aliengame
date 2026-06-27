@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://co7e6vohhl83m"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://co7e6vohhl83m"]
 
 [ext_resource type="Texture2D" uid="uid://b3qm7r4hb2tsg" path="res://assets/sprites/npcs/friendliness_pellet.png" id="1_5lm6h"]
 
@@ -19,7 +19,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iojpi")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 10.0
 }]

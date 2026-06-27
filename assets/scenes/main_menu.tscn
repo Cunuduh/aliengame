@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcxmbwn7cnrbx"]
+[gd_scene format=3 uid="uid://bcxmbwn7cnrbx"]
 
 [ext_resource type="Script" uid="uid://dobx1s1x25h6d" path="res://assets/scripts/world/main_menu.gd" id="1_b0aoo"]
 [ext_resource type="Texture2D" uid="uid://dfyo7gwd8jjh2" path="res://assets/sprites/ui/start.png" id="2_s745y"]
@@ -19,7 +19,7 @@ shader_parameter/monochromatic = true
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pwmgw"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=1822718727]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b0aoo")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=126618871]
 material = SubResource("ShaderMaterial_rqlaf")
 layout_mode = 1
 anchors_preset = 15
@@ -38,7 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_pwmgw")
 
-[node name="Start" type="TextureButton" parent="Background"]
+[node name="Start" type="TextureButton" parent="Background" unique_id=929700600]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -53,7 +53,7 @@ grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("2_s745y")
 
-[node name="Title" type="TextureRect" parent="."]
+[node name="Title" type="TextureRect" parent="." unique_id=1046294943]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
