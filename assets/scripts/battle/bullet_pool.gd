@@ -117,6 +117,7 @@ func _process(delta: float) -> void:
 				var player_node: Player = collider
 				if not player_node.invincibility:
 					player_node.stats.health -= 1
+					player_node.start_invincibility()
 				elif player_node.heal_from_damage:
 					player_node.stats.health += 1
 				player_node.collision_count += 1

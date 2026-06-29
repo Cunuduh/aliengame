@@ -1,6 +1,7 @@
 extends Sprite2D
 
-const SHAPE := preload("res://assets/resources/player_attack_projectile_shape.tres")
+const SHAPE := preload("res://assets/resources/player_fireball_projectile_shape.tres")
+const CHARGED_TEXTURE := preload("res://assets/sprites/player/fireball_charged.png")
 
 var direction := Vector2.ZERO
 var _distance_traveled := 0.0
@@ -15,8 +16,10 @@ func _init() -> void:
 	query.shape = SHAPE
 	query.collide_with_bodies = true
 	query.collision_mask = 1 << 2
-func launch(target: Vector2, dist: int) -> void:
+func launch(target: Vector2, dist: int, charged := false) -> void:
 	visible = true
+	if charged:
+		texture = CHARGED_TEXTURE
 	_max_distance = dist
 	direction = target - global_position
 	rotation = direction.angle()

@@ -44,6 +44,8 @@ var ability_cooldowns: Array[float]
 var ghost_count := 10
 var ghost_data: Array[Dictionary] = []
 
+var _soul_tween: Tween
+
 func _ready() -> void:
 	Input.set_use_accumulated_input(false)
 	soul.visible = false
@@ -210,9 +212,29 @@ func _create_ability_states(ability: Ability, index: int) -> void:
 	battling_node._sub_states.append(ability_node)
 
 func start_invincibility() -> void:
+	if invincibility:
+		return
 	invincibility = true
+	_show_soul_blink()
 	await get_tree().create_timer(0.5).timeout
 	invincibility = false
+	_fade_soul()
+
+func _show_soul_blink() -> void:
+	if _soul_tween and _soul_tween.is_valid():
+		_soul_tween.kill()
+	soul.visible = true
+	soul.modulate.a = 1.0
+	_soul_tween = create_tween().set_loops()
+	_soul_tween.tween_property(soul, "modulate:a", 0.15, 0.125)
+	_soul_tween.tween_property(soul, "modulate:a", 1.0, 0.125)
+
+func _fade_soul() -> void:
+	if _soul_tween and _soul_tween.is_valid():
+		_soul_tween.kill()
+	_soul_tween = create_tween()
+	_soul_tween.tween_property(soul, "modulate:a", 0.0, 0.3)
+	_soul_tween.tween_callback(func() -> void: soul.visible = false)
 
 func process_collisions() -> void:
 	overworld_query.transform = global_transform
@@ -391,7 +413,7 @@ func _handle_battle_movement(delta: float) -> Vector2:
 func _on_battling_state_entered() -> void:
 	in_battle = true
 	sprite.modulate = Color(1, 1, 1, 0.5)
-	soul.visible = true
+	soul.visible = false
 	overworld_collision.set_deferred("disabled", true)
 	battle_collision.set_deferred("disabled", false)
 	overworld_query.collision_mask = 0
@@ -441,14 +463,15 @@ func _on_battling_state_unhandled_input(event: InputEvent) -> void:
 		elif event.pressed:
 			if event.is_action_pressed("slow"):
 				speed = 30.0
-			elif event.is_action_released("slow"):
-				speed = 60.0
 			for i in range(abilities.size()):
 				if ability_cooldowns[i] == 0:
 					var action_name := "attack" if i == 0 else "ability_%d" % (i)
 					if event.is_action_pressed(action_name):
 						state_chart.send_event("use_%s-%d" % [abilities[i].name, i])
 						break
+		elif not event.pressed:
+			if event.is_action_released("slow"):
+				speed = 60.0
 
 func _on_battling_state_exited() -> void:
 	in_battle = false
@@ -459,7 +482,10 @@ func _on_battling_state_exited() -> void:
 	sprite.modulate = Color(1, 1, 1, 1)
 	sprite.position = Vector2.ZERO
 
+	if _soul_tween and _soul_tween.is_valid():
+		_soul_tween.kill()
 	soul.visible = false
+	soul.modulate.a = 1.0
 	battle_collision.set_deferred("disabled", true)
 	if stats.health <= 0:
 		BulletPool.clear_bullets()
@@ -477,9 +503,11 @@ func _execute_ability(index: int) -> void:
 	# ignore warnings about redundant await because the ability functions might be async
 	if index >= 0 and index < abilities.size():
 		var ability := abilities[index]
+		@warning_ignore_start("redundant_await")
 		await ability.pre_execute(self)
 		await ability.execute(self)
 		await ability.exit(self)
+		@warning_ignore_restore("redundant_await")
 		ability_cooldowns[index] = ability.cooldown
 		_update_battle_sprite()
 

@@ -1,13 +1,13 @@
 extends Ability
-class_name BasicAbility2
+class_name Dash
 
 var override_velocity := Vector2.ZERO
 
 func _init() -> void:
 	cooldown = 7.5
-	name = "basic_ability_2"
+	name = "dash"
 	current_state = "cast"
-	icon = preload("res://assets/sprites/ui/battle/player/basic_ability_2_icon.png")
+	icon = preload("res://assets/sprites/ui/battle/player/dash_icon.png")
 
 func pre_execute(player: Player) -> void:
 	if player.velocity.length() == 0:
@@ -16,13 +16,16 @@ func pre_execute(player: Player) -> void:
 		override_velocity = Vector2(cos(snapped_angle), sin(snapped_angle)) * direction.length()
 
 func execute(player: Player) -> void:
-	var dash_distance := 150.0
-	var dash_speed := 750.0
+	var dash_distance := 100.0
+	var dash_speed := 250.0
 	var direction := player.velocity.normalized()
 	if player.velocity.length() == 0:
 		var snapped_angle := roundi(player.closest_enemy_position.direction_to(player.global_position).angle() / PI * 4) * PI / 4
 		direction = Vector2(cos(snapped_angle), sin(snapped_angle))
 		
+	player.locked_animation = true
+	update_current_anim(direction, player)
+
 	var target_pos := player.global_position + (direction * dash_distance)
 	var space_state := player.get_world_2d().direct_space_state
 	var query := PhysicsRayQueryParameters2D.create(player.global_position, target_pos)
@@ -51,5 +54,6 @@ func execute(player: Player) -> void:
 		await player.get_tree().create_timer(dash_duration / player.ghost_count).timeout
 
 	player.invincibility = false
+	player.locked_animation = false
 	var idx := player.get_ability_index(self)
 	player.state_chart.send_event("end_%s-%d" % [name, idx])

@@ -1,11 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://boss0elbx5bkd"]
+[gd_scene format=3 uid="uid://boss0elbx5bkd"]
 
 [ext_resource type="Shader" uid="uid://dlqmftebtvtws" path="res://assets/shaders/space_effect.gdshader" id="1_td76n"]
 [ext_resource type="Texture2D" uid="uid://bm0f5injvb83i" path="res://assets/sprites/backgrounds/planet.png" id="2_01cdn"]
 [ext_resource type="PackedScene" uid="uid://cy7o8s575kcm7" path="res://assets/scenes/player.tscn" id="2_fbo41"]
 [ext_resource type="Script" uid="uid://bsm1p7h4p5i3q" path="res://assets/scripts/player/abilities/ability.gd" id="4_6ddyr"]
-[ext_resource type="Script" uid="uid://oykae3gjh2nd" path="res://assets/scripts/player/abilities/basic_attack_ability.gd" id="5_g4tfb"]
-[ext_resource type="Script" uid="uid://cwns6ni7kinlh" path="res://assets/scripts/player/abilities/basic_ability_2.gd" id="6_7wgpu"]
+[ext_resource type="Script" uid="uid://oykae3gjh2nd" path="res://assets/scripts/player/abilities/fireball.gd" id="5_g4tfb"]
+[ext_resource type="Script" uid="uid://nrlsmxv85h1f" path="res://assets/scripts/player/abilities/dash.gd" id="6_7wgpu"]
+[ext_resource type="Script" uid="uid://dynfyet10ksbt" path="res://assets/scripts/player/abilities/basic_ability_1.gd" id="7_g4tfb"]
 [ext_resource type="PackedScene" uid="uid://bjptk35p5s344" path="res://assets/scenes/robot_enemy.tscn" id="8_g4tfb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sjlfm"]
@@ -43,7 +44,11 @@ script = ExtResource("5_g4tfb")
 script = ExtResource("6_7wgpu")
 metadata/_custom_type_script = "uid://cwns6ni7kinlh"
 
-[node name="Lobby" type="Control" groups=["world"]]
+[sub_resource type="Resource" id="Resource_0bskb"]
+script = ExtResource("7_g4tfb")
+metadata/_custom_type_script = "uid://dynfyet10ksbt"
+
+[node name="Lobby" type="Control" unique_id=1716468418 groups=["world"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,7 +56,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="." groups=["world"]]
+[node name="Background" type="ColorRect" parent="." unique_id=1745563447 groups=["world"]]
 material = SubResource("ShaderMaterial_sjlfm")
 layout_mode = 1
 anchors_preset = 15
@@ -60,26 +65,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["world"]]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=704546595 groups=["world"]]
 physics_material_override = SubResource("PhysicsMaterial_wy8fe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1212899515 groups=["world"]]
 shape = SubResource("SegmentShape2D_jfdlv")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1145973090 groups=["world"]]
 shape = SubResource("SegmentShape2D_wp7fb")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=2130661281 groups=["world"]]
 position = Vector2(-160, -1)
 shape = SubResource("SegmentShape2D_ypipq")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=309771633 groups=["world"]]
 position = Vector2(0, -29)
 shape = SubResource("SegmentShape2D_bpnd8")
 
-[node name="Player" parent="." instance=ExtResource("2_fbo41")]
+[node name="Player" parent="." unique_id=434888561 instance=ExtResource("2_fbo41")]
 position = Vector2(61, 137)
-abilities = Array[ExtResource("4_6ddyr")]([SubResource("Resource_x4l06"), SubResource("Resource_q8pmi")])
+abilities = Array[ExtResource("4_6ddyr")]([SubResource("Resource_x4l06"), SubResource("Resource_q8pmi"), SubResource("Resource_0bskb")])
 
-[node name="RobotEnemy" parent="." instance=ExtResource("8_g4tfb")]
+[node name="RobotEnemy" parent="." unique_id=1177118878 instance=ExtResource("8_g4tfb")]
 position = Vector2(136, 157)
