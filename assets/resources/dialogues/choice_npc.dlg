@@ -1,0 +1,24 @@
+# Branching dialogue demo for testing_room.tscn.
+# "== name" defines a label, "-> name" jumps to it ("end" ends the dialogue),
+# "* TEXT -> name" is a choice option; an option without "->" falls through.
+test: DLG_CHOICE_INTRO
+
+== ask
+* DLG_CHOICE_OPT_NICE -> nice
+* DLG_CHOICE_OPT_MEAN -> mean
+* DLG_CHOICE_OPT_BYE -> bye
+
+== nice
+test: DLG_CHOICE_NICE
+-> again
+
+== mean
+test: DLG_CHOICE_MEAN
+-> again
+
+== again
+test: DLG_CHOICE_AGAIN
+-> ask
+
+== bye
+test: DLG_CHOICE_BYE

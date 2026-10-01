@@ -1,0 +1,61 @@
+keys,en,fr_CA
+PARTY,PARTY,ÉQUIPE
+ITEMS,ITEMS,OBJETS
+CONFIG,CONFIG,CONFIG
+CONTROLS,CONTROLS,COMMANDES
+KEYBINDS,KEYBINDS,TOUCHES
+VOLUME,VOLUME,VOLUME
+LANGUAGE,LANGUAGE,LANGUE
+QUIT,QUIT,QUITTER
+INTERACT,INTERACT,INTERAGIR
+CANCEL,CANCEL,ANNULER
+MENU,MENU,MENU
+ATTACK,ATTACK,ATTAQUE
+TURN ORDER,TURN ORDER,ORDRE DES TOURS
+PRESS KEY,PRESS KEY,PRESSER UNE TOUCHE
+No items.,No items.,Aucun objet.
+Z: heal   X: back,Z: heal   X: back,Z : soigner   X : retour
+Z: use   X: back,Z: use   X: back,Z : utiliser   X : retour
+Z: select   X: back,Z: select   X: back,Z : choisir   X : retour
+Z: rebind   X: back,Z: rebind   X: back,Z : réassigner   X : retour
+HP  %d / %d,HP  %d / %d,PV  %d / %d
+ATK %d   DEF %d   AGI %d,ATK %d   DEF %d   AGI %d,ATQ %d   DÉF %d   AGI %d
+* You're surrounded!,* You're surrounded!,* Tu es encerclée!
+* You won!,* You won!,* Tu as gagné!
+* You lost...,* You lost...,* Tu as perdu...
+* You have no abilities.,* You have no abilities.,* Tu n'as aucune capacité.
+* You have no items.,* You have no items.,* Tu n'as aucun objet.
+* Not enough EN.,* Not enough EN.,* Pas assez d'EN.
+* %s holds their turn.,* %s holds their turn.,* %s garde son tour.
+* %s took %d damage!,* %s took %d damage!,* %s subit %d dégâts!
+* %s recovered %d HP!,* %s recovered %d HP!,* %s récupère %d PV!
+* %s uses %s!,* %s uses %s!,* %s utilise %s!
+* %s attacks %s!,* %s attacks %s!,* %s attaque %s!
+* %s slaps %s!,* %s slaps %s!,* %s gifle %s!
+* %s bites %s!,* %s bites %s!,* %s mord %s!
+* The party recovers %d EN!,* The party recovers %d EN!,* L'équipe récupère %d EN!
+* %s's next Link runs a step deeper!,* %s's next Link runs a step deeper!,* Le prochain Link de %s ira un cran plus loin!
+* {name}'s {stat} rose!,* {name}'s {stat} rose!,* {stat} de {name} augmente!
+* {name}'s {stat} fell!,* {name}'s {stat} fell!,* {stat} de {name} diminue!
+* {name}'s {stat} won't go any higher!,* {name}'s {stat} won't go any higher!,* {stat} de {name} ne peut plus augmenter!
+* {name}'s {stat} won't go any lower!,* {name}'s {stat} won't go any lower!,* {stat} de {name} ne peut plus diminuer!
+It applies next round.,It applies next round.,S'applique à la prochaine manche.
+attack,attack,L'attaque
+defense,defense,La défense
+agility,agility,L'agilité
+Pass Turn,Pass Turn,Passer le tour
+Change Order,Change Order,Changer l'ordre
+Fight,Fight,Combat
+Pass,Pass,Passer
+Attack,Attack,Attaque
+Wait,Wait,Attendre
+Plan,Plan,Plan
+Moves,Moves,Attaques
+%s: begin   %s: cancel,%s: begin   %s: cancel,%s : lancer   %s : annuler
+%s: inspect   %s: back,%s: inspect   %s: back,%s : examiner   %s : retour
+%s: back,%s: back,%s : retour
+HP%,HP%,PV%
+EN,EN,ÉN
+ACTION,ACTION,ACTION
+PLAN,PLAN,PLAN
+E,E,É

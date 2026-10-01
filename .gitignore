@@ -4,3 +4,6 @@
 # MacOS specific ignores
 .DS_Store
 **/._*
+room_bases/
+screen_bases/
+tools/map-massing/venv/

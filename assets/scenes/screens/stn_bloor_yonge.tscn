@@ -1,0 +1,119 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" uid="uid://cy7o8s575kcm7" path="res://assets/scenes/cora.tscn" id="90_cora"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/screens/stn_bloor_yonge.png" id="1_u3dtx"]
+[ext_resource type="Script" path="res://assets/scripts/world/station_entrance.gd" id="2_gr1fn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8c6ec"]
+size = Vector2(144, 414)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anlt7"]
+size = Vector2(64, 176)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krwju"]
+size = Vector2(192, 344)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jmvn"]
+size = Vector2(128, 446)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hccpi"]
+size = Vector2(32, 157)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slkef"]
+size = Vector2(88, 173)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq4ia"]
+size = Vector2(440, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs0ho"]
+size = Vector2(574, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yxes"]
+size = Vector2(574, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q44s0"]
+size = Vector2(32, 810)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oh82p"]
+size = Vector2(32, 810)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6db7n"]
+radius = 18.0
+
+[node name="ScreenStnBloorYonge" type="Node2D" unique_id=86595738 groups=["world"]]
+y_sort_enabled = true
+metadata/screen_key = "stn_bloor_yonge"
+
+[node name="Plate" type="Sprite2D" parent="." unique_id=1156743670]
+texture_filter = 1
+texture = ExtResource("1_u3dtx")
+centered = false
+
+[node name="Solids" type="StaticBody2D" parent="." unique_id=1331715359]
+
+[node name="Solid0" type="CollisionShape2D" parent="Solids" unique_id=1552196309]
+position = Vector2(354, 97)
+shape = SubResource("RectangleShape2D_8c6ec")
+
+[node name="Solid1" type="CollisionShape2D" parent="Solids" unique_id=448247385]
+position = Vector2(-38, 328)
+shape = SubResource("RectangleShape2D_anlt7")
+
+[node name="Solid2" type="CollisionShape2D" parent="Solids" unique_id=823420688]
+position = Vector2(90, 252)
+shape = SubResource("RectangleShape2D_krwju")
+
+[node name="Solid3" type="CollisionShape2D" parent="Solids" unique_id=1958686200]
+position = Vector2(362, 209)
+shape = SubResource("RectangleShape2D_6jmvn")
+
+[node name="Solid4" type="CollisionShape2D" parent="Solids" unique_id=283295008]
+position = Vector2(458, 361.5)
+shape = SubResource("RectangleShape2D_hccpi")
+
+[node name="Solid5" type="CollisionShape2D" parent="Solids" unique_id=1247414046]
+position = Vector2(518, 369.5)
+shape = SubResource("RectangleShape2D_slkef")
+
+[node name="Solid6" type="CollisionShape2D" parent="Solids" unique_id=411566886]
+position = Vector2(686, 648)
+shape = SubResource("RectangleShape2D_kq4ia")
+
+[node name="Bounds" type="StaticBody2D" parent="." unique_id=2035761463]
+
+[node name="Wall0" type="CollisionShape2D" parent="Bounds" unique_id=1376673315]
+position = Vector2(255, -16)
+shape = SubResource("RectangleShape2D_bs0ho")
+
+[node name="Wall1" type="CollisionShape2D" parent="Bounds" unique_id=1850965461]
+position = Vector2(255, 762)
+shape = SubResource("RectangleShape2D_4yxes")
+
+[node name="Wall2" type="CollisionShape2D" parent="Bounds" unique_id=177961734]
+position = Vector2(-16, 373)
+shape = SubResource("RectangleShape2D_q44s0")
+
+[node name="Wall3" type="CollisionShape2D" parent="Bounds" unique_id=557995306]
+position = Vector2(526, 373)
+shape = SubResource("RectangleShape2D_oh82p")
+
+[node name="Stations" type="Node2D" parent="." unique_id=486368239]
+
+[node name="Station0" type="Area2D" parent="Stations" unique_id=1150387586]
+position = Vector2(300, 534)
+collision_layer = 0
+monitorable = false
+script = ExtResource("2_gr1fn")
+
+[node name="Shape" type="CollisionShape2D" parent="Stations/Station0" unique_id=1408420841]
+shape = SubResource("CircleShape2D_6db7n")
+
+[node name="Cora" parent="." instance=ExtResource("90_cora")]
+position = Vector2(256, 534)
+
+[node name="Camera2D" type="Camera2D" parent="Cora"]
+limit_left = 0
+limit_top = 0
+limit_right = 510
+limit_bottom = 746

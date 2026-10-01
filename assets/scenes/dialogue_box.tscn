@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://t1p5p5a2g4mt"]
+
+[ext_resource type="Script" uid="uid://d4mjfhiy5vwmf" path="res://assets/scripts/dialogue/dialogue_box.gd" id="1_dlgbox"]
+[ext_resource type="Theme" uid="uid://bk27uogicxbh4" path="res://assets/themes/default_theme.tres" id="2_theme"]
+[ext_resource type="FontFile" uid="uid://cqxt1vg7vcy05" path="res://assets/fonts/cozy-quill.otf" id="3_u1vlu"]
+[ext_resource type="FontFile" uid="uid://dthx7l0pqel3o" path="res://assets/fonts/cozy-quill-bold.otf" id="4_mop83"]
+[ext_resource type="Texture2D" uid="uid://bv6tr8g380g1i" path="res://assets/sprites/ui/battle/scroll_down.png" id="5_arrow"]
+[ext_resource type="FontFile" uid="uid://crthqsswb35ge" path="res://assets/fonts/cozy-quill-italic.otf" id="5_pfoni"]
+
+[node name="DialogueBox" type="CanvasLayer" unique_id=725226810]
+process_mode = 3
+layer = 10
+script = ExtResource("1_dlgbox")
+
+[node name="Panel" type="Panel" parent="." unique_id=1561786156]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -101.0
+offset_top = -63.0
+offset_right = 101.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_theme")
+
+[node name="Text" type="RichTextLabel" parent="Panel" unique_id=2042785111]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = -8.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_u1vlu")
+theme_override_fonts/bold_font = ExtResource("4_mop83")
+theme_override_fonts/italics_font = ExtResource("5_pfoni")
+theme_override_font_sizes/normal_font_size = 9
+theme_override_font_sizes/bold_font_size = 9
+theme_override_font_sizes/bold_italics_font_size = 9
+theme_override_font_sizes/italics_font_size = 9
+theme_override_font_sizes/mono_font_size = 9
+bbcode_enabled = true
+scroll_active = false
+visible_characters = 0
+visible_characters_behavior = 1
+
+[node name="ChoicePanel" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = -95.0
+offset_right = 101.0
+offset_bottom = -65.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_theme")
+
+[node name="ChoiceList" type="VBoxContainer" parent="ChoicePanel"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = -8.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 1
+
+[node name="AdvanceIcon" type="TextureRect" parent="Panel" unique_id=1496885674]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -12.0
+offset_right = -6.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("5_arrow")
+expand_mode = 1
+stretch_mode = 5

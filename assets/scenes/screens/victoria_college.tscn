@@ -1,0 +1,147 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" uid="uid://cy7o8s575kcm7" path="res://assets/scenes/cora.tscn" id="90_cora"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/screens/victoria_college.png" id="1_cu1au"]
+[ext_resource type="Script" path="res://assets/scripts/world/station_entrance.gd" id="2_38q45"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmalr"]
+size = Vector2(224, 127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fspcm"]
+size = Vector2(48, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5t6d2"]
+size = Vector2(56, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyfux"]
+size = Vector2(144, 167)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvhpa"]
+size = Vector2(64, 158)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dg7l"]
+size = Vector2(160, 199)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jk73n"]
+size = Vector2(56, 246)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvwd7"]
+size = Vector2(56, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5w03"]
+size = Vector2(152, 141)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btbk5"]
+size = Vector2(136, 205)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgrcc"]
+size = Vector2(32, 741)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6e3i0"]
+size = Vector2(574, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ubul"]
+size = Vector2(574, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55vtk"]
+size = Vector2(32, 554)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbrx3"]
+size = Vector2(32, 554)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oapc2"]
+radius = 18.0
+
+[node name="ScreenVictoriaCollege" type="Node2D" unique_id=2135667625 groups=["world"]]
+y_sort_enabled = true
+metadata/screen_key = "victoria_college"
+
+[node name="Plate" type="Sprite2D" parent="." unique_id=921921734]
+texture_filter = 1
+texture = ExtResource("1_cu1au")
+centered = false
+
+[node name="Solids" type="StaticBody2D" parent="." unique_id=102654371]
+
+[node name="Solid0" type="CollisionShape2D" parent="Solids" unique_id=1944640443]
+position = Vector2(390, 11.5)
+shape = SubResource("RectangleShape2D_bmalr")
+
+[node name="Solid1" type="CollisionShape2D" parent="Solids" unique_id=1456834366]
+position = Vector2(46, 44)
+shape = SubResource("RectangleShape2D_fspcm")
+
+[node name="Solid2" type="CollisionShape2D" parent="Solids" unique_id=1767676803]
+position = Vector2(-70, 48)
+shape = SubResource("RectangleShape2D_5t6d2")
+
+[node name="Solid3" type="CollisionShape2D" parent="Solids" unique_id=996417857]
+position = Vector2(174, 31.5)
+shape = SubResource("RectangleShape2D_qyfux")
+
+[node name="Solid4" type="CollisionShape2D" parent="Solids" unique_id=547404715]
+position = Vector2(-10, 84)
+shape = SubResource("RectangleShape2D_yvhpa")
+
+[node name="Solid5" type="CollisionShape2D" parent="Solids" unique_id=1583661845]
+position = Vector2(254, 207.5)
+shape = SubResource("RectangleShape2D_8dg7l")
+
+[node name="Solid6" type="CollisionShape2D" parent="Solids" unique_id=500935629]
+position = Vector2(-14, 248)
+shape = SubResource("RectangleShape2D_jk73n")
+
+[node name="Solid7" type="CollisionShape2D" parent="Solids" unique_id=1709055502]
+position = Vector2(42, 332)
+shape = SubResource("RectangleShape2D_jvwd7")
+
+[node name="Solid8" type="CollisionShape2D" parent="Solids" unique_id=2084915946]
+position = Vector2(130, 420.5)
+shape = SubResource("RectangleShape2D_w5w03")
+
+[node name="Solid9" type="CollisionShape2D" parent="Solids" unique_id=2142574409]
+position = Vector2(378, 540.5)
+shape = SubResource("RectangleShape2D_btbk5")
+
+[node name="Solid10" type="CollisionShape2D" parent="Solids" unique_id=1131885711]
+position = Vector2(550, 344.5)
+shape = SubResource("RectangleShape2D_rgrcc")
+
+[node name="Bounds" type="StaticBody2D" parent="." unique_id=1802917605]
+
+[node name="Wall0" type="CollisionShape2D" parent="Bounds" unique_id=1390728927]
+position = Vector2(255, -16)
+shape = SubResource("RectangleShape2D_6e3i0")
+
+[node name="Wall1" type="CollisionShape2D" parent="Bounds" unique_id=367690973]
+position = Vector2(255, 506)
+shape = SubResource("RectangleShape2D_4ubul")
+
+[node name="Wall2" type="CollisionShape2D" parent="Bounds" unique_id=459956267]
+position = Vector2(-16, 245)
+shape = SubResource("RectangleShape2D_55vtk")
+
+[node name="Wall3" type="CollisionShape2D" parent="Bounds" unique_id=406967493]
+position = Vector2(526, 245)
+shape = SubResource("RectangleShape2D_kbrx3")
+
+[node name="Stations" type="Node2D" parent="." unique_id=1383407320]
+
+[node name="Station0" type="Area2D" parent="Stations" unique_id=410703690]
+position = Vector2(300, 302)
+collision_layer = 0
+monitorable = false
+script = ExtResource("2_38q45")
+
+[node name="Shape" type="CollisionShape2D" parent="Stations/Station0" unique_id=887942269]
+shape = SubResource("CircleShape2D_oapc2")
+
+[node name="Cora" parent="." instance=ExtResource("90_cora")]
+position = Vector2(256, 302)
+
+[node name="Camera2D" type="Camera2D" parent="Cora"]
+limit_left = 0
+limit_top = 0
+limit_right = 510
+limit_bottom = 490

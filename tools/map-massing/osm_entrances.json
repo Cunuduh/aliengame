@@ -1,0 +1,7691 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-07-25T04:01:59Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 29658570,
+  "lat": 43.6672864,
+  "lon": -79.4028921,
+  "tags": {
+    "entrance": "emergency"
+  }
+},
+{
+  "type": "node",
+  "id": 55808839,
+  "lat": 43.6617357,
+  "lon": -79.4009790,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 59651831,
+  "lat": 43.6511113,
+  "lon": -79.3976056,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 60033232,
+  "lat": 43.6623318,
+  "lon": -79.3961596,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 60715211,
+  "lat": 43.6672191,
+  "lon": -79.4043024,
+  "tags": {
+    "colour": "green",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Spadina Road West Entrance",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 87475432,
+  "lat": 43.6594108,
+  "lon": -79.3916189,
+  "tags": {
+    "entrance": "yes",
+    "note": "Closed"
+  }
+},
+{
+  "type": "node",
+  "id": 89447050,
+  "lat": 43.6556261,
+  "lon": -79.3835112,
+  "tags": {
+    "access": "customers",
+    "addr:floor": ";G",
+    "entrance": "main",
+    "level": "0;0",
+    "name": "To Canadian Tire",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 89447064,
+  "lat": 43.6601140,
+  "lon": -79.3899770,
+  "tags": {
+    "check_date:wheelchair": "2023-02-03",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "University / College Northeast Entrance",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 89447066,
+  "lat": 43.6596485,
+  "lon": -79.3900198,
+  "tags": {
+    "check_date:wheelchair": "2023-07-17",
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "University / College Southeast Entrance",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 89447068,
+  "lat": 43.6596520,
+  "lon": -79.3908255,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "University / College Southwest Entrance",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 89447072,
+  "lat": 43.6600199,
+  "lon": -79.3907873,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "University / College Northwest Entrance",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 272323963,
+  "lat": 43.6699667,
+  "lon": -79.3854653,
+  "tags": {
+    "entrance": "yes",
+    "name": "Bloor-Yonge",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 278094017,
+  "lat": 43.6614680,
+  "lon": -79.3827691,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "Yonge / Carlton Northeast Corner",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 281660485,
+  "lat": 43.6507643,
+  "lon": -79.3860362,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "Four Seasons Entrance",
+    "note": "In Four Seasons Centre",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 281660487,
+  "lat": 43.6509935,
+  "lon": -79.3869651,
+  "tags": {
+    "check_date:wheelchair": "2023-07-13",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "University / Queen, Northwest Entrance",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 281660489,
+  "lat": 43.6506398,
+  "lon": -79.3868386,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "University / Queen, Southwest Entrance",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 281669666,
+  "lat": 43.6545798,
+  "lon": -79.3811747,
+  "tags": {
+    "description": "Trinity Square entrance",
+    "entrance": "yes",
+    "level": "0",
+    "name": "CF Toronto Eaton Centre",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 293309245,
+  "lat": 43.6526393,
+  "lon": -79.3787938,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Entrance by 2 Queen Street East",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 293309381,
+  "lat": 43.6535532,
+  "lon": -79.3800134,
+  "tags": {
+    "description": "Underground entrance from Queen Station north area via PATH",
+    "entrance": "yes",
+    "level": "-2",
+    "name": "CF Toronto Eaton Centre (PATH)",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 293309447,
+  "lat": 43.6562289,
+  "lon": -79.3805600,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Sankofa Square Entrance",
+    "note": "Dundas Station",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 293309464,
+  "lat": 43.6524492,
+  "lon": -79.3798007,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Yonge / Queen Northwest Corner",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 304888566,
+  "lat": 43.6667046,
+  "lon": -79.3928993,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 305011584,
+  "lat": 43.6563268,
+  "lon": -79.3814100,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Entrance from Atrium on Bay (via PATH)",
+    "note": "Dundas Station",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 306724444,
+  "lat": 43.6513296,
+  "lon": -79.3838211,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 307371519,
+  "lat": 43.6625125,
+  "lon": -79.3975720,
+  "tags": {
+    "addr:housenumber": "73",
+    "addr:postcode": "M5S 2E5",
+    "addr:street": "St George Street",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 332338401,
+  "lat": 43.6664896,
+  "lon": -79.3913228,
+  "tags": {
+    "entrance": "main",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 333554744,
+  "lat": 43.6650777,
+  "lon": -79.3955463,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 333554746,
+  "lat": 43.6664368,
+  "lon": -79.3947921,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 339275045,
+  "lat": 43.6670451,
+  "lon": -79.3927455,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 340165033,
+  "lat": 43.6622922,
+  "lon": -79.4000890,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 344196076,
+  "lat": 43.6620067,
+  "lon": -79.3996327,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "300",
+    "addr:postcode": "M5S 3J6",
+    "addr:street": "Huron Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 344196088,
+  "lat": 43.6624002,
+  "lon": -79.4004095,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "21",
+    "addr:street": "Classic Avenue",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 344196093,
+  "lat": 43.6614843,
+  "lon": -79.4009419,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "40",
+    "addr:street": "Willcocks Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 344196105,
+  "lat": 43.6616366,
+  "lon": -79.4004391,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "30",
+    "addr:street": "Willcocks Street",
+    "entrance": "yes",
+    "note": "Residence rooms accessible via this entrance have mailing address 20 Willcocks Street (since mailboxes are there); door locked after 9pm and on weekends"
+  }
+},
+{
+  "type": "node",
+  "id": 344196111,
+  "lat": 43.6617551,
+  "lon": -79.4000617,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "20",
+    "addr:street": "Willcocks Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 344202170,
+  "lat": 43.6621550,
+  "lon": -79.3940795,
+  "tags": {
+    "entrance": "main",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 349409891,
+  "lat": 43.6684741,
+  "lon": -79.3798730,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 391008076,
+  "lat": 43.6604571,
+  "lon": -79.3849561,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 400926970,
+  "lat": 43.6531552,
+  "lon": -79.3793938,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "193",
+    "addr:street": "Yonge Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 400989643,
+  "lat": 43.6608394,
+  "lon": -79.3830738,
+  "tags": {
+    "entrance": "yes",
+    "level": "0",
+    "name": "Carlu"
+  }
+},
+{
+  "type": "node",
+  "id": 401518634,
+  "lat": 43.6524414,
+  "lon": -79.3800659,
+  "tags": {
+    "access": "no",
+    "entrance": "yes",
+    "note": "Entrance closed as of 2025-11-03"
+  }
+},
+{
+  "type": "node",
+  "id": 401518635,
+  "lat": 43.6521582,
+  "lon": -79.3800399,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 416772904,
+  "lat": 43.6665462,
+  "lon": -79.4034163,
+  "tags": {
+    "entrance": "emergency"
+  }
+},
+{
+  "type": "node",
+  "id": 418970515,
+  "lat": 43.6699515,
+  "lon": -79.3924437,
+  "tags": {
+    "check_date:wheelchair": "2023-06-22",
+    "colour": "green",
+    "entrance": "yes",
+    "name": "Cumberland Street",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 519717386,
+  "lat": 43.6516989,
+  "lon": -79.3817037,
+  "tags": {
+    "description": "Access to Thomson Building concourse from Bay and Queen Sts",
+    "entrance": "yes",
+    "level": "1",
+    "name": "Thomson Building (PATH access)",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 547845269,
+  "lat": 43.6533590,
+  "lon": -79.3824260,
+  "tags": {
+    "entrance": "main",
+    "level": "0",
+    "name": "483 Bay Street"
+  }
+},
+{
+  "type": "node",
+  "id": 606308644,
+  "lat": 43.6544490,
+  "lon": -79.3885054,
+  "tags": {
+    "automatic": "no",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "438 University Avenue Entrance",
+    "note": "from Air Miles Tower private property - no TTC logo sign",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 616551749,
+  "lat": 43.6612603,
+  "lon": -79.3827044,
+  "tags": {
+    "check_date:wheelchair": "2023-09-18",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "Yonge / Carlton Southeast Corner",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 703096130,
+  "lat": 43.6633418,
+  "lon": -79.3954613,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 703096134,
+  "lat": 43.6626633,
+  "lon": -79.3961008,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 703096142,
+  "lat": 43.6625481,
+  "lon": -79.3954982,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 703096144,
+  "lat": 43.6628211,
+  "lon": -79.3950285,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 703096400,
+  "lat": 43.6631876,
+  "lon": -79.3947383,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 703098879,
+  "lat": 43.6625627,
+  "lon": -79.3989974,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 703098881,
+  "lat": 43.6610681,
+  "lon": -79.3936681,
+  "tags": {
+    "door": "yes",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 703098883,
+  "lat": 43.6607490,
+  "lon": -79.3952397,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 703098884,
+  "lat": 43.6626765,
+  "lon": -79.3984390,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 703098885,
+  "lat": 43.6635528,
+  "lon": -79.3947641,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 703098887,
+  "lat": 43.6622593,
+  "lon": -79.3981763,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 703098888,
+  "lat": 43.6607357,
+  "lon": -79.3982189,
+  "tags": {
+    "door": "hinged",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 703099081,
+  "lat": 43.6630379,
+  "lon": -79.4000175,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 703099083,
+  "lat": 43.6646866,
+  "lon": -79.3993805,
+  "tags": {
+    "access": "private",
+    "entrance": "yes",
+    "note": "closed due to construction"
+  }
+},
+{
+  "type": "node",
+  "id": 703099084,
+  "lat": 43.6645380,
+  "lon": -79.3988982,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 703099085,
+  "lat": 43.6642316,
+  "lon": -79.3992270,
+  "tags": {
+    "access": "private",
+    "entrance": "yes",
+    "note": "closed due to construction"
+  }
+},
+{
+  "type": "node",
+  "id": 703099520,
+  "lat": 43.6673459,
+  "lon": -79.3925949,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 730029013,
+  "lat": 43.6604203,
+  "lon": -79.3931401,
+  "tags": {
+    "entrance": "yes",
+    "level": "1"
+  }
+},
+{
+  "type": "node",
+  "id": 733203395,
+  "lat": 43.6607649,
+  "lon": -79.3952002,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 733203396,
+  "lat": 43.6603573,
+  "lon": -79.3950093,
+  "tags": {
+    "entrance": "yes",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 733203398,
+  "lat": 43.6597038,
+  "lon": -79.3954353,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 733203400,
+  "lat": 43.6596894,
+  "lon": -79.3952521,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 733203401,
+  "lat": 43.6601339,
+  "lon": -79.3963551,
+  "tags": {
+    "entrance": "yes",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 733203402,
+  "lat": 43.6599027,
+  "lon": -79.3948503,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 733203403,
+  "lat": 43.6598633,
+  "lon": -79.3964044,
+  "tags": {
+    "entrance": "main",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 733206244,
+  "lat": 43.6637604,
+  "lon": -79.3941189,
+  "tags": {
+    "entrance": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 733206245,
+  "lat": 43.6596665,
+  "lon": -79.3969070,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 733206246,
+  "lat": 43.6619393,
+  "lon": -79.3977699,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 733206247,
+  "lat": 43.6637773,
+  "lon": -79.3951272,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 748721416,
+  "lat": 43.6599219,
+  "lon": -79.3941456,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 751970431,
+  "lat": 43.6648585,
+  "lon": -79.3993333,
+  "tags": {
+    "access": "private",
+    "entrance": "yes",
+    "note": "closed due to construction"
+  }
+},
+{
+  "type": "node",
+  "id": 751970432,
+  "lat": 43.6641305,
+  "lon": -79.3990911,
+  "tags": {
+    "access": "private",
+    "entrance": "yes",
+    "note": "closed due to construction"
+  }
+},
+{
+  "type": "node",
+  "id": 752192449,
+  "lat": 43.6633080,
+  "lon": -79.4014402,
+  "tags": {
+    "entrance": "yes",
+    "name": "Pedestrian entrance to underground parking"
+  }
+},
+{
+  "type": "node",
+  "id": 754100632,
+  "lat": 43.6671200,
+  "lon": -79.3881937,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 766976263,
+  "lat": 43.6605073,
+  "lon": -79.3950535,
+  "tags": {
+    "entrance": "exit",
+    "note": "Exit from room SF1101"
+  }
+},
+{
+  "type": "node",
+  "id": 766976285,
+  "lat": 43.6598492,
+  "lon": -79.3951129,
+  "tags": {
+    "entrance": "yes",
+    "level": "1"
+  }
+},
+{
+  "type": "node",
+  "id": 766976286,
+  "lat": 43.6597234,
+  "lon": -79.3950358,
+  "tags": {
+    "entrance": "yes",
+    "level": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 768963196,
+  "lat": 43.6513889,
+  "lon": -79.3826190,
+  "tags": {
+    "description": "Queen St east side entrance",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Sheraton Centre",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 769482181,
+  "lat": 43.6588958,
+  "lon": -79.3852106,
+  "tags": {
+    "access": "yes",
+    "addr:housenumber": "720",
+    "addr:street": "Bay Street",
+    "door": "yes",
+    "entrance": "main",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 769483559,
+  "lat": 43.6581023,
+  "lon": -79.3879399,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "150",
+    "addr:street": "Gerrard Street West",
+    "entrance": "yes",
+    "name": "Toronto General Hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 769503592,
+  "lat": 43.6542693,
+  "lon": -79.3876895,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "425",
+    "addr:street": "University Avenue",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 769503593,
+  "lat": 43.6538020,
+  "lon": -79.3874927,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "393",
+    "addr:street": "University Avenue",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 772957911,
+  "lat": 43.6592941,
+  "lon": -79.3987855,
+  "tags": {
+    "entrance": "yes",
+    "name": "CAMH Huron Street Entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 773000493,
+  "lat": 43.6659383,
+  "lon": -79.3989617,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 773005421,
+  "lat": 43.6621322,
+  "lon": -79.3914871,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "1",
+    "addr:postcode": "M7A 1A1",
+    "addr:street": "Queen's Park Crescent",
+    "entrance": "main",
+    "min_height": "0.5"
+  }
+},
+{
+  "type": "node",
+  "id": 773005422,
+  "lat": 43.6635817,
+  "lon": -79.4004292,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 773005423,
+  "lat": 43.6631829,
+  "lon": -79.3993914,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 773005424,
+  "lat": 43.6682506,
+  "lon": -79.3949170,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 773005485,
+  "lat": 43.6558252,
+  "lon": -79.3825930,
+  "tags": {
+    "description": "Dundas St entrance (near Ted Rogers School of Management)",
+    "entrance": "yes",
+    "level": "0",
+    "name": "CF Toronto Eaton Centre",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 773005490,
+  "lat": 43.6534007,
+  "lon": -79.3809085,
+  "tags": {
+    "description": "James / Albert entrance",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "CF Toronto Eaton Centre",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 773005492,
+  "lat": 43.6558714,
+  "lon": -79.3823798,
+  "tags": {
+    "entrance": "main",
+    "name": "Escalators to Ted Rogers School of Management"
+  }
+},
+{
+  "type": "node",
+  "id": 773005496,
+  "lat": 43.6546891,
+  "lon": -79.3806911,
+  "tags": {
+    "description": "Yonge St Central-north entrance",
+    "entrance": "yes",
+    "level": "0",
+    "name": "CF Toronto Eaton Centre",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 773005586,
+  "lat": 43.6568197,
+  "lon": -79.3809820,
+  "tags": {
+    "entrance": "yes",
+    "note": "formerly to Future Shop"
+  }
+},
+{
+  "type": "node",
+  "id": 773005587,
+  "lat": 43.6564653,
+  "lon": -79.3808184,
+  "tags": {
+    "access": "customers",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 773005588,
+  "lat": 43.6565087,
+  "lon": -79.3805463,
+  "tags": {
+    "entrance": "main",
+    "level": "0",
+    "name": "The Tenor",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 773005590,
+  "lat": 43.6523031,
+  "lon": -79.3816025,
+  "tags": {
+    "entrance": "main",
+    "min_height": "2.5"
+  }
+},
+{
+  "type": "node",
+  "id": 773398430,
+  "lat": 43.6653436,
+  "lon": -79.3882644,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 773398432,
+  "lat": 43.6652684,
+  "lon": -79.3886990,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 773398433,
+  "lat": 43.6651607,
+  "lon": -79.3890927,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 774094109,
+  "lat": 43.6583202,
+  "lon": -79.3989716,
+  "tags": {
+    "door": "hinged",
+    "entrance": "main",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 774094111,
+  "lat": 43.6586836,
+  "lon": -79.3982169,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 774094112,
+  "lat": 43.6591342,
+  "lon": -79.3983790,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 779168881,
+  "lat": 43.6620699,
+  "lon": -79.3985351,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 783499439,
+  "lat": 43.6585909,
+  "lon": -79.3931079,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 807336387,
+  "lat": 43.6633698,
+  "lon": -79.3988780,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 828418148,
+  "lat": 43.6678924,
+  "lon": -79.3968555,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "299",
+    "addr:street": "Bloor Street West",
+    "entrance": "yes",
+    "note": "To Varsity Stadium"
+  }
+},
+{
+  "type": "node",
+  "id": 828418474,
+  "lat": 43.6666707,
+  "lon": -79.3996964,
+  "tags": {
+    "entrance": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 847509172,
+  "lat": 43.6647250,
+  "lon": -79.3902421,
+  "tags": {
+    "entrance": "yes",
+    "note": "rear door"
+  }
+},
+{
+  "type": "node",
+  "id": 847509173,
+  "lat": 43.6648239,
+  "lon": -79.3902860,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 847509174,
+  "lat": 43.6650525,
+  "lon": -79.3896638,
+  "tags": {
+    "entrance": "main",
+    "note": "small wheelchair ramp hidden at west end",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 854322016,
+  "lat": 43.6603297,
+  "lon": -79.3956244,
+  "tags": {
+    "entrance": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 854322045,
+  "lat": 43.6602947,
+  "lon": -79.3963965,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 856205360,
+  "lat": 43.6621642,
+  "lon": -79.3983094,
+  "tags": {
+    "entrance": "emergency",
+    "note": "Back door no entry"
+  }
+},
+{
+  "type": "node",
+  "id": 860566114,
+  "lat": 43.6696948,
+  "lon": -79.3853610,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 864223764,
+  "lat": 43.6532124,
+  "lon": -79.3861451,
+  "tags": {
+    "entrance": "yes",
+    "note": "please use revolving doors"
+  }
+},
+{
+  "type": "node",
+  "id": 928546802,
+  "lat": 43.6628250,
+  "lon": -79.3987666,
+  "tags": {
+    "entrance": "yes",
+    "note": "To basement (labeled Ground floor by signage)"
+  }
+},
+{
+  "type": "node",
+  "id": 929627699,
+  "lat": 43.6657827,
+  "lon": -79.3972246,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 937247649,
+  "lat": 43.6581626,
+  "lon": -79.3788849,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 937247652,
+  "lat": 43.6593726,
+  "lon": -79.3794679,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 937247655,
+  "lat": 43.6593265,
+  "lon": -79.3796814,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 937247665,
+  "lat": 43.6580932,
+  "lon": -79.3792496,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 938003293,
+  "lat": 43.6622436,
+  "lon": -79.3941153,
+  "tags": {
+    "access": "private",
+    "entrance": "yes",
+    "note": "Entrance/exit for wheelchairs only and emergency exit - alarm will sound",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 938027043,
+  "lat": 43.6688216,
+  "lon": -79.3924822,
+  "tags": {
+    "door": "hinged",
+    "entrance": "yes",
+    "level": "0",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 949014800,
+  "lat": 43.6667821,
+  "lon": -79.3919042,
+  "tags": {
+    "entrance": "main",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 949014803,
+  "lat": 43.6664733,
+  "lon": -79.3926282,
+  "tags": {
+    "entrance": "yes",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 949014805,
+  "lat": 43.6665542,
+  "lon": -79.3921252,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 955610642,
+  "lat": 43.6686924,
+  "lon": -79.3888226,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1114051482,
+  "lat": 43.6560837,
+  "lon": -79.3811012,
+  "tags": {
+    "description": "Underground entrance from Dundas Station via PATH (on level 2)",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "CF Toronto Eaton Centre (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1114068269,
+  "lat": 43.6561359,
+  "lon": -79.3810543,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-2",
+    "name": "Entrance from Eaton Centre L1 (via PATH)",
+    "note": "Dundas Station",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1114068278,
+  "lat": 43.6559415,
+  "lon": -79.3808933,
+  "tags": {
+    "description": "Yonge / Dundas entrance",
+    "entrance": "main",
+    "level": "0",
+    "name": "CF Toronto Eaton Centre",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1114130819,
+  "lat": 43.6547005,
+  "lon": -79.3895740,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "250",
+    "addr:street": "Dundas Street West",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 1114297905,
+  "lat": 43.6591663,
+  "lon": -79.3992192,
+  "tags": {
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 1114297906,
+  "lat": 43.6589903,
+  "lon": -79.3990336,
+  "tags": {
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 1128902823,
+  "lat": 43.6688967,
+  "lon": -79.3877117,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1215001167,
+  "lat": 43.6657702,
+  "lon": -79.3821880,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 1215010170,
+  "lat": 43.6651942,
+  "lon": -79.3828705,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1224687765,
+  "lat": 43.6693591,
+  "lon": -79.3938565,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "150",
+    "addr:street": "Bloor Street West",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 1224701186,
+  "lat": 43.6693621,
+  "lon": -79.3917051,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "102",
+    "addr:street": "Bloor Street West",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1358241962,
+  "lat": 43.6504629,
+  "lon": -79.3925950,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "18",
+    "addr:street": "Beverley Street",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 1370525081,
+  "lat": 43.6629831,
+  "lon": -79.3862917,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "887",
+    "addr:street": "Bay Street",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 1385339540,
+  "lat": 43.6546048,
+  "lon": -79.3879439,
+  "tags": {
+    "automatic": "no",
+    "check_date:wheelchair": "2025-07-30",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "University / Dundas, Southeast corner",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 1402832494,
+  "lat": 43.6683970,
+  "lon": -79.3963167,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1403960963,
+  "lat": 43.6622167,
+  "lon": -79.4004223,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1404153725,
+  "lat": 43.6694668,
+  "lon": -79.4009653,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1432347929,
+  "lat": 43.6605571,
+  "lon": -79.4005001,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1432352439,
+  "lat": 43.6607125,
+  "lon": -79.3983312,
+  "tags": {
+    "door": "hinged",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 1562051540,
+  "lat": 43.6542805,
+  "lon": -79.3798695,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "229",
+    "addr:street": "Yonge Street",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 1601737354,
+  "lat": 43.6687027,
+  "lon": -79.3949054,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 1601737359,
+  "lat": 43.6689401,
+  "lon": -79.3951020,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1633421937,
+  "lat": 43.6597186,
+  "lon": -79.3993673,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "33",
+    "addr:street": "Ursula Franklin Street",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 1707778363,
+  "lat": 43.6679512,
+  "lon": -79.3983912,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1721865582,
+  "lat": 43.6610665,
+  "lon": -79.3896369,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 1721866194,
+  "lat": 43.6631443,
+  "lon": -79.3919179,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 1870660386,
+  "lat": 43.6571313,
+  "lon": -79.3950821,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "207",
+    "addr:street": "Beverley Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1889248809,
+  "lat": 43.6516455,
+  "lon": -79.3835723,
+  "tags": {
+    "description": "PATH access from Queen St",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Sheraton Centre (PATH access)",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 1895652088,
+  "lat": 43.6591243,
+  "lon": -79.3909792,
+  "tags": {
+    "entrance": "main",
+    "level": "1"
+  }
+},
+{
+  "type": "node",
+  "id": 2014631961,
+  "lat": 43.6537161,
+  "lon": -79.3819838,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2039215117,
+  "lat": 43.6689342,
+  "lon": -79.3939156,
+  "tags": {
+    "entrance": "main",
+    "min_height": "1.5"
+  }
+},
+{
+  "type": "node",
+  "id": 2039215171,
+  "lat": 43.6685208,
+  "lon": -79.3955967,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2041327560,
+  "lat": 43.6589357,
+  "lon": -79.3808003,
+  "tags": {
+    "access": "private",
+    "entrance": "yes",
+    "level": "1"
+  }
+},
+{
+  "type": "node",
+  "id": 2041327565,
+  "lat": 43.6590077,
+  "lon": -79.3804745,
+  "tags": {
+    "access": "private",
+    "entrance": "yes",
+    "level": "1"
+  }
+},
+{
+  "type": "node",
+  "id": 2078234556,
+  "lat": 43.6614830,
+  "lon": -79.3821419,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2086306664,
+  "lat": 43.6530797,
+  "lon": -79.3837019,
+  "tags": {
+    "door": "yes",
+    "entrance": "main",
+    "level": "0",
+    "name": "Toronto City Hall",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2122030519,
+  "lat": 43.6617485,
+  "lon": -79.3886959,
+  "tags": {
+    "entrance": "service"
+  }
+},
+{
+  "type": "node",
+  "id": 2128387965,
+  "lat": 43.6543908,
+  "lon": -79.3904082,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2129327665,
+  "lat": 43.6604433,
+  "lon": -79.3927694,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2142265847,
+  "lat": 43.6679657,
+  "lon": -79.3933833,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2143017770,
+  "lat": 43.6661368,
+  "lon": -79.3898466,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2143149535,
+  "lat": 43.6660718,
+  "lon": -79.3872131,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "44",
+    "addr:street": "St. Joseph Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2143221585,
+  "lat": 43.6662501,
+  "lon": -79.3875449,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "1033",
+    "addr:street": "Bay Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2143239271,
+  "lat": 43.6651518,
+  "lon": -79.3904589,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2143257505,
+  "lat": 43.6662779,
+  "lon": -79.3888115,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2143274337,
+  "lat": 43.6669204,
+  "lon": -79.3922186,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2143277573,
+  "lat": 43.6671221,
+  "lon": -79.3933227,
+  "tags": {
+    "access": "private",
+    "check_date:wheelchair": "2023-09-07",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "Queens Park East Side",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 2143277574,
+  "lat": 43.6672742,
+  "lon": -79.3936875,
+  "tags": {
+    "access": "private",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "Queens Park West Side",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 2143277602,
+  "lat": 43.6669556,
+  "lon": -79.3929455,
+  "tags": {
+    "entrance": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2143277607,
+  "lat": 43.6672511,
+  "lon": -79.3929422,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2143277998,
+  "lat": 43.6670247,
+  "lon": -79.3935848,
+  "tags": {
+    "access": "private",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "Queens Park West Side",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 2143277999,
+  "lat": 43.6670308,
+  "lon": -79.3932854,
+  "tags": {
+    "access": "private",
+    "check_date:wheelchair": "2023-09-07",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "Queens Park East Side",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 2143282064,
+  "lat": 43.6678242,
+  "lon": -79.3940826,
+  "tags": {
+    "entrance": "emergency",
+    "min_height": "1.5",
+    "note": "Old entrance to ROM - closed"
+  }
+},
+{
+  "type": "node",
+  "id": 2143284310,
+  "lat": 43.6674520,
+  "lon": -79.3920315,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2143393366,
+  "lat": 43.6671558,
+  "lon": -79.3906533,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2143434863,
+  "lat": 43.6626649,
+  "lon": -79.3951577,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2143435225,
+  "lat": 43.6645615,
+  "lon": -79.3952058,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2143460109,
+  "lat": 43.6620460,
+  "lon": -79.3988743,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2143484329,
+  "lat": 43.6580937,
+  "lon": -79.3984219,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2143488334,
+  "lat": 43.6619301,
+  "lon": -79.3928043,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2143489695,
+  "lat": 43.6618905,
+  "lon": -79.3939647,
+  "tags": {
+    "entrance": "emergency",
+    "min_height": "1"
+  }
+},
+{
+  "type": "node",
+  "id": 2143490768,
+  "lat": 43.6640158,
+  "lon": -79.3894684,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2143490773,
+  "lat": 43.6642154,
+  "lon": -79.3885937,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2143491097,
+  "lat": 43.6639995,
+  "lon": -79.3904892,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2143493381,
+  "lat": 43.6613471,
+  "lon": -79.3970712,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2143494816,
+  "lat": 43.6661903,
+  "lon": -79.3907888,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2143498936,
+  "lat": 43.6597658,
+  "lon": -79.3923442,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2143501175,
+  "lat": 43.6630732,
+  "lon": -79.3951558,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2143501656,
+  "lat": 43.6593795,
+  "lon": -79.4006106,
+  "tags": {
+    "entrance": "main",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 2143503860,
+  "lat": 43.6698111,
+  "lon": -79.3964914,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2144366452,
+  "lat": 43.6669055,
+  "lon": -79.3910109,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2144368655,
+  "lat": 43.6682828,
+  "lon": -79.3891308,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2144593262,
+  "lat": 43.6686060,
+  "lon": -79.3892657,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2144593273,
+  "lat": 43.6688898,
+  "lon": -79.3893772,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2144620382,
+  "lat": 43.6672850,
+  "lon": -79.3899769,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2144638305,
+  "lat": 43.6668085,
+  "lon": -79.3910024,
+  "tags": {
+    "entrance": "yes",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 2144867154,
+  "lat": 43.6685703,
+  "lon": -79.3881842,
+  "tags": {
+    "entrance": "yes",
+    "note": "To 44 Charles St (apartment building)"
+  }
+},
+{
+  "type": "node",
+  "id": 2144932699,
+  "lat": 43.6673883,
+  "lon": -79.3871525,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2144934963,
+  "lat": 43.6684820,
+  "lon": -79.3817556,
+  "tags": {
+    "entrance": "main",
+    "source": "Bing"
+  }
+},
+{
+  "type": "node",
+  "id": 2144936078,
+  "lat": 43.6660090,
+  "lon": -79.3893780,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2144936279,
+  "lat": 43.6660020,
+  "lon": -79.3895603,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2144937771,
+  "lat": 43.6691180,
+  "lon": -79.3847661,
+  "tags": {
+    "entrance": "main",
+    "source": "Bing"
+  }
+},
+{
+  "type": "node",
+  "id": 2144960974,
+  "lat": 43.6672040,
+  "lon": -79.3937827,
+  "tags": {
+    "entrance": "yes",
+    "name": "President's Choice School Entrance",
+    "name:en": "President's Choice School Entrance",
+    "name:fr": "l'Entrée des groupes scolaires Le Choix du Président"
+  }
+},
+{
+  "type": "node",
+  "id": 2144962286,
+  "lat": 43.6646552,
+  "lon": -79.3812695,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2144962440,
+  "lat": 43.6671858,
+  "lon": -79.3830189,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2144963143,
+  "lat": 43.6644780,
+  "lon": -79.3817787,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2144963170,
+  "lat": 43.6642016,
+  "lon": -79.3816465,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2144963793,
+  "lat": 43.6645858,
+  "lon": -79.3814016,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2144967282,
+  "lat": 43.6679335,
+  "lon": -79.3843290,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2144967309,
+  "lat": 43.6650469,
+  "lon": -79.3896888,
+  "tags": {
+    "entrance": "exit",
+    "note": "small wheelchair ramp hidden at west end",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2167335875,
+  "lat": 43.6634740,
+  "lon": -79.3820641,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2176650790,
+  "lat": 43.6541788,
+  "lon": -79.3790679,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2194597544,
+  "lat": 43.6619455,
+  "lon": -79.3796081,
+  "tags": {
+    "entrance": "yes",
+    "name": "Loblaws"
+  }
+},
+{
+  "type": "node",
+  "id": 2195057598,
+  "lat": 43.6618292,
+  "lon": -79.3801478,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2259552513,
+  "lat": 43.6659645,
+  "lon": -79.3867465,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2259558004,
+  "lat": 43.6642727,
+  "lon": -79.3827762,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2259558881,
+  "lat": 43.6644211,
+  "lon": -79.3820165,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2259560903,
+  "lat": 43.6656985,
+  "lon": -79.3817176,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2259562886,
+  "lat": 43.6646526,
+  "lon": -79.3810923,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2259572905,
+  "lat": 43.6642506,
+  "lon": -79.3905133,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2295429900,
+  "lat": 43.6513531,
+  "lon": -79.3835946,
+  "tags": {
+    "access": "permissive",
+    "description": "Queen St entrance",
+    "entrance": "main",
+    "level": "0",
+    "name": "Sheraton Centre",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2429557034,
+  "lat": 43.6668087,
+  "lon": -79.4023346,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2449693541,
+  "lat": 43.6517084,
+  "lon": -79.3874223,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "330",
+    "addr:street": "University Avenue",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2457606235,
+  "lat": 43.6678299,
+  "lon": -79.3903318,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2457609343,
+  "lat": 43.6559490,
+  "lon": -79.3834824,
+  "tags": {
+    "addr:housenumber": "595",
+    "addr:street": "Bay Street",
+    "description": "Bay / Dundas entrance",
+    "entrance": "main",
+    "level": "0",
+    "name": "Atrium on Bay",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2473977982,
+  "lat": 43.6681576,
+  "lon": -79.3903625,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2473977985,
+  "lat": 43.6685263,
+  "lon": -79.3907706,
+  "tags": {
+    "entrance": "main",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 2478473426,
+  "lat": 43.6589497,
+  "lon": -79.3955780,
+  "tags": {
+    "addr:housenumber": "200",
+    "addr:street": "College Street",
+    "door": "hinged",
+    "entrance": "main",
+    "level": "0",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 2480697684,
+  "lat": 43.6671246,
+  "lon": -79.3998757,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2480713254,
+  "lat": 43.6603996,
+  "lon": -79.3925161,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2480713264,
+  "lat": 43.6605073,
+  "lon": -79.3917594,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2480718641,
+  "lat": 43.6598879,
+  "lon": -79.3915867,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2480731326,
+  "lat": 43.6591775,
+  "lon": -79.3910799,
+  "tags": {
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 2480731366,
+  "lat": 43.6595632,
+  "lon": -79.3907245,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2481906175,
+  "lat": 43.6677886,
+  "lon": -79.3940691,
+  "tags": {
+    "entrance": "emergency",
+    "min_height": "1.5",
+    "note": "Old entrance to ROM - closed"
+  }
+},
+{
+  "type": "node",
+  "id": 2481906178,
+  "lat": 43.6678576,
+  "lon": -79.3940960,
+  "tags": {
+    "entrance": "emergency",
+    "min_height": "1.5",
+    "note": "Old entrance to ROM - closed"
+  }
+},
+{
+  "type": "node",
+  "id": 2481907818,
+  "lat": 43.6673692,
+  "lon": -79.3895958,
+  "tags": {
+    "entrance": "yes",
+    "note": "wheelchair push button",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2481907819,
+  "lat": 43.6677447,
+  "lon": -79.3896011,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2481908768,
+  "lat": 43.6677542,
+  "lon": -79.3931107,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2481908806,
+  "lat": 43.6671036,
+  "lon": -79.3923545,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2482511524,
+  "lat": 43.6699792,
+  "lon": -79.3909125,
+  "tags": {
+    "entrance": "yes",
+    "name": "№10 Bellair",
+    "note": "revolving door"
+  }
+},
+{
+  "type": "node",
+  "id": 2485269154,
+  "lat": 43.6535929,
+  "lon": -79.3873849,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "375",
+    "addr:street": "University Avenue",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2485279214,
+  "lat": 43.6528928,
+  "lon": -79.3867579,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2485287244,
+  "lat": 43.6534212,
+  "lon": -79.3873327,
+  "tags": {
+    "entrance": "yes",
+    "note": "To Staples"
+  }
+},
+{
+  "type": "node",
+  "id": 2485311960,
+  "lat": 43.6526987,
+  "lon": -79.3863701,
+  "tags": {
+    "entrance": "yes",
+    "note": "door with trillium logo"
+  }
+},
+{
+  "type": "node",
+  "id": 2485314308,
+  "lat": 43.6528436,
+  "lon": -79.3860079,
+  "tags": {
+    "entrance": "yes",
+    "note": "revolving door"
+  }
+},
+{
+  "type": "node",
+  "id": 2485317648,
+  "lat": 43.6614926,
+  "lon": -79.3869616,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "76",
+    "addr:street": "Grenville Street",
+    "entrance": "main",
+    "name": "Grenville Entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 2485318020,
+  "lat": 43.6605329,
+  "lon": -79.3829444,
+  "tags": {
+    "entrance": "yes",
+    "level": "0",
+    "name": "College Park Shops"
+  }
+},
+{
+  "type": "node",
+  "id": 2485322856,
+  "lat": 43.6631801,
+  "lon": -79.3901375,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "23",
+    "addr:street": "Queen's Park",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2485324043,
+  "lat": 43.6595111,
+  "lon": -79.3898612,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housename": "MaRS",
+    "addr:housenumber": "661",
+    "addr:street": "University Avenue",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2485324047,
+  "lat": 43.6622614,
+  "lon": -79.3869785,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2485344499,
+  "lat": 43.6647580,
+  "lon": -79.3871120,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2495281968,
+  "lat": 43.6671586,
+  "lon": -79.3906398,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2495291181,
+  "lat": 43.6692108,
+  "lon": -79.3912552,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2495299836,
+  "lat": 43.6690394,
+  "lon": -79.3893604,
+  "tags": {
+    "entrance": "yes",
+    "name": "Tim Hortons"
+  }
+},
+{
+  "type": "node",
+  "id": 2495302070,
+  "lat": 43.6685463,
+  "lon": -79.3909669,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2495304640,
+  "lat": 43.6677756,
+  "lon": -79.3893835,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2498967370,
+  "lat": 43.6689623,
+  "lon": -79.3893765,
+  "tags": {
+    "entrance": "emergency"
+  }
+},
+{
+  "type": "node",
+  "id": 2498967862,
+  "lat": 43.6662350,
+  "lon": -79.3910420,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2498968774,
+  "lat": 43.6657614,
+  "lon": -79.3909398,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2514169729,
+  "lat": 43.6667984,
+  "lon": -79.3880076,
+  "tags": {
+    "entrance": "yes",
+    "note": "to Binn's. under corner of building"
+  }
+},
+{
+  "type": "node",
+  "id": 2521223191,
+  "lat": 43.6651270,
+  "lon": -79.4032536,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2521223464,
+  "lat": 43.6654800,
+  "lon": -79.4034155,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2521567889,
+  "lat": 43.6654299,
+  "lon": -79.3996789,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2521567901,
+  "lat": 43.6654786,
+  "lon": -79.3994339,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2521567908,
+  "lat": 43.6668352,
+  "lon": -79.4016526,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2521567916,
+  "lat": 43.6669617,
+  "lon": -79.4010832,
+  "tags": {
+    "addr:housenumber": "341",
+    "addr:street": "Bloor Street West",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2533031478,
+  "lat": 43.6694926,
+  "lon": -79.4047628,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2552749807,
+  "lat": 43.6639330,
+  "lon": -79.3899347,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2557544302,
+  "lat": 43.6608405,
+  "lon": -79.3922509,
+  "tags": {
+    "entrance": "emergency"
+  }
+},
+{
+  "type": "node",
+  "id": 2557555613,
+  "lat": 43.6610785,
+  "lon": -79.3866990,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2635688703,
+  "lat": 43.6673619,
+  "lon": -79.3984622,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2672428216,
+  "lat": 43.6573600,
+  "lon": -79.3907913,
+  "tags": {
+    "access": "yes",
+    "addr:housenumber": "600",
+    "addr:street": "University Avenue",
+    "door": "yes",
+    "entrance": "main",
+    "name": "Murray St Entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2672428217,
+  "lat": 43.6575892,
+  "lon": -79.3899030,
+  "tags": {
+    "access": "yes",
+    "addr:housenumber": "600",
+    "addr:street": "University Avenue",
+    "entrance": "main",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2674085210,
+  "lat": 43.6595463,
+  "lon": -79.3785984,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2684469979,
+  "lat": 43.6560554,
+  "lon": -79.3787045,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "55",
+    "addr:street": "Dundas Street East",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2702116129,
+  "lat": 43.6547548,
+  "lon": -79.3913605,
+  "tags": {
+    "entrance": "main",
+    "min_height": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 2704154149,
+  "lat": 43.6547804,
+  "lon": -79.3801022,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2717181943,
+  "lat": 43.6616346,
+  "lon": -79.3862870,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2725513337,
+  "lat": 43.6564548,
+  "lon": -79.3963306,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2748923934,
+  "lat": 43.6686030,
+  "lon": -79.3800134,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2748928593,
+  "lat": 43.6684712,
+  "lon": -79.3806818,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2783505741,
+  "lat": 43.6677807,
+  "lon": -79.4001528,
+  "tags": {
+    "entrance": "main",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2785652248,
+  "lat": 43.6655757,
+  "lon": -79.3993103,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2797903403,
+  "lat": 43.6585340,
+  "lon": -79.3933344,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2807096795,
+  "lat": 43.6591621,
+  "lon": -79.3929829,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2809034240,
+  "lat": 43.6594220,
+  "lon": -79.3933984,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:province": "ON",
+    "door": "yes",
+    "entrance": "main",
+    "level": "0",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 2809038556,
+  "lat": 43.6538139,
+  "lon": -79.3910884,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2826869154,
+  "lat": 43.6577246,
+  "lon": -79.3843751,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 2887819203,
+  "lat": 43.6607479,
+  "lon": -79.3872591,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2982812270,
+  "lat": 43.6577911,
+  "lon": -79.3871082,
+  "tags": {
+    "entrance": "yes",
+    "name": "Emergency"
+  }
+},
+{
+  "type": "node",
+  "id": 2982812271,
+  "lat": 43.6574862,
+  "lon": -79.3864749,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 3028895592,
+  "lat": 43.6575687,
+  "lon": -79.3812669,
+  "tags": {
+    "access": "private",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 3061656194,
+  "lat": 43.6692365,
+  "lon": -79.3839354,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3081114130,
+  "lat": 43.6599701,
+  "lon": -79.3886888,
+  "tags": {
+    "check_date:wheelchair": "2023-10-10",
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "min_height": "1",
+    "name": "MaRS Discovery District",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3108416943,
+  "lat": 43.6559897,
+  "lon": -79.3869070,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 3240407655,
+  "lat": 43.6659744,
+  "lon": -79.4049863,
+  "tags": {
+    "entrance": "yes",
+    "note:covid19": "temporary closed"
+  }
+},
+{
+  "type": "node",
+  "id": 3311072382,
+  "lat": 43.6689729,
+  "lon": -79.3798130,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3311072383,
+  "lat": 43.6692299,
+  "lon": -79.3797973,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 3311075198,
+  "lat": 43.6687866,
+  "lon": -79.3804020,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 3311085735,
+  "lat": 43.6686518,
+  "lon": -79.3812938,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 3317176628,
+  "lat": 43.6696449,
+  "lon": -79.3824159,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3317176646,
+  "lat": 43.6686890,
+  "lon": -79.3855079,
+  "tags": {
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3357209890,
+  "lat": 43.6589350,
+  "lon": -79.3940293,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 3484213426,
+  "lat": 43.6510748,
+  "lon": -79.3811294,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3484213427,
+  "lat": 43.6511818,
+  "lon": -79.3808942,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3555231311,
+  "lat": 43.6513232,
+  "lon": -79.3810855,
+  "tags": {
+    "entrance": "yes",
+    "level": "0",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3555231315,
+  "lat": 43.6513775,
+  "lon": -79.3812429,
+  "tags": {
+    "entrance": "yes",
+    "level": "0",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3555231322,
+  "lat": 43.6516523,
+  "lon": -79.3812907,
+  "tags": {
+    "entrance": "main",
+    "level": "0",
+    "name": "Simpson Tower",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3555231330,
+  "lat": 43.6517490,
+  "lon": -79.3791355,
+  "tags": {
+    "access": "no",
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3555231337,
+  "lat": 43.6517686,
+  "lon": -79.3791231,
+  "tags": {
+    "access": "no",
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3555231349,
+  "lat": 43.6521800,
+  "lon": -79.3799384,
+  "tags": {
+    "access": "no",
+    "entrance": "main",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3555231355,
+  "lat": 43.6522440,
+  "lon": -79.3793982,
+  "tags": {
+    "access": "no",
+    "entrance": "main",
+    "note": "closed for construction",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3555231357,
+  "lat": 43.6522355,
+  "lon": -79.3795500,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Yonge / Queen Southwest Corner",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3559858969,
+  "lat": 43.6524207,
+  "lon": -79.3790321,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-2",
+    "name": "Entrance from One Queen Street East (via PATH)",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3559859198,
+  "lat": 43.6537130,
+  "lon": -79.3797090,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Yonge / Shuter Southeast corner",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3559868710,
+  "lat": 43.6561755,
+  "lon": -79.3840731,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 3561214180,
+  "lat": 43.6523042,
+  "lon": -79.3805995,
+  "tags": {
+    "entrance": "main",
+    "level": "0",
+    "name": "Cadillac Fairview Tower",
+    "note": "access to mall and tower, only open weekdays during working hours",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3561230009,
+  "lat": 43.6524850,
+  "lon": -79.3794533,
+  "tags": {
+    "entrance": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3561230014,
+  "lat": 43.6525451,
+  "lon": -79.3822840,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3561230025,
+  "lat": 43.6527695,
+  "lon": -79.3812600,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3561606476,
+  "lat": 43.6581398,
+  "lon": -79.3831355,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3584705952,
+  "lat": 43.6508207,
+  "lon": -79.3834861,
+  "tags": {
+    "description": "Underground entrance from Richmond-Adelaide Centre via PATH",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Sheraton Centre (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3587003519,
+  "lat": 43.6516684,
+  "lon": -79.3823191,
+  "tags": {
+    "access": "permissive",
+    "addr:housenumber": "65",
+    "addr:street": "Queen Street West",
+    "door": "yes",
+    "entrance": "main",
+    "level": "0",
+    "name": "Thomson Building"
+  }
+},
+{
+  "type": "node",
+  "id": 3588977298,
+  "lat": 43.6536037,
+  "lon": -79.3799138,
+  "tags": {
+    "description": "Yonge / Shuter entrance",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "CF Toronto Eaton Centre",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3590213125,
+  "lat": 43.6632008,
+  "lon": -79.3802449,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 3590215407,
+  "lat": 43.6620317,
+  "lon": -79.3829767,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "1",
+    "addr:street": "Wood Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3590215411,
+  "lat": 43.6622355,
+  "lon": -79.3817853,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3590216609,
+  "lat": 43.6623455,
+  "lon": -79.3813071,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "33",
+    "addr:street": "Wood Street",
+    "entrance": "yes",
+    "name": "Holiday Inn"
+  }
+},
+{
+  "type": "node",
+  "id": 3597533191,
+  "lat": 43.6539379,
+  "lon": -79.3805499,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3643122493,
+  "lat": 43.6601706,
+  "lon": -79.3877187,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3643122593,
+  "lat": 43.6600244,
+  "lon": -79.3884023,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3700419539,
+  "lat": 43.6568138,
+  "lon": -79.3816853,
+  "tags": {
+    "entrance": "emergency",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3700426255,
+  "lat": 43.6562909,
+  "lon": -79.3842507,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3700427206,
+  "lat": 43.6561093,
+  "lon": -79.3823999,
+  "tags": {
+    "description": "Dundas St entrance",
+    "door": "yes",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Atrium on Bay",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3700427208,
+  "lat": 43.6566202,
+  "lon": -79.3826109,
+  "tags": {
+    "description": "Edward St entrance",
+    "door": "yes",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Atrium on Bay",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3705253941,
+  "lat": 43.6521247,
+  "lon": -79.3839218,
+  "tags": {
+    "door": "yes",
+    "entrance": "yes",
+    "level": "1",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3705928219,
+  "lat": 43.6557708,
+  "lon": -79.3828440,
+  "tags": {
+    "access": "customers",
+    "entrance": "yes",
+    "note": "to Best Buy"
+  }
+},
+{
+  "type": "node",
+  "id": 3708490352,
+  "lat": 43.6564347,
+  "lon": -79.3807596,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Entrance from The Tenor (via PATH)",
+    "note": "Dundas Station",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3708490354,
+  "lat": 43.6563249,
+  "lon": -79.3813052,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Yonge / Dundas Northwest corner",
+    "note": "Dundas Station",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3708513581,
+  "lat": 43.6526114,
+  "lon": -79.3792079,
+  "tags": {
+    "access": "customers",
+    "entrance": "yes",
+    "note": "to BMO"
+  }
+},
+{
+  "type": "node",
+  "id": 3708515061,
+  "lat": 43.6524224,
+  "lon": -79.3788510,
+  "tags": {
+    "description": "Queen St entrance (signpost for Queen Station)",
+    "entrance": "main",
+    "level": "0",
+    "name": "One Queen Street East",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3708584193,
+  "lat": 43.6500565,
+  "lon": -79.3805995,
+  "tags": {
+    "description": "Adelaide St entrance",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Bay Adelaide Centre West Tower",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3708584194,
+  "lat": 43.6502795,
+  "lon": -79.3807876,
+  "tags": {
+    "description": "Bay St entrance",
+    "door": "revolving",
+    "entrance": "main",
+    "level": "0",
+    "name": "Bay Adelaide Centre West Tower",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3712841966,
+  "lat": 43.6505155,
+  "lon": -79.3835228,
+  "tags": {
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3712848900,
+  "lat": 43.6508486,
+  "lon": -79.3832859,
+  "tags": {
+    "access": "permissive",
+    "description": "Richmond St entrance",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Sheraton Centre",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3712854737,
+  "lat": 43.6534446,
+  "lon": -79.3815324,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 3712855212,
+  "lat": 43.6542654,
+  "lon": -79.3823376,
+  "tags": {
+    "entrance": "no",
+    "exit": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3712907644,
+  "lat": 43.6549565,
+  "lon": -79.3880958,
+  "tags": {
+    "automatic": "no",
+    "check_date:wheelchair": "2025-07-30",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "University / Dundas, Northeast corner",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3712907651,
+  "lat": 43.6549997,
+  "lon": -79.3887850,
+  "tags": {
+    "automatic": "no",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "University / Dundas, Northwest corner",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3725531618,
+  "lat": 43.6696751,
+  "lon": -79.3938203,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "150",
+    "addr:street": "Bloor Street West",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 3928028039,
+  "lat": 43.6535882,
+  "lon": -79.3909939,
+  "tags": {
+    "access": "private",
+    "addr:housenumber": "105",
+    "addr:street": "McCaul Street",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 3983186028,
+  "lat": 43.6642517,
+  "lon": -79.3990918,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3983186029,
+  "lat": 43.6641564,
+  "lon": -79.3992465,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3996672203,
+  "lat": 43.6620722,
+  "lon": -79.3988847,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4036605677,
+  "lat": 43.6557065,
+  "lon": -79.3868029,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 4036606925,
+  "lat": 43.6620376,
+  "lon": -79.3842964,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 4056603055,
+  "lat": 43.6591180,
+  "lon": -79.3948125,
+  "tags": {
+    "addr:housenumber": "184",
+    "addr:street": "College Street",
+    "door": "hinged",
+    "entrance": "main",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 4061861175,
+  "lat": 43.6506799,
+  "lon": -79.3870126,
+  "tags": {
+    "entrance": "yes",
+    "name": "University / Queen, Southwest Entrance",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 4193416180,
+  "lat": 43.6682105,
+  "lon": -79.4047346,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 4312082264,
+  "lat": 43.6579433,
+  "lon": -79.3784265,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 4407462250,
+  "lat": 43.6554414,
+  "lon": -79.3793498,
+  "tags": {
+    "addr:housenumber": "244",
+    "addr:street": "Victoria Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4407462251,
+  "lat": 43.6552376,
+  "lon": -79.3803103,
+  "tags": {
+    "addr:housenumber": "263",
+    "addr:street": "Yonge Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4454371823,
+  "lat": 43.6682259,
+  "lon": -79.3999659,
+  "tags": {
+    "entrance": "yes",
+    "name": "St George Street",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 4461090647,
+  "lat": 43.6684311,
+  "lon": -79.3983702,
+  "tags": {
+    "entrance": "exit"
+  }
+},
+{
+  "type": "node",
+  "id": 4497821138,
+  "lat": 43.6561173,
+  "lon": -79.3785126,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 4536946920,
+  "lat": 43.6687652,
+  "lon": -79.3944437,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "170",
+    "addr:street": "Bloor Street West",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4572092702,
+  "lat": 43.6690433,
+  "lon": -79.3931805,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "144",
+    "addr:street": "Bloor Street West",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4611052479,
+  "lat": 43.6685845,
+  "lon": -79.3952985,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "200",
+    "addr:street": "Bloor Street West",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 4611052480,
+  "lat": 43.6686041,
+  "lon": -79.3952101,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "196",
+    "addr:street": "Bloor Street West",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4611052481,
+  "lat": 43.6685600,
+  "lon": -79.3954118,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "200A",
+    "addr:street": "Bloor Street West",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4616857693,
+  "lat": 43.6691414,
+  "lon": -79.4007327,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 4616857694,
+  "lat": 43.6689960,
+  "lon": -79.4006751,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 4616867365,
+  "lat": 43.6689597,
+  "lon": -79.4001188,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 4616878497,
+  "lat": 43.6685188,
+  "lon": -79.4000669,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 4616881039,
+  "lat": 43.6675476,
+  "lon": -79.3985990,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 4621056660,
+  "lat": 43.6546600,
+  "lon": -79.3965232,
+  "tags": {
+    "addr:housenumber": "101",
+    "addr:street": "Huron Street",
+    "entrance": "yes",
+    "name": "Office"
+  }
+},
+{
+  "type": "node",
+  "id": 4621081341,
+  "lat": 43.6554003,
+  "lon": -79.3917524,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5262723000,
+  "lat": 43.6687236,
+  "lon": -79.3978261,
+  "tags": {
+    "automated": "no",
+    "entrance": "yes",
+    "name": "Bedford Road Entrance",
+    "operator": "Beford Road Entrance",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5262723001,
+  "lat": 43.6679432,
+  "lon": -79.3984285,
+  "tags": {
+    "automated": "yes",
+    "entrance": "yes",
+    "name": "OISE Entrance",
+    "network": "TTC",
+    "note": "In OISE",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 5301178868,
+  "lat": 43.6677001,
+  "lon": -79.3921629,
+  "tags": {
+    "entrance": "main",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5352711827,
+  "lat": 43.6546023,
+  "lon": -79.3824224,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6327999246,
+  "lat": 43.6504423,
+  "lon": -79.3911722,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 6336107775,
+  "lat": 43.6659798,
+  "lon": -79.3936579,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6378801416,
+  "lat": 43.6521214,
+  "lon": -79.3915322,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 6403166287,
+  "lat": 43.6520781,
+  "lon": -79.3903537,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "53",
+    "addr:street": "McCaul Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6403166288,
+  "lat": 43.6526003,
+  "lon": -79.3905738,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "73",
+    "addr:street": "McCaul Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6416544001,
+  "lat": 43.6505004,
+  "lon": -79.3877342,
+  "tags": {
+    "addr:housenumber": "215-217",
+    "addr:street": "Queen Street West",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 6431753618,
+  "lat": 43.6546279,
+  "lon": -79.3819790,
+  "tags": {
+    "entrance": "yes",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6483208703,
+  "lat": 43.6507375,
+  "lon": -79.3982308,
+  "tags": {
+    "addr:housenumber": "99",
+    "addr:street": "Cameron Street",
+    "entrance": "yes",
+    "name": "Chinatown Centre Residences",
+    "source": "survey"
+  }
+},
+{
+  "type": "node",
+  "id": 6483208704,
+  "lat": 43.6509207,
+  "lon": -79.3983045,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6493362888,
+  "lat": 43.6680202,
+  "lon": -79.3822972,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6493362889,
+  "lat": 43.6680567,
+  "lon": -79.3825101,
+  "tags": {
+    "access": "private",
+    "door": "hinged",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 6593471049,
+  "lat": 43.6506043,
+  "lon": -79.3798341,
+  "tags": {
+    "description": "Courtyard entrance",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Bay Adelaide Centre East Tower",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6625069001,
+  "lat": 43.6566987,
+  "lon": -79.4046579,
+  "tags": {
+    "door": "overhead",
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 6654979891,
+  "lat": 43.6683482,
+  "lon": -79.3828619,
+  "tags": {
+    "access": "private",
+    "door": "sliding",
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 6672822222,
+  "lat": 43.6504296,
+  "lon": -79.3788779,
+  "tags": {
+    "addr:housenumber": "8",
+    "addr:street": "Adelaide Street West",
+    "description": "East tower podium entrance",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Bay Adelaide Centre East Tower",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6710500028,
+  "lat": 43.6524383,
+  "lon": -79.3800804,
+  "tags": {
+    "access": "yes",
+    "description": "Queen St entrance",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "CF Toronto Eaton Centre",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6710552880,
+  "lat": 43.6553289,
+  "lon": -79.3810648,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6904986006,
+  "lat": 43.6510759,
+  "lon": -79.3790829,
+  "tags": {
+    "addr:housenumber": "140",
+    "addr:street": "Yonge Street",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 6994217784,
+  "lat": 43.6535239,
+  "lon": -79.3900340,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6994226887,
+  "lat": 43.6535990,
+  "lon": -79.3907914,
+  "tags": {
+    "addr:housenumber": "113",
+    "addr:street": "McCaul Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6994226888,
+  "lat": 43.6536402,
+  "lon": -79.3907396,
+  "tags": {
+    "entrance": "yes",
+    "note": "This is an entrance between two different buildings at slightly different levels (couple of steps and a ramp). There are gates for blocking off access, they were open at 9pm, maybe they're closed at night."
+  }
+},
+{
+  "type": "node",
+  "id": 7129318827,
+  "lat": 43.6692634,
+  "lon": -79.3837996,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7468059316,
+  "lat": 43.6587984,
+  "lon": -79.3857410,
+  "tags": {
+    "access": "yes",
+    "addr:housenumber": "720",
+    "addr:street": "Bay Street",
+    "door": "yes",
+    "entrance": "secondary",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7518567149,
+  "lat": 43.6512342,
+  "lon": -79.3815313,
+  "tags": {
+    "access": "yes",
+    "addr:housenumber": "390",
+    "addr:street": "Bay Street",
+    "entrance": "main",
+    "level": "0",
+    "name": "Munich Re Centre",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7573364236,
+  "lat": 43.6676756,
+  "lon": -79.3786608,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7578199802,
+  "lat": 43.6608807,
+  "lon": -79.3928249,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7590457327,
+  "lat": 43.6686652,
+  "lon": -79.3980686,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7868892192,
+  "lat": 43.6598632,
+  "lon": -79.3928510,
+  "tags": {
+    "door": "yes",
+    "entrance": "main",
+    "level": "0",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7868892242,
+  "lat": 43.6598825,
+  "lon": -79.3928595,
+  "tags": {
+    "door": "yes",
+    "entrance": "main",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 7911263668,
+  "lat": 43.6537844,
+  "lon": -79.3867745,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "375",
+    "addr:street": "University Avenue",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 8007731900,
+  "lat": 43.6640007,
+  "lon": -79.4012269,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8142505474,
+  "lat": 43.6558205,
+  "lon": -79.3852231,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8435073801,
+  "lat": 43.6572479,
+  "lon": -79.3780302,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8544407495,
+  "lat": 43.6653177,
+  "lon": -79.3959419,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8544407496,
+  "lat": 43.6653446,
+  "lon": -79.3954538,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8711037171,
+  "lat": 43.6570888,
+  "lon": -79.3886204,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8790689279,
+  "lat": 43.6503116,
+  "lon": -79.3781289,
+  "tags": {
+    "entrance": "main",
+    "level": "0",
+    "name": "1 Adelaide East",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8805498993,
+  "lat": 43.6658579,
+  "lon": -79.3839266,
+  "tags": {
+    "entrance": "yes",
+    "name": "Dundonald Street",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 8870077123,
+  "lat": 43.6649258,
+  "lon": -79.4009535,
+  "tags": {
+    "access": "yes",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8918199963,
+  "lat": 43.6517844,
+  "lon": -79.3855116,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 8961428182,
+  "lat": 43.6536413,
+  "lon": -79.4021227,
+  "tags": {
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 8961428184,
+  "lat": 43.6536383,
+  "lon": -79.4020926,
+  "tags": {
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 8961469993,
+  "lat": 43.6597611,
+  "lon": -79.4011188,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8961478118,
+  "lat": 43.6596511,
+  "lon": -79.4010737,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8961478220,
+  "lat": 43.6599271,
+  "lon": -79.4004582,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8961478222,
+  "lat": 43.6598244,
+  "lon": -79.4004155,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8961478288,
+  "lat": 43.6599142,
+  "lon": -79.4007697,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8961478291,
+  "lat": 43.6598884,
+  "lon": -79.4008896,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8961875733,
+  "lat": 43.6544741,
+  "lon": -79.4046829,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8961875983,
+  "lat": 43.6568151,
+  "lon": -79.4048806,
+  "tags": {
+    "door": "hinged",
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 8961875989,
+  "lat": 43.6567354,
+  "lon": -79.4046717,
+  "tags": {
+    "door": "overhead",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8961875993,
+  "lat": 43.6568644,
+  "lon": -79.4046787,
+  "tags": {
+    "door": "hinged",
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 8961875994,
+  "lat": 43.6568061,
+  "lon": -79.4047287,
+  "tags": {
+    "door": "hinged",
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 8961875995,
+  "lat": 43.6569030,
+  "lon": -79.4046975,
+  "tags": {
+    "door": "hinged",
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 8969075217,
+  "lat": 43.6686257,
+  "lon": -79.3852280,
+  "tags": {
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 8976141639,
+  "lat": 43.6632665,
+  "lon": -79.3826364,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8976141787,
+  "lat": 43.6633024,
+  "lon": -79.3829362,
+  "tags": {
+    "access": "customers",
+    "automatic_door": "button",
+    "door": "hinged",
+    "entrance": "main",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8976141793,
+  "lat": 43.6631940,
+  "lon": -79.3829554,
+  "tags": {
+    "entrance": "emergency",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 8976141797,
+  "lat": 43.6636496,
+  "lon": -79.3816717,
+  "tags": {
+    "entrance": "staircase"
+  }
+},
+{
+  "type": "node",
+  "id": 9135892686,
+  "lat": 43.6598801,
+  "lon": -79.3928704,
+  "tags": {
+    "door": "yes",
+    "entrance": "main",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 9135892699,
+  "lat": 43.6608748,
+  "lon": -79.3931696,
+  "tags": {
+    "door": "yes",
+    "entrance": "exit"
+  }
+},
+{
+  "type": "node",
+  "id": 9135892703,
+  "lat": 43.6598607,
+  "lon": -79.3928619,
+  "tags": {
+    "door": "yes",
+    "entrance": "main",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 9137764761,
+  "lat": 43.6600155,
+  "lon": -79.3926554,
+  "tags": {
+    "entrance": "emergency",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 9176691542,
+  "lat": 43.6625692,
+  "lon": -79.4022875,
+  "tags": {
+    "capacity": "3",
+    "door": "yes",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 9216233574,
+  "lat": 43.6593952,
+  "lon": -79.3939182,
+  "tags": {
+    "addr:floor": "1",
+    "door": "yes",
+    "entrance": "main",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 9495984447,
+  "lat": 43.6625431,
+  "lon": -79.3974259,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 9517994071,
+  "lat": 43.6594089,
+  "lon": -79.3960721,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9523386298,
+  "lat": 43.6625208,
+  "lon": -79.3994188,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 9533672862,
+  "lat": 43.6641069,
+  "lon": -79.3900775,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9573411071,
+  "lat": 43.6683371,
+  "lon": -79.3938024,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 9573411074,
+  "lat": 43.6683447,
+  "lon": -79.3937679,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9917987752,
+  "lat": 43.6538186,
+  "lon": -79.4047544,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:province": "Ontario",
+    "addr:street": "Leonard Avenue",
+    "entrance": "yes",
+    "level": "0",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9919909610,
+  "lat": 43.6543946,
+  "lon": -79.4046503,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9920141465,
+  "lat": 43.6518646,
+  "lon": -79.4046838,
+  "tags": {
+    "entrance": "yes",
+    "level": "0",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9920141475,
+  "lat": 43.6518422,
+  "lon": -79.4046755,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10049914555,
+  "lat": 43.6517794,
+  "lon": -79.4004713,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 10138352204,
+  "lat": 43.6615031,
+  "lon": -79.3963569,
+  "tags": {
+    "entrance": "yes",
+    "min_height": "1"
+  }
+},
+{
+  "type": "node",
+  "id": 10678742885,
+  "lat": 43.6508786,
+  "lon": -79.3898301,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 11011041800,
+  "lat": 43.6688124,
+  "lon": -79.3925289,
+  "tags": {
+    "door": "hinged",
+    "entrance": "yes",
+    "level": "0",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11011041801,
+  "lat": 43.6686617,
+  "lon": -79.3924010,
+  "tags": {
+    "door": "hinged",
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 11011041802,
+  "lat": 43.6686507,
+  "lon": -79.3924518,
+  "tags": {
+    "door": "hinged",
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 11011106265,
+  "lat": 43.6692665,
+  "lon": -79.3921483,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11018633667,
+  "lat": 43.6597909,
+  "lon": -79.3894732,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 11044534425,
+  "lat": 43.6682909,
+  "lon": -79.3914069,
+  "tags": {
+    "door": "hinged",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11044534430,
+  "lat": 43.6684123,
+  "lon": -79.3915449,
+  "tags": {
+    "door": "hinged",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11055798008,
+  "lat": 43.6612480,
+  "lon": -79.3861905,
+  "tags": {
+    "access": "yes",
+    "entrance": "main",
+    "level": "0",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11072016086,
+  "lat": 43.6512798,
+  "lon": -79.3909076,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 11223388485,
+  "lat": 43.6673068,
+  "lon": -79.4039743,
+  "tags": {
+    "colour": "green",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Spadina Road East Entrance",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11244959776,
+  "lat": 43.6584894,
+  "lon": -79.3805307,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11244959779,
+  "lat": 43.6589791,
+  "lon": -79.3804693,
+  "tags": {
+    "access": "private",
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 11244959780,
+  "lat": 43.6589167,
+  "lon": -79.3807453,
+  "tags": {
+    "access": "private",
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 11244959782,
+  "lat": 43.6587429,
+  "lon": -79.3806358,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11244959797,
+  "lat": 43.6585417,
+  "lon": -79.3802887,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11265647553,
+  "lat": 43.6584650,
+  "lon": -79.3784730,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11265647563,
+  "lat": 43.6589071,
+  "lon": -79.3786715,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11265647565,
+  "lat": 43.6583627,
+  "lon": -79.3791648,
+  "tags": {
+    "access": "private",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 11265647567,
+  "lat": 43.6582336,
+  "lon": -79.3791117,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11265654669,
+  "lat": 43.6581957,
+  "lon": -79.3787339,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11265654671,
+  "lat": 43.6580605,
+  "lon": -79.3793989,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11265654677,
+  "lat": 43.6590701,
+  "lon": -79.3800398,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11265654682,
+  "lat": 43.6585588,
+  "lon": -79.3798850,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11265654684,
+  "lat": 43.6581616,
+  "lon": -79.3798186,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11265654689,
+  "lat": 43.6588829,
+  "lon": -79.3799150,
+  "tags": {
+    "access": "private",
+    "entrance": "yes",
+    "level": "1"
+  }
+},
+{
+  "type": "node",
+  "id": 11267842958,
+  "lat": 43.6565289,
+  "lon": -79.3807087,
+  "tags": {
+    "description": "Underground entrance from Dundas Station via PATH",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "The Tenor (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11267842959,
+  "lat": 43.6651907,
+  "lon": -79.3836932,
+  "tags": {
+    "entrance": "yes",
+    "name": "Wellesley Street East",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11270795315,
+  "lat": 43.6593306,
+  "lon": -79.3781067,
+  "tags": {
+    "access": "private",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 11275920886,
+  "lat": 43.6696981,
+  "lon": -79.3853622,
+  "tags": {
+    "entrance": "yes",
+    "name": "Hayden Street Entrance",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11275920887,
+  "lat": 43.6697832,
+  "lon": -79.3876128,
+  "tags": {
+    "entrance": "yes",
+    "name": "1 Bloor Street East Entrance",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11285182328,
+  "lat": 43.6650921,
+  "lon": -79.3963457,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 11346211615,
+  "lat": 43.6597370,
+  "lon": -79.3930744,
+  "tags": {
+    "entrance": "yes",
+    "level": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 11357007509,
+  "lat": 43.6692717,
+  "lon": -79.3921503,
+  "tags": {
+    "colour": "green",
+    "entrance": "yes",
+    "name": "80 Bloor Street West",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 11357007510,
+  "lat": 43.6697578,
+  "lon": -79.3900887,
+  "tags": {
+    "entrance": "yes",
+    "name": "80 Bloor Street West",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 11396046466,
+  "lat": 43.6594045,
+  "lon": -79.3934765,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:province": "ON",
+    "door": "yes",
+    "entrance": "exit",
+    "level": "-1",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11415454280,
+  "lat": 43.6542948,
+  "lon": -79.3996793,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11483951865,
+  "lat": 43.6599986,
+  "lon": -79.3948606,
+  "tags": {
+    "entrance": "yes",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 11522441206,
+  "lat": 43.6699126,
+  "lon": -79.3891122,
+  "tags": {
+    "access": "permissive",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11870062547,
+  "lat": 43.6518929,
+  "lon": -79.3932513,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11895607135,
+  "lat": 43.6603519,
+  "lon": -79.3981830,
+  "tags": {
+    "door": "hinged",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11916619674,
+  "lat": 43.6683647,
+  "lon": -79.3826220,
+  "tags": {
+    "entrance": "main",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 11984501434,
+  "lat": 43.6662980,
+  "lon": -79.3822364,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 12053673276,
+  "lat": 43.6582662,
+  "lon": -79.3788491,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 12053673277,
+  "lat": 43.6581390,
+  "lon": -79.3787959,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 12053673278,
+  "lat": 43.6580294,
+  "lon": -79.3793053,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 12053673279,
+  "lat": 43.6581542,
+  "lon": -79.3793575,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 12168123857,
+  "lat": 43.6509685,
+  "lon": -79.4012148,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 12198007576,
+  "lat": 43.6648681,
+  "lon": -79.4044674,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12248816206,
+  "lat": 43.6540873,
+  "lon": -79.3902548,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12253645011,
+  "lat": 43.6614259,
+  "lon": -79.3848543,
+  "tags": {
+    "door": "hinged",
+    "entrance": "yes",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 12344834324,
+  "lat": 43.6514582,
+  "lon": -79.3926684,
+  "tags": {
+    "entrance": "emergency"
+  }
+},
+{
+  "type": "node",
+  "id": 12501150259,
+  "lat": 43.6560945,
+  "lon": -79.3988710,
+  "tags": {
+    "addr:housenumber": "81",
+    "addr:street": "Cecil Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12540985092,
+  "lat": 43.6549771,
+  "lon": -79.3848778,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "111",
+    "addr:street": "Elizabeth Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12545522920,
+  "lat": 43.6683994,
+  "lon": -79.3948598,
+  "tags": {
+    "access": "private",
+    "entrance": "service"
+  }
+},
+{
+  "type": "node",
+  "id": 12634774410,
+  "lat": 43.6582606,
+  "lon": -79.3853191,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "77",
+    "addr:province": "Ontario",
+    "addr:street": "Gerrard Street West",
+    "door": "hinged",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12634774411,
+  "lat": 43.6581064,
+  "lon": -79.3860337,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "99",
+    "addr:province": "Ontario",
+    "addr:street": "Gerrard Street West",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12634807373,
+  "lat": 43.6567595,
+  "lon": -79.3895480,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12714843851,
+  "lat": 43.6521924,
+  "lon": -79.3847299,
+  "tags": {
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 12714843852,
+  "lat": 43.6521931,
+  "lon": -79.3845690,
+  "tags": {
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 12748023026,
+  "lat": 43.6618821,
+  "lon": -79.3841863,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 12748023029,
+  "lat": 43.6619414,
+  "lon": -79.3838928,
+  "tags": {
+    "addr:housenumber": "7",
+    "addr:street": "Grenville Street",
+    "entrance": "yes",
+    "name": "YC Residences"
+  }
+},
+{
+  "type": "node",
+  "id": 12748023032,
+  "lat": 43.6617795,
+  "lon": -79.3856661,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 12787445760,
+  "lat": 43.6596094,
+  "lon": -79.3827129,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "382",
+    "addr:postcode": "M5B1S9",
+    "addr:province": "ON",
+    "addr:street": "Yonge Street",
+    "entrance": "yes",
+    "level": "2",
+    "ref": "Shops at Aura",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12805621957,
+  "lat": 43.6665838,
+  "lon": -79.4015755,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12926544258,
+  "lat": 43.6666441,
+  "lon": -79.3926225,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12926544265,
+  "lat": 43.6666163,
+  "lon": -79.3925667,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13076788668,
+  "lat": 43.6627125,
+  "lon": -79.3961976,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13076878683,
+  "lat": 43.6609084,
+  "lon": -79.3968404,
+  "tags": {
+    "door": "hinged",
+    "entrance": "main",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 13076878684,
+  "lat": 43.6605628,
+  "lon": -79.3965614,
+  "tags": {
+    "door": "hinged",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 13117181660,
+  "lat": 43.6671215,
+  "lon": -79.4008503,
+  "tags": {
+    "addr:housenumber": "339",
+    "addr:street": "Bloor Street West",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13124092177,
+  "lat": 43.6605087,
+  "lon": -79.3869827,
+  "tags": {
+    "access": "yes",
+    "addr:city": "Toronto",
+    "addr:housenumber": "67",
+    "addr:province": "Ontario",
+    "addr:street": "College Street",
+    "door": "yes",
+    "entrance": "main",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13124092184,
+  "lat": 43.6603982,
+  "lon": -79.3864379,
+  "tags": {
+    "description": "790 Bay Street La Plante Entrance",
+    "door": "yes",
+    "entrance": "secondary"
+  }
+},
+{
+  "type": "node",
+  "id": 13124092185,
+  "lat": 43.6604928,
+  "lon": -79.3859000,
+  "tags": {
+    "access": "yes",
+    "addr:housenumber": "790",
+    "addr:street": "Bay Street",
+    "door": "yes",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 13128131474,
+  "lat": 43.6606014,
+  "lon": -79.3963802,
+  "tags": {
+    "door": "hinged",
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 13128131475,
+  "lat": 43.6610036,
+  "lon": -79.3963878,
+  "tags": {
+    "door": "hinged",
+    "entrance": "main",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 13128131476,
+  "lat": 43.6604103,
+  "lon": -79.3952385,
+  "tags": {
+    "entrance": "yes",
+    "level": "-0.5",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13128900036,
+  "lat": 43.6603233,
+  "lon": -79.3957073,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13137229293,
+  "lat": 43.6598719,
+  "lon": -79.3950048,
+  "tags": {
+    "entrance": "staircase",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13143611372,
+  "lat": 43.6669851,
+  "lon": -79.3852883,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13144867099,
+  "lat": 43.6609172,
+  "lon": -79.3967987,
+  "tags": {
+    "door": "hinged",
+    "entrance": "staircase"
+  }
+},
+{
+  "type": "node",
+  "id": 13144867100,
+  "lat": 43.6609952,
+  "lon": -79.3964279,
+  "tags": {
+    "door": "hinged",
+    "entrance": "staircase"
+  }
+},
+{
+  "type": "node",
+  "id": 13144896901,
+  "lat": 43.6606221,
+  "lon": -79.3963339,
+  "tags": {
+    "door": "hinged",
+    "entrance": "emergency"
+  }
+},
+{
+  "type": "node",
+  "id": 13152924408,
+  "lat": 43.6604144,
+  "lon": -79.3922102,
+  "tags": {
+    "entrance": "yes",
+    "level": "-1"
+  }
+},
+{
+  "type": "node",
+  "id": 13172237045,
+  "lat": 43.6592308,
+  "lon": -79.3958061,
+  "tags": {
+    "entrance": "emergency",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 13181107922,
+  "lat": 43.6600676,
+  "lon": -79.3958448,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13183962990,
+  "lat": 43.6543595,
+  "lon": -79.3790471,
+  "tags": {
+    "addr:housenumber": "20",
+    "addr:street": "Shuter Street",
+    "door": "hinged",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13183963000,
+  "lat": 43.6542336,
+  "lon": -79.3798499,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13191728485,
+  "lat": 43.6628674,
+  "lon": -79.3840885,
+  "tags": {
+    "addr:housenumber": "1",
+    "addr:street": "Grosvenor Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13191728488,
+  "lat": 43.6625977,
+  "lon": -79.3837763,
+  "tags": {
+    "addr:housenumber": "484",
+    "addr:street": "Yonge Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13195634314,
+  "lat": 43.6682127,
+  "lon": -79.3957488,
+  "tags": {
+    "alt_name": "Queen Alexandra Gateway",
+    "entrance": "yes",
+    "name": "Queen Alexandra Gates",
+    "name:etymology": "Queen Alexandra",
+    "name:etymology:wikidata": "Q152260"
+  }
+},
+{
+  "type": "node",
+  "id": 13195760332,
+  "lat": 43.6660946,
+  "lon": -79.3843289,
+  "tags": {
+    "addr:housenumber": "3",
+    "addr:street": "Gloucester Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13195760333,
+  "lat": 43.6660829,
+  "lon": -79.3843789,
+  "tags": {
+    "access": "no",
+    "entrance": "yes",
+    "note": "TTC Welsley station entrance closed currently"
+  }
+},
+{
+  "type": "node",
+  "id": 13196851729,
+  "lat": 43.6601734,
+  "lon": -79.3823454,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13197074418,
+  "lat": 43.6570610,
+  "lon": -79.3960864,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13197074419,
+  "lat": 43.6569034,
+  "lon": -79.3961011,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 13203894287,
+  "lat": 43.6613397,
+  "lon": -79.3812966,
+  "tags": {
+    "addr:housenumber": "27",
+    "addr:street": "Carlton Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13228738016,
+  "lat": 43.6587854,
+  "lon": -79.3841357,
+  "tags": {
+    "addr:housenumber": "44",
+    "addr:street": "Gerrard Street West",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13228738020,
+  "lat": 43.6586996,
+  "lon": -79.3844316,
+  "tags": {
+    "addr:housenumber": "711",
+    "addr:street": "Bay Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13228738044,
+  "lat": 43.6595181,
+  "lon": -79.3867798,
+  "tags": {
+    "addr:housenumber": "201",
+    "addr:street": "Elizabeth Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13231929374,
+  "lat": 43.6567284,
+  "lon": -79.3835059,
+  "tags": {
+    "addr:housenumber": "633",
+    "addr:street": "Bay Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13233022644,
+  "lat": 43.6640010,
+  "lon": -79.4000219,
+  "tags": {
+    "addr:housenumber": "369",
+    "addr:street": "Huron Street",
+    "door": "hinged",
+    "entrance": "exit",
+    "level": "0",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13233022645,
+  "lat": 43.6640012,
+  "lon": -79.4000059,
+  "tags": {
+    "addr:housenumber": "369",
+    "addr:street": "Huron Street",
+    "door": "revolving",
+    "entrance": "exit",
+    "level": "0",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13233022646,
+  "lat": 43.6640014,
+  "lon": -79.3999853,
+  "tags": {
+    "addr:housenumber": "369",
+    "addr:street": "Huron Street",
+    "door": "revolving",
+    "entrance": "entrance",
+    "level": "0",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13233022647,
+  "lat": 43.6640016,
+  "lon": -79.3999652,
+  "tags": {
+    "addr:housenumber": "369",
+    "addr:street": "Huron Street",
+    "door": "hinged",
+    "entrance": "entrance",
+    "level": "0",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13233171093,
+  "lat": 43.6612207,
+  "lon": -79.4010705,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13233171095,
+  "lat": 43.6612257,
+  "lon": -79.4009462,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13240034826,
+  "lat": 43.6555702,
+  "lon": -79.3781417,
+  "tags": {
+    "addr:housenumber": "80",
+    "addr:street": "Bond Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13244294214,
+  "lat": 43.6604821,
+  "lon": -79.3982886,
+  "tags": {
+    "door": "hinged",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13256168418,
+  "lat": 43.6502099,
+  "lon": -79.3833001,
+  "tags": {
+    "description": "120 Adelaide West Richmond St. entrance",
+    "entrance": "yes",
+    "level": "0",
+    "name": "120 Adelaide West",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13260501181,
+  "lat": 43.6505961,
+  "lon": -79.3835421,
+  "tags": {
+    "description": "Underground entrance from Sheraton Centre via PATH",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Richmond-Adelaide Centre (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13260501185,
+  "lat": 43.6505219,
+  "lon": -79.3838606,
+  "tags": {
+    "entrance": "main",
+    "level": "0",
+    "name": "111 Richmond West",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13260501191,
+  "lat": 43.6505540,
+  "lon": -79.3832291,
+  "tags": {
+    "entrance": "main",
+    "level": "0",
+    "name": "85 Richmond West",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13278060634,
+  "lat": 43.6516362,
+  "lon": -79.3838146,
+  "tags": {
+    "description": "Underground entrance from Toronto City Hall parking via PATH",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Sheraton Centre (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13278060642,
+  "lat": 43.6508842,
+  "lon": -79.3846229,
+  "tags": {
+    "entrance": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13278824986,
+  "lat": 43.6515496,
+  "lon": -79.3815642,
+  "tags": {
+    "description": "Underground entrance from Hudson's Bay via PATH",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Thomson Building (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13278824996,
+  "lat": 43.6511203,
+  "lon": -79.3820946,
+  "tags": {
+    "entrance": "main",
+    "level": "0",
+    "name": "Victory Building",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13288303220,
+  "lat": 43.6501795,
+  "lon": -79.3784631,
+  "tags": {
+    "entrance": "main",
+    "level": "0",
+    "name": "110 Yonge",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13293811846,
+  "lat": 43.6513596,
+  "lon": -79.3799656,
+  "tags": {
+    "description": "Underground entrance from Hudson's Bay via PATH",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Bay Adelaide Centre (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13293811857,
+  "lat": 43.6508790,
+  "lon": -79.3799893,
+  "tags": {
+    "description": "Temperance St entrance",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Bay Adelaide Centre North Tower",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13293811858,
+  "lat": 43.6513330,
+  "lon": -79.3801898,
+  "tags": {
+    "description": "Richmond St entrance",
+    "entrance": "main",
+    "level": "0",
+    "name": "Bay Adelaide Centre North Tower",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13293811860,
+  "lat": 43.6502721,
+  "lon": -79.3796066,
+  "tags": {
+    "description": "Adelaide St entrance",
+    "entrance": "main",
+    "level": "0",
+    "name": "Bay Adelaide Centre East Tower",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13293811861,
+  "lat": 43.6502674,
+  "lon": -79.3797317,
+  "tags": {
+    "description": "Underground entrance from Scotia Plaza via PATH",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Bay Adelaide Centre (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13293811872,
+  "lat": 43.6504621,
+  "lon": -79.3802272,
+  "tags": {
+    "description": "Courtyard entrance",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Bay Adelaide Centre West Tower",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13295755930,
+  "lat": 43.6516945,
+  "lon": -79.3838387,
+  "tags": {
+    "description": "Underground entrance from Sheraton Centre via PATH",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Toronto City Hall parking (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13295755947,
+  "lat": 43.6567759,
+  "lon": -79.3812452,
+  "tags": {
+    "description": "Yonge St entrance",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Atrium on Bay",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13295755954,
+  "lat": 43.6563702,
+  "lon": -79.3814278,
+  "tags": {
+    "description": "Underground entrance from Dundas Station via PATH",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Atrium on Bay (PATH)",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13295755956,
+  "lat": 43.6562328,
+  "lon": -79.3837530,
+  "tags": {
+    "description": "PATH access from Bay St",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Atrium on Bay (PATH access)",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13297903995,
+  "lat": 43.6547054,
+  "lon": -79.3808705,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13298086103,
+  "lat": 43.6560493,
+  "lon": -79.3810472,
+  "tags": {
+    "description": "Underground entrance from Dundas Station via PATH (on level 1)",
+    "entrance": "yes",
+    "level": "-2",
+    "name": "CF Toronto Eaton Centre (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13298086110,
+  "lat": 43.6559965,
+  "lon": -79.3817184,
+  "tags": {
+    "entrance": "main",
+    "level": "0",
+    "name": "One Dundas West",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13298086115,
+  "lat": 43.6561453,
+  "lon": -79.3810918,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Entrance from Eaton Centre L2 (via PATH)",
+    "note": "Dundas Station",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13298086132,
+  "lat": 43.6563381,
+  "lon": -79.3804562,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Sankofa Square Elevator",
+    "note": "Dundas Station",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13298409919,
+  "lat": 43.6524624,
+  "lon": -79.3798515,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "South Entrance from Eaton Centre (via PATH)",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13298409941,
+  "lat": 43.6525507,
+  "lon": -79.3800605,
+  "tags": {
+    "description": "Underground entrance from Queen Station via PATH",
+    "entrance": "yes",
+    "level": "-2",
+    "name": "CF Toronto Eaton Centre (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13298501955,
+  "lat": 43.6535678,
+  "lon": -79.3799423,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "North Entrance from Eaton Centre (via PATH)",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13299958352,
+  "lat": 43.6515968,
+  "lon": -79.3798512,
+  "tags": {
+    "description": "Underground entrance from Bay Adelaide Centre via PATH",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Hudson's Bay (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13299958358,
+  "lat": 43.6514455,
+  "lon": -79.3812861,
+  "tags": {
+    "description": "Underground entrance from Thomson Building via PATH",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Hudson's Bay (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13299958366,
+  "lat": 43.6521781,
+  "lon": -79.3796681,
+  "tags": {
+    "description": "Underground entrance from Queen Station via PATH",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Hudson's Bay (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13299958367,
+  "lat": 43.6523095,
+  "lon": -79.3790610,
+  "tags": {
+    "description": "Underground entrance from Hudson's Bay via PATH",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "One Queen Street East (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13299958373,
+  "lat": 43.6514193,
+  "lon": -79.3786999,
+  "tags": {
+    "entrance": "main",
+    "level": "0",
+    "name": "Yonge Richmond Centre",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13299958377,
+  "lat": 43.6516790,
+  "lon": -79.3784717,
+  "tags": {
+    "description": "Underground entrance from One Queen Street East via PATH",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Yonge Richmond Centre (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13299958378,
+  "lat": 43.6519211,
+  "lon": -79.3785730,
+  "tags": {
+    "description": "Underground entrance from Yonge Richmond Centre via PATH",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "One Queen Street East (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13299958380,
+  "lat": 43.6522278,
+  "lon": -79.3796872,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Entrance from Hudson's Bay (via PATH)",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13299958381,
+  "lat": 43.6524090,
+  "lon": -79.3789905,
+  "tags": {
+    "description": "Underground entrance from Queen Station via PATH",
+    "entrance": "yes",
+    "level": "-2",
+    "name": "One Queen Street East (PATH)",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13299958382,
+  "lat": 43.6522867,
+  "lon": -79.3789910,
+  "tags": {
+    "description": "Yonge St entrance",
+    "entrance": "yes",
+    "level": "0",
+    "name": "One Queen Street East",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13299958386,
+  "lat": 43.6524488,
+  "lon": -79.3783749,
+  "tags": {
+    "description": "Queen / Victoria entrance",
+    "entrance": "yes",
+    "level": "0",
+    "name": "One Queen Street East",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13299958393,
+  "lat": 43.6522464,
+  "lon": -79.3793549,
+  "tags": {
+    "description": "Underground entrance from One Queen Street East via PATH",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Hudson's Bay (PATH)",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13299958399,
+  "lat": 43.6526755,
+  "lon": -79.3787175,
+  "tags": {
+    "entrance": "main",
+    "level": "0",
+    "name": "2 Queen Street East",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13299991702,
+  "lat": 43.6526948,
+  "lon": -79.3792085,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Yonge / Queen Northeast Corner",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13306782516,
+  "lat": 43.6612162,
+  "lon": -79.3987517,
+  "tags": {
+    "door": "hinged",
+    "entrance": "secondary"
+  }
+},
+{
+  "type": "node",
+  "id": 13306782517,
+  "lat": 43.6612860,
+  "lon": -79.3984319,
+  "tags": {
+    "door": "hinged",
+    "entrance": "secondary"
+  }
+},
+{
+  "type": "node",
+  "id": 13389863469,
+  "lat": 43.6637966,
+  "lon": -79.3834484,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "18",
+    "addr:province": "Ontario",
+    "addr:street": "Maitland Terrace",
+    "entrance": "main",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13403045088,
+  "lat": 43.6607541,
+  "lon": -79.4009162,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13403166893,
+  "lat": 43.6592341,
+  "lon": -79.3974873,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13403166895,
+  "lat": 43.6594359,
+  "lon": -79.3979587,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13403178515,
+  "lat": 43.6596210,
+  "lon": -79.3825389,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13403216311,
+  "lat": 43.6602913,
+  "lon": -79.3892541,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13436099437,
+  "lat": 43.6602429,
+  "lon": -79.3942066,
+  "tags": {
+    "addr:housenumber": "5",
+    "addr:street": "King's College Road",
+    "entrance": "yes",
+    "level": "0",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13436117656,
+  "lat": 43.6592142,
+  "lon": -79.3959374,
+  "tags": {
+    "entrance": "staircase"
+  }
+},
+{
+  "type": "node",
+  "id": 13436117657,
+  "lat": 43.6591207,
+  "lon": -79.3957843,
+  "tags": {
+    "entrance": "staircase"
+  }
+},
+{
+  "type": "node",
+  "id": 13436117658,
+  "lat": 43.6594202,
+  "lon": -79.3943897,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13436117672,
+  "lat": 43.6595529,
+  "lon": -79.3945335,
+  "tags": {
+    "entrance": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13436156049,
+  "lat": 43.6592500,
+  "lon": -79.3951842,
+  "tags": {
+    "entrance": "staircase",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13436614499,
+  "lat": 43.6594998,
+  "lon": -79.3948447,
+  "tags": {
+    "entrance": "staircase",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13439794666,
+  "lat": 43.6595412,
+  "lon": -79.3945756,
+  "tags": {
+    "addr:floor": "0",
+    "entrance": "loading_dock",
+    "level": "-1"
+  }
+},
+{
+  "type": "node",
+  "id": 13442611344,
+  "lat": 43.6594254,
+  "lon": -79.3939311,
+  "tags": {
+    "entrance": "elevator",
+    "level": "-1",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13442771929,
+  "lat": 43.6594140,
+  "lon": -79.3950378,
+  "tags": {
+    "addr:floor": "0",
+    "entrance": "yes",
+    "level": "-1",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13444464985,
+  "lat": 43.6596391,
+  "lon": -79.3929585,
+  "tags": {
+    "door": "hinged",
+    "entrance": "yes",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13453226980,
+  "lat": 43.6610867,
+  "lon": -79.3975804,
+  "tags": {
+    "door": "hinged",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13454420111,
+  "lat": 43.6600263,
+  "lon": -79.3970247,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13457242126,
+  "lat": 43.6667157,
+  "lon": -79.3980685,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13465075314,
+  "lat": 43.6661927,
+  "lon": -79.3937803,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13465075320,
+  "lat": 43.6665662,
+  "lon": -79.3942862,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13465111272,
+  "lat": 43.6589013,
+  "lon": -79.3904833,
+  "tags": {
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 13465111273,
+  "lat": 43.6608542,
+  "lon": -79.3842276,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13482439818,
+  "lat": 43.6602299,
+  "lon": -79.3916272,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13482453090,
+  "lat": 43.6594327,
+  "lon": -79.3933504,
+  "tags": {
+    "door": "hinged",
+    "entrance": "yes",
+    "level": "-1",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13513374212,
+  "lat": 43.6614956,
+  "lon": -79.3990450,
+  "tags": {
+    "door": "hinged",
+    "entrance": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13517050538,
+  "lat": 43.6657451,
+  "lon": -79.3940871,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13517050542,
+  "lat": 43.6658318,
+  "lon": -79.3937080,
+  "tags": {
+    "entrance": "yes",
+    "level:ref": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 13517050545,
+  "lat": 43.6660500,
+  "lon": -79.3942123,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13517050546,
+  "lat": 43.6659240,
+  "lon": -79.3943845,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13522179762,
+  "lat": 43.6540746,
+  "lon": -79.3946716,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13522922001,
+  "lat": 43.6597381,
+  "lon": -79.3956228,
+  "tags": {
+    "entrance": "yes",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13534566171,
+  "lat": 43.6597614,
+  "lon": -79.3930856,
+  "tags": {
+    "entrance": "yes",
+    "level": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 13547973332,
+  "lat": 43.6596497,
+  "lon": -79.3980433,
+  "tags": {
+    "entrance": "emergency"
+  }
+},
+{
+  "type": "node",
+  "id": 13561103524,
+  "lat": 43.6584725,
+  "lon": -79.3930578,
+  "tags": {
+    "door": "hinged",
+    "entrance": "staircase"
+  }
+},
+{
+  "type": "node",
+  "id": 13596846712,
+  "lat": 43.6599854,
+  "lon": -79.3972674,
+  "tags": {
+    "entrance": "exit"
+  }
+},
+{
+  "type": "node",
+  "id": 13625510977,
+  "lat": 43.6591892,
+  "lon": -79.3823659,
+  "tags": {
+    "entrance": "shop",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13647896604,
+  "lat": 43.6614722,
+  "lon": -79.3981289,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13647896605,
+  "lat": 43.6616076,
+  "lon": -79.3978338,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13648554787,
+  "lat": 43.6635796,
+  "lon": -79.3947220,
+  "tags": {
+    "description": "Hart House Theatre entrance",
+    "entrance": "yes",
+    "level": "-1"
+  }
+},
+{
+  "type": "node",
+  "id": 13648554789,
+  "lat": 43.6636666,
+  "lon": -79.3942770,
+  "tags": {
+    "entrance": "service",
+    "level": "-1"
+  }
+},
+{
+  "type": "node",
+  "id": 13652319143,
+  "lat": 43.6597335,
+  "lon": -79.3946077,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13653694739,
+  "lat": 43.6603376,
+  "lon": -79.3966719,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 13690168308,
+  "lat": 43.6557645,
+  "lon": -79.3955302,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 13715067452,
+  "lat": 43.6594880,
+  "lon": -79.3908788,
+  "tags": {
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 13715067457,
+  "lat": 43.6588277,
+  "lon": -79.3914341,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13721713251,
+  "lat": 43.6595222,
+  "lon": -79.3906920,
+  "tags": {
+    "access": "private",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13725882183,
+  "lat": 43.6550931,
+  "lon": -79.3983195,
+  "tags": {
+    "addr:housenumber": "132",
+    "addr:street": "Baldwin Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13759196199,
+  "lat": 43.6666693,
+  "lon": -79.3987489,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13759206001,
+  "lat": 43.6668985,
+  "lon": -79.3990485,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13759206009,
+  "lat": 43.6668638,
+  "lon": -79.3990958,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13759206037,
+  "lat": 43.6669150,
+  "lon": -79.3993439,
+  "tags": {
+    "entrance": "main"
+  }
+},
+{
+  "type": "node",
+  "id": 13767367042,
+  "lat": 43.6630772,
+  "lon": -79.3946773,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13828540442,
+  "lat": 43.6560651,
+  "lon": -79.3937551,
+  "tags": {
+    "addr:housenumber": "32",
+    "addr:street": "Baldwin Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13828540443,
+  "lat": 43.6569698,
+  "lon": -79.3940268,
+  "tags": {
+    "addr:housenumber": "28",
+    "addr:street": "Henry Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13828540449,
+  "lat": 43.6562392,
+  "lon": -79.3937234,
+  "tags": {
+    "addr:housenumber": "6",
+    "addr:street": "Henry Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13828540450,
+  "lat": 43.6562883,
+  "lon": -79.3934542,
+  "tags": {
+    "addr:housenumber": "26A",
+    "addr:street": "Baldwin Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13828540451,
+  "lat": 43.6560807,
+  "lon": -79.3936834,
+  "tags": {
+    "addr:housenumber": "30",
+    "addr:street": "Baldwin Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13873163242,
+  "lat": 43.6567889,
+  "lon": -79.3951829,
+  "tags": {
+    "addr:housenumber": "204",
+    "addr:street": "Beverley Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13873163243,
+  "lat": 43.6580781,
+  "lon": -79.3949319,
+  "tags": {
+    "entrance": "garage"
+  }
+},
+{
+  "type": "node",
+  "id": 13873163244,
+  "lat": 43.6570872,
+  "lon": -79.3950200,
+  "tags": {
+    "addr:housenumber": "12C",
+    "addr:street": "Cecil Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13873163245,
+  "lat": 43.6571026,
+  "lon": -79.3949471,
+  "tags": {
+    "addr:housenumber": "12B",
+    "addr:street": "Cecil Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13873163246,
+  "lat": 43.6571158,
+  "lon": -79.3948851,
+  "tags": {
+    "addr:housenumber": "12A",
+    "addr:street": "Cecil Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13873163247,
+  "lat": 43.6571288,
+  "lon": -79.3948236,
+  "tags": {
+    "addr:housenumber": "10B",
+    "addr:street": "Cecil Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13873163248,
+  "lat": 43.6571408,
+  "lon": -79.3947671,
+  "tags": {
+    "addr:housenumber": "10A",
+    "addr:street": "Cecil Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13873163249,
+  "lat": 43.6571540,
+  "lon": -79.3947048,
+  "tags": {
+    "addr:housenumber": "8B",
+    "addr:street": "Cecil Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13873163250,
+  "lat": 43.6571665,
+  "lon": -79.3946457,
+  "tags": {
+    "addr:housenumber": "8A",
+    "addr:street": "Cecil Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13873163251,
+  "lat": 43.6572667,
+  "lon": -79.3946700,
+  "tags": {
+    "door": "overhead",
+    "entrance": "garage"
+  }
+},
+{
+  "type": "node",
+  "id": 13873163252,
+  "lat": 43.6570010,
+  "lon": -79.3944319,
+  "tags": {
+    "entrance": "emergency",
+    "ref": "D"
+  }
+},
+{
+  "type": "node",
+  "id": 13873163253,
+  "lat": 43.6570144,
+  "lon": -79.3943703,
+  "tags": {
+    "addr:housenumber": "7B",
+    "addr:street": "Cecil Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13873163254,
+  "lat": 43.6570217,
+  "lon": -79.3943368,
+  "tags": {
+    "addr:housenumber": "7A",
+    "addr:street": "Cecil Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13873163255,
+  "lat": 43.6570343,
+  "lon": -79.3942788,
+  "tags": {
+    "addr:housenumber": "5B",
+    "addr:street": "Cecil Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13873163256,
+  "lat": 43.6570405,
+  "lon": -79.3942501,
+  "tags": {
+    "addr:housenumber": "5A",
+    "addr:street": "Cecil Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13873163257,
+  "lat": 43.6572232,
+  "lon": -79.3944065,
+  "tags": {
+    "addr:housenumber": "4",
+    "addr:street": "Cecil Street",
+    "addr:unit": "1",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13874711484,
+  "lat": 43.6561082,
+  "lon": -79.3946062,
+  "tags": {
+    "addr:housenumber": "187",
+    "addr:street": "Beverley Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13874711485,
+  "lat": 43.6562137,
+  "lon": -79.3946422,
+  "tags": {
+    "addr:housenumber": "189",
+    "addr:street": "Beverley Street",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13874729732,
+  "lat": 43.6572322,
+  "lon": -79.3946561,
+  "tags": {
+    "door": "overhead",
+    "entrance": "garage"
+  }
+},
+{
+  "type": "node",
+  "id": 13874793667,
+  "lat": 43.6522046,
+  "lon": -79.3983552,
+  "tags": {
+    "addr:housenumber": "10",
+    "addr:street": "Willison Square",
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13899880207,
+  "lat": 43.6651107,
+  "lon": -79.3961205,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13899880211,
+  "lat": 43.6650789,
+  "lon": -79.3961072,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13999372286,
+  "lat": 43.6593182,
+  "lon": -79.3998721,
+  "tags": {
+    "access": "private",
+    "entrance": "main",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 14014825877,
+  "lat": 43.6602611,
+  "lon": -79.3828297,
+  "tags": {
+    "entrance": "yes",
+    "level": "0",
+    "name": "Yonge 424 Street"
+  }
+},
+{
+  "type": "node",
+  "id": 14014825889,
+  "lat": 43.6611065,
+  "lon": -79.3831865,
+  "tags": {
+    "entrance": "yes",
+    "level": "0",
+    "name": "Winners"
+  }
+},
+{
+  "type": "node",
+  "id": 14014825892,
+  "lat": 43.6598946,
+  "lon": -79.3828448,
+  "tags": {
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 14014825900,
+  "lat": 43.6611962,
+  "lon": -79.3834186,
+  "tags": {
+    "entrance": "yes",
+    "level": "0",
+    "name": "College Park Shops"
+  }
+},
+{
+  "type": "node",
+  "id": 14014830007,
+  "lat": 43.6600374,
+  "lon": -79.3827352,
+  "tags": {
+    "entrance": "yes",
+    "level": "0",
+    "name": "Planet Fitness"
+  }
+},
+{
+  "type": "node",
+  "id": 14015025812,
+  "lat": 43.6611551,
+  "lon": -79.3835990,
+  "tags": {
+    "entrance": "yes",
+    "level": "0",
+    "name": "Winners"
+  }
+},
+{
+  "type": "node",
+  "id": 14015025814,
+  "lat": 43.6612040,
+  "lon": -79.3833841,
+  "tags": {
+    "entrance": "shop"
+  }
+},
+{
+  "type": "node",
+  "id": 14019965016,
+  "lat": 43.6679653,
+  "lon": -79.3965687,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 14020362002,
+  "lat": 43.6557661,
+  "lon": -79.3879374,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "136",
+    "addr:province": "Ontario",
+    "addr:street": "Edward Street",
+    "entrance": "yes",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 14020362003,
+  "lat": 43.6557877,
+  "lon": -79.3883384,
+  "tags": {
+    "addr:city": "Toronto",
+    "addr:housenumber": "505",
+    "addr:province": "Ontario",
+    "addr:street": "University Avenue",
+    "entrance": "main",
+    "level": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 14024333550,
+  "lat": 43.6636484,
+  "lon": -79.3944195,
+  "tags": {
+    "entrance": "yes",
+    "level": "-1"
+  }
+},
+{
+  "type": "node",
+  "id": 14024333553,
+  "lat": 43.6636657,
+  "lon": -79.3942299,
+  "tags": {
+    "entrance": "yes",
+    "level": "0"
+  }
+}
+
+  ]
+}

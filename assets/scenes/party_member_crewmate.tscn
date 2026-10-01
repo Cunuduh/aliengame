@@ -1,0 +1,228 @@
+[gd_scene format=3 uid="uid://b7yq2n8xkc4pd"]
+
+[ext_resource type="Shader" uid="uid://d2tfkj0vys23w" path="res://assets/shaders/dissolve.gdshader" id="1_gwhrs"]
+[ext_resource type="Script" uid="uid://cu14kqnvwtew2" path="res://assets/scripts/characters/party_member.gd" id="2_pmemb"]
+[ext_resource type="Script" uid="uid://bsm1p7h4p5i3q" path="res://assets/scripts/abilities/ability.gd" id="2_xbxy0"]
+[ext_resource type="Script" uid="uid://oykae3gjh2nd" path="res://assets/scripts/abilities/spike.gd" id="3_32r3b"]
+[ext_resource type="Script" uid="uid://cjkbvly834ypq" path="res://assets/scripts/characters/character_stats.gd" id="3_6035u"]
+[ext_resource type="Texture2D" uid="uid://bwp1o4byq7vvq" path="res://assets/sprites/npcs/crewmate.png" id="6_j06p2"]
+
+[sub_resource type="Resource" id="Resource_6tix3"]
+script = ExtResource("3_32r3b")
+metadata/_custom_type_script = "uid://oykae3gjh2nd"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdn5g"]
+size = Vector2(20, 42)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_snygp"]
+noise_type = 3
+domain_warp_enabled = true
+domain_warp_type = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4fcm6"]
+width = 384
+height = 300
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_snygp")
+normalize = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aslhk"]
+resource_local_to_scene = true
+shader = ExtResource("1_gwhrs")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_4fcm6")
+shader_parameter/noise_tiling = 1.0
+shader_parameter/progress = 0.0
+shader_parameter/edge_thickness = 0.025
+shader_parameter/edge_colour = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_rmlry"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_xdjb2"]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_abfkd"]
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 4, 5, 4]
+}
+
+[sub_resource type="Animation" id="Animation_k6i2p"]
+resource_name = "damaged"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.25),
+"transitions": PackedFloat32Array(0.277393, 1, 2.73208, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(7, 0), Vector2(-5, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_xfn25"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_p2cjj"]
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ogkg5"]
+_data = {
+&"RESET": SubResource("Animation_rmlry"),
+&"attack": SubResource("Animation_xdjb2"),
+&"attack_wait": SubResource("Animation_abfkd"),
+&"damaged": SubResource("Animation_k6i2p"),
+&"default": SubResource("Animation_xfn25"),
+&"idle": SubResource("Animation_p2cjj")
+}
+
+[node name="PartyMemberCrewmate" type="CharacterBody2D" unique_id=120122552 groups=["party"]]
+y_sort_enabled = true
+script = ExtResource("2_pmemb")
+combatant_name = "Crewmate"
+abilities = Array[ExtResource("2_xbxy0")]([SubResource("Resource_6tix3")])
+
+[node name="CharacterStats" type="Node" parent="." unique_id=801278535]
+script = ExtResource("3_6035u")
+max_health = 24
+max_attack = 8
+health = 24
+attack = 8
+agility = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1203913848]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_jdn5g")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=825171290]
+texture_filter = 1
+material = SubResource("ShaderMaterial_aslhk")
+texture = ExtResource("6_j06p2")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=739753728]
+libraries/ = SubResource("AnimationLibrary_ogkg5")

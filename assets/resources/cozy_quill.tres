@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://brsa3jx24dlqj"]
+
+[ext_resource type="FontFile" uid="uid://cqxt1vg7vcy05" path="res://assets/fonts/cozy-quill.otf" id="1_1ifvs"]
+
+[resource]
+line_spacing = 1.0
+font = ExtResource("1_1ifvs")
+font_size = 9

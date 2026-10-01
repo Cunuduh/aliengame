@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dmafsbj38c8ip"
+path="res://.godot/imported/hit_effects.aseprite-768c30494991254ba47125c39a70657a.res"
+
+[deps]
+
+source_file="res://assets/sprites/effects/hit_effects.aseprite"
+dest_files=["res://.godot/imported/hit_effects.aseprite-768c30494991254ba47125c39a70657a.res"]
+
+[params]
+

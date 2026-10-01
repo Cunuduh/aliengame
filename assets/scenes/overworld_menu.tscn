@@ -1,0 +1,520 @@
+[gd_scene format=3 uid="uid://bpgrsv7fcdn4p"]
+
+[ext_resource type="Script" uid="uid://bh8djo82o37tr" path="res://assets/scripts/ui/overworld_menu.gd" id="1_script"]
+[ext_resource type="Theme" uid="uid://bk27uogicxbh4" path="res://assets/themes/default_theme.tres" id="2_theme"]
+[ext_resource type="FontFile" uid="uid://cqxt1vg7vcy05" path="res://assets/fonts/cozy-quill.otf" id="3_font"]
+[ext_resource type="FontFile" uid="uid://dthx7l0pqel3o" path="res://assets/fonts/cozy-quill-bold.otf" id="4_bold"]
+[ext_resource type="Texture2D" uid="uid://bkp1aunv4m11c" path="res://assets/sprites/ui/battle/party/caret_white.png" id="5_caret"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_detail = 1
+
+[node name="OverworldMenu" type="CanvasLayer" unique_id=633980027]
+process_mode = 3
+layer = 9
+script = ExtResource("1_script")
+
+[node name="Root" type="Control" parent="." unique_id=1269464367]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dimmer" type="ColorRect" parent="Root" unique_id=1793543853]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.45)
+
+[node name="Banner" type="ColorRect" parent="Root" unique_id=1793543854]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 28.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Options" type="HBoxContainer" parent="Root/Banner" unique_id=475113866]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 48
+alignment = 1
+
+[node name="PartyOption" type="Label" parent="Root/Banner/Options" unique_id=1229414175]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 9
+text = "PARTY"
+
+[node name="ItemsOption" type="Label" parent="Root/Banner/Options" unique_id=2002001993]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 9
+text = "ITEMS"
+
+[node name="ConfigOption" type="Label" parent="Root/Banner/Options" unique_id=1141848452]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 9
+text = "CONFIG"
+
+[node name="ContentPanel" type="Panel" parent="Root" unique_id=596698048]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 44.0
+offset_right = 264.0
+offset_bottom = 216.0
+theme = ExtResource("2_theme")
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="PartyPage" type="Control" parent="Root/ContentPanel" unique_id=1729151399]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Members" type="VBoxContainer" parent="Root/ContentPanel/PartyPage" unique_id=468321791]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Member1" type="VBoxContainer" parent="Root/ContentPanel/PartyPage/Members" unique_id=1833607831]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Name" type="Label" parent="Root/ContentPanel/PartyPage/Members/Member1" unique_id=1348789011]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 9
+text = "NAME"
+
+[node name="HP" type="Label" parent="Root/ContentPanel/PartyPage/Members/Member1" unique_id=834422712]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "HP 0 / 0"
+
+[node name="Stats" type="Label" parent="Root/ContentPanel/PartyPage/Members/Member1" unique_id=701502135]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "ATK 0   DEF 0   AGI 0"
+
+[node name="Member2" type="VBoxContainer" parent="Root/ContentPanel/PartyPage/Members" unique_id=435427953]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Name" type="Label" parent="Root/ContentPanel/PartyPage/Members/Member2" unique_id=1114028333]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 9
+text = "NAME"
+
+[node name="HP" type="Label" parent="Root/ContentPanel/PartyPage/Members/Member2" unique_id=761196625]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "HP 0 / 0"
+
+[node name="Stats" type="Label" parent="Root/ContentPanel/PartyPage/Members/Member2" unique_id=1219052699]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "ATK 0   DEF 0   AGI 0"
+
+[node name="Member3" type="VBoxContainer" parent="Root/ContentPanel/PartyPage/Members" unique_id=2076196080]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Name" type="Label" parent="Root/ContentPanel/PartyPage/Members/Member3" unique_id=1061078234]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 9
+text = "NAME"
+
+[node name="HP" type="Label" parent="Root/ContentPanel/PartyPage/Members/Member3" unique_id=1551542126]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "HP 0 / 0"
+
+[node name="Stats" type="Label" parent="Root/ContentPanel/PartyPage/Members/Member3" unique_id=993002424]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "ATK 0   DEF 0   AGI 0"
+
+[node name="PartyHint" type="Label" parent="Root/ContentPanel/PartyPage" unique_id=1455029231]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -18.0
+offset_right = -10.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.45, 0.45, 0.45, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "Z: heal   X: back"
+
+[node name="ItemsPage" type="Control" parent="Root/ContentPanel" unique_id=10906830]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemsList" type="RichTextLabel" parent="Root/ContentPanel/ItemsPage" unique_id=2017979727]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_font")
+theme_override_fonts/bold_font = ExtResource("4_bold")
+theme_override_font_sizes/normal_font_size = 9
+theme_override_font_sizes/bold_font_size = 9
+bbcode_enabled = true
+scroll_active = false
+
+[node name="ItemDesc" type="Label" parent="Root/ContentPanel/ItemsPage" unique_id=84066279]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -32.0
+offset_right = -10.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.62, 0.62, 0.62, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = ""
+
+[node name="ItemsHint" type="Label" parent="Root/ContentPanel/ItemsPage" unique_id=84066280]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -18.0
+offset_right = -10.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.45, 0.45, 0.45, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "Z: use   X: back"
+
+[node name="ConfigPage" type="Control" parent="Root/ContentPanel" unique_id=1897969322]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Entries" type="VBoxContainer" parent="Root/ContentPanel/ConfigPage" unique_id=414503873]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 14.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="KeybindsRow" type="HBoxContainer" parent="Root/ContentPanel/ConfigPage/Entries" unique_id=827875337]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Root/ContentPanel/ConfigPage/Entries/KeybindsRow" unique_id=633092144]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 9
+text = "KEYBINDS"
+
+[node name="VolumeRow" type="HBoxContainer" parent="Root/ContentPanel/ConfigPage/Entries" unique_id=1087707339]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Root/ContentPanel/ConfigPage/Entries/VolumeRow" unique_id=217634867]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 9
+text = "VOLUME"
+
+[node name="Value" type="Label" parent="Root/ContentPanel/ConfigPage/Entries/VolumeRow" unique_id=489676535]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "100%"
+
+[node name="LanguageRow" type="HBoxContainer" parent="Root/ContentPanel/ConfigPage/Entries" unique_id=1087707340]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Root/ContentPanel/ConfigPage/Entries/LanguageRow" unique_id=217634868]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 9
+text = "LANGUAGE"
+
+[node name="Value" type="Label" parent="Root/ContentPanel/ConfigPage/Entries/LanguageRow" unique_id=489676536]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "ENGLISH"
+
+[node name="QuitRow" type="HBoxContainer" parent="Root/ContentPanel/ConfigPage/Entries" unique_id=31927833]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Root/ContentPanel/ConfigPage/Entries/QuitRow" unique_id=575027767]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 9
+text = "QUIT"
+
+[node name="ConfigHint" type="Label" parent="Root/ContentPanel/ConfigPage" unique_id=1778926893]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -20.0
+offset_right = -10.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.45, 0.45, 0.45, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "Z: select   X: back"
+
+[node name="KeybindPanel" type="Control" parent="Root/ContentPanel/ConfigPage" unique_id=981064636]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Rows" type="VBoxContainer" parent="Root/ContentPanel/ConfigPage/KeybindPanel" unique_id=1434376628]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 14.0
+offset_right = -10.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="InteractRow" type="HBoxContainer" parent="Root/ContentPanel/ConfigPage/KeybindPanel/Rows" unique_id=1050160420]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Root/ContentPanel/ConfigPage/KeybindPanel/Rows/InteractRow" unique_id=647492651]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 9
+text = "INTERACT"
+
+[node name="Value" type="Label" parent="Root/ContentPanel/ConfigPage/KeybindPanel/Rows/InteractRow" unique_id=443667551]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "Z"
+
+[node name="CancelRow" type="HBoxContainer" parent="Root/ContentPanel/ConfigPage/KeybindPanel/Rows" unique_id=1453808557]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Root/ContentPanel/ConfigPage/KeybindPanel/Rows/CancelRow" unique_id=1814587679]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 9
+text = "CANCEL"
+
+[node name="Value" type="Label" parent="Root/ContentPanel/ConfigPage/KeybindPanel/Rows/CancelRow" unique_id=83015801]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "X"
+
+[node name="MenuRow" type="HBoxContainer" parent="Root/ContentPanel/ConfigPage/KeybindPanel/Rows" unique_id=1568438772]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Root/ContentPanel/ConfigPage/KeybindPanel/Rows/MenuRow" unique_id=257745362]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 9
+text = "MENU"
+
+[node name="Value" type="Label" parent="Root/ContentPanel/ConfigPage/KeybindPanel/Rows/MenuRow" unique_id=346613665]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "C"
+
+[node name="AttackRow" type="HBoxContainer" parent="Root/ContentPanel/ConfigPage/KeybindPanel/Rows" unique_id=1985726656]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Root/ContentPanel/ConfigPage/KeybindPanel/Rows/AttackRow" unique_id=2000247096]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 9
+text = "ATTACK"
+
+[node name="Value" type="Label" parent="Root/ContentPanel/ConfigPage/KeybindPanel/Rows/AttackRow" unique_id=1056021071]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "---"
+
+[node name="TurnOrderRow" type="HBoxContainer" parent="Root/ContentPanel/ConfigPage/KeybindPanel/Rows" unique_id=1471688754]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Root/ContentPanel/ConfigPage/KeybindPanel/Rows/TurnOrderRow" unique_id=85515473]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 9
+text = "TURN ORDER"
+
+[node name="Value" type="Label" parent="Root/ContentPanel/ConfigPage/KeybindPanel/Rows/TurnOrderRow" unique_id=236325226]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "---"
+
+[node name="KeybindHint" type="Label" parent="Root/ContentPanel/ConfigPage/KeybindPanel" unique_id=1664734142]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -20.0
+offset_right = -10.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.45, 0.45, 0.45, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "Z: rebind   X: back"
+
+[node name="TitlePlate" type="ColorRect" parent="Root/ContentPanel" unique_id=1664734143]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_top = -5.0
+offset_right = 36.0
+offset_bottom = 6.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PanelTitle" type="Label" parent="Root/ContentPanel" unique_id=1664734144]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_top = -5.0
+offset_right = 36.0
+offset_bottom = 6.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 9
+text = "PARTY"
+horizontal_alignment = 1
+
+[node name="Caret" type="TextureRect" parent="Root" unique_id=1784129959]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 9.0
+texture = ExtResource("5_caret")
+stretch_mode = 5

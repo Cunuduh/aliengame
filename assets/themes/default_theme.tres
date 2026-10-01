@@ -1,15 +1,14 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://bk27uogicxbh4"]
+[gd_resource type="Theme" format=3 uid="uid://bk27uogicxbh4"]
 
 [ext_resource type="StyleBox" uid="uid://dnvicmkir420h" path="res://assets/themes/style_box_faded.tres" id="1_b4fcc"]
 [ext_resource type="StyleBox" uid="uid://c5tlqbje5nj3b" path="res://assets/themes/style_box_normal.tres" id="1_sx0q5"]
 [ext_resource type="StyleBox" uid="uid://dvtjwc563oipb" path="res://assets/themes/style_box_focused.tres" id="2_2reeo"]
 [ext_resource type="StyleBox" uid="uid://bv1ip8t22e2mv" path="res://assets/themes/style_box_inverted.tres" id="3_q3wao"]
-[ext_resource type="FontVariation" uid="uid://bnh22ackgv80s" path="res://assets/themes/dtm_sans.tres" id="5_2reeo"]
-[ext_resource type="FontFile" uid="uid://w2qxj82kbywq" path="res://assets/fonts/DTM-Sans.otf" id="5_b4fcc"]
+[ext_resource type="FontFile" uid="uid://cqxt1vg7vcy05" path="res://assets/fonts/cozy-quill.otf" id="5_b4fcc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q3wao"]
 
-[sub_resource type="Image" id="Image_2reeo"]
+[sub_resource type="Image" id="Image_b4fcc"]
 data = {
 "data": PackedByteArray(180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 19, 180, 180, 180, 19, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 19, 180, 180, 180, 64, 180, 180, 180, 64, 180, 180, 180, 19, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 19, 180, 180, 180, 64, 180, 180, 180, 64, 180, 180, 180, 19, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 19, 180, 180, 180, 19, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 0),
 "format": "RGBA8",
@@ -19,9 +18,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_2reeo"]
-image = SubResource("Image_2reeo")
+image = SubResource("Image_b4fcc")
 
-[sub_resource type="Image" id="Image_q3wao"]
+[sub_resource type="Image" id="Image_2reeo"]
 data = {
 "data": PackedByteArray(179, 179, 179, 47, 179, 179, 179, 50, 179, 179, 179, 6, 175, 175, 175, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 64, 180, 180, 180, 64, 177, 177, 177, 49, 180, 180, 180, 64, 175, 175, 175, 54, 175, 175, 175, 6, 175, 175, 175, 0, 180, 180, 180, 0, 180, 180, 180, 64, 180, 180, 180, 64, 177, 177, 177, 5, 177, 177, 177, 52, 180, 180, 180, 64, 175, 175, 175, 54, 175, 175, 175, 6, 180, 180, 180, 0, 180, 180, 180, 64, 180, 180, 180, 64, 177, 177, 177, 0, 177, 177, 177, 5, 177, 177, 177, 52, 180, 180, 180, 64, 179, 179, 179, 50, 179, 179, 179, 0, 180, 180, 180, 64, 180, 180, 180, 64, 178, 178, 178, 0, 178, 178, 178, 6, 178, 178, 178, 53, 180, 180, 180, 64, 177, 177, 177, 49, 177, 177, 177, 0, 180, 180, 180, 64, 180, 180, 180, 64, 178, 178, 178, 6, 178, 178, 178, 53, 180, 180, 180, 64, 178, 178, 178, 53, 177, 177, 177, 5, 180, 180, 180, 0, 180, 180, 180, 64, 180, 180, 180, 64, 181, 181, 181, 48, 180, 180, 180, 64, 178, 178, 178, 53, 178, 178, 178, 5, 178, 178, 178, 0, 180, 180, 180, 0, 180, 180, 180, 64, 180, 180, 180, 64, 181, 181, 181, 41, 181, 181, 181, 48, 178, 178, 178, 5, 178, 178, 178, 0, 180, 180, 180, 0, 180, 180, 180, 0, 180, 180, 180, 64, 180, 180, 180, 64),
 "format": "RGBA8",
@@ -31,11 +30,11 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_3ccda"]
-image = SubResource("Image_q3wao")
+image = SubResource("Image_2reeo")
 
 [resource]
 default_font = ExtResource("5_b4fcc")
-default_font_size = 13
+default_font_size = 10
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
@@ -66,7 +65,7 @@ Label/constants/outline_size = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 0
-Label/fonts/font = ExtResource("5_2reeo")
+Label/fonts/font = ExtResource("5_b4fcc")
 Label/styles/normal = SubResource("StyleBoxEmpty_q3wao")
 LineEdit/styles/focus = ExtResource("2_2reeo")
 LineEdit/styles/normal = ExtResource("1_sx0q5")

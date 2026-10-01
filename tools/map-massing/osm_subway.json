@@ -1,0 +1,896 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-07-25T04:07:03Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 60715211,
+  "lat": 43.6672191,
+  "lon": -79.4043024,
+  "tags": {
+    "colour": "green",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Spadina Road West Entrance",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 89447064,
+  "lat": 43.6601140,
+  "lon": -79.3899770,
+  "tags": {
+    "check_date:wheelchair": "2023-02-03",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "University / College Northeast Entrance",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 89447066,
+  "lat": 43.6596485,
+  "lon": -79.3900198,
+  "tags": {
+    "check_date:wheelchair": "2023-07-17",
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "University / College Southeast Entrance",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 89447068,
+  "lat": 43.6596520,
+  "lon": -79.3908255,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "University / College Southwest Entrance",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 89447072,
+  "lat": 43.6600199,
+  "lon": -79.3907873,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "University / College Northwest Entrance",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 278094017,
+  "lat": 43.6614680,
+  "lon": -79.3827691,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "Yonge / Carlton Northeast Corner",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 281660485,
+  "lat": 43.6507643,
+  "lon": -79.3860362,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "Four Seasons Entrance",
+    "note": "In Four Seasons Centre",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 281660487,
+  "lat": 43.6509935,
+  "lon": -79.3869651,
+  "tags": {
+    "check_date:wheelchair": "2023-07-13",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "University / Queen, Northwest Entrance",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 281660489,
+  "lat": 43.6506398,
+  "lon": -79.3868386,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "University / Queen, Southwest Entrance",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 293309245,
+  "lat": 43.6526393,
+  "lon": -79.3787938,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Entrance by 2 Queen Street East",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 293309447,
+  "lat": 43.6562289,
+  "lon": -79.3805600,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Sankofa Square Entrance",
+    "note": "Dundas Station",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 293309464,
+  "lat": 43.6524492,
+  "lon": -79.3798007,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Yonge / Queen Northwest Corner",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 305011584,
+  "lat": 43.6563268,
+  "lon": -79.3814100,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Entrance from Atrium on Bay (via PATH)",
+    "note": "Dundas Station",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 371812129,
+  "lat": 43.6610821,
+  "lon": -79.3834009,
+  "tags": {
+    "check_date:wheelchair": "2022-06-19",
+    "colour": "yellow",
+    "door": "yes",
+    "floor": "-1",
+    "indoor": "door",
+    "level": "-1",
+    "name": "College Park Shops Entrance",
+    "note": "inside college park",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 418970515,
+  "lat": 43.6699515,
+  "lon": -79.3924437,
+  "tags": {
+    "check_date:wheelchair": "2023-06-22",
+    "colour": "green",
+    "entrance": "yes",
+    "name": "Cumberland Street",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 606308644,
+  "lat": 43.6544490,
+  "lon": -79.3885054,
+  "tags": {
+    "automatic": "no",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "438 University Avenue Entrance",
+    "note": "from Air Miles Tower private property - no TTC logo sign",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 616551749,
+  "lat": 43.6612603,
+  "lon": -79.3827044,
+  "tags": {
+    "check_date:wheelchair": "2023-09-18",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "Yonge / Carlton Southeast Corner",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 697805124,
+  "lat": 43.6485310,
+  "lon": -79.3778403,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Entrance from Commerce Court (via PATH)",
+    "note": "King Station",
+    "railway": "subway_entrance",
+    "ref": "D",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 1114068269,
+  "lat": 43.6561359,
+  "lon": -79.3810543,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-2",
+    "name": "Entrance from Eaton Centre L1 (via PATH)",
+    "note": "Dundas Station",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1385339540,
+  "lat": 43.6546048,
+  "lon": -79.3879439,
+  "tags": {
+    "automatic": "no",
+    "check_date:wheelchair": "2025-07-30",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "University / Dundas, Southeast corner",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 2143277573,
+  "lat": 43.6671221,
+  "lon": -79.3933227,
+  "tags": {
+    "access": "private",
+    "check_date:wheelchair": "2023-09-07",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "Queens Park East Side",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 2143277574,
+  "lat": 43.6672742,
+  "lon": -79.3936875,
+  "tags": {
+    "access": "private",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "Queens Park West Side",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 2143277998,
+  "lat": 43.6670247,
+  "lon": -79.3935848,
+  "tags": {
+    "access": "private",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "Queens Park West Side",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 2143277999,
+  "lat": 43.6670308,
+  "lon": -79.3932854,
+  "tags": {
+    "access": "private",
+    "check_date:wheelchair": "2023-09-07",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "Queens Park East Side",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3081114130,
+  "lat": 43.6599701,
+  "lon": -79.3886888,
+  "tags": {
+    "check_date:wheelchair": "2023-10-10",
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "min_height": "1",
+    "name": "MaRS Discovery District",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3308637282,
+  "lat": 43.6484299,
+  "lon": -79.3776920,
+  "tags": {
+    "entrance": "exit",
+    "name": "Yonge / Melinda",
+    "note": "exit only, from southbound platforms only, enforced by up escalator (no stairs) and video camera. warning signs to discourage illegal entry",
+    "railway": "subway_entrance",
+    "ref": "C"
+  }
+},
+{
+  "type": "node",
+  "id": 3418891293,
+  "lat": 43.6493037,
+  "lon": -79.3775919,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Yonge / King Northeast corner",
+    "network": "TTC",
+    "note": "King Station",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "ref": "B1",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3555231357,
+  "lat": 43.6522355,
+  "lon": -79.3795500,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Yonge / Queen Southwest Corner",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3559858969,
+  "lat": 43.6524207,
+  "lon": -79.3790321,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-2",
+    "name": "Entrance from One Queen Street East (via PATH)",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3559859198,
+  "lat": 43.6537130,
+  "lon": -79.3797090,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Yonge / Shuter Southeast corner",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3697981902,
+  "lat": 43.6490196,
+  "lon": -79.3782399,
+  "tags": {
+    "entrance": "yes",
+    "level": "0",
+    "name": "Yonge / King Southwest corner",
+    "network": "TTC",
+    "note": "King Station",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "ref": "A1",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3698860822,
+  "lat": 43.6492148,
+  "lon": -79.3773459,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Yonge / King Southeast corner",
+    "network": "TTC",
+    "note": "King Station",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "ref": "B2",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3705565839,
+  "lat": 43.6492953,
+  "lon": -79.3781522,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Entrance from Scotia Plaza (via PATH)",
+    "note": "King Station",
+    "railway": "subway_entrance",
+    "ref": "A3",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3705565840,
+  "lat": 43.6491865,
+  "lon": -79.3782007,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Yonge / King Northeast corner",
+    "note": "King Station",
+    "railway": "subway_entrance",
+    "ref": "A2",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3708490352,
+  "lat": 43.6564347,
+  "lon": -79.3807596,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Entrance from The Tenor (via PATH)",
+    "note": "Dundas Station",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3708490354,
+  "lat": 43.6563249,
+  "lon": -79.3813052,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Yonge / Dundas Northwest corner",
+    "note": "Dundas Station",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3712907644,
+  "lat": 43.6549565,
+  "lon": -79.3880958,
+  "tags": {
+    "automatic": "no",
+    "check_date:wheelchair": "2025-07-30",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "University / Dundas, Northeast corner",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3712907651,
+  "lat": 43.6549997,
+  "lon": -79.3887850,
+  "tags": {
+    "automatic": "no",
+    "colour": "yellow",
+    "entrance": "yes",
+    "name": "University / Dundas, Northwest corner",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4061861175,
+  "lat": 43.6506799,
+  "lon": -79.3870126,
+  "tags": {
+    "entrance": "yes",
+    "name": "University / Queen, Southwest Entrance",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 4454371823,
+  "lat": 43.6682259,
+  "lon": -79.3999659,
+  "tags": {
+    "entrance": "yes",
+    "name": "St George Street",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 5262723000,
+  "lat": 43.6687236,
+  "lon": -79.3978261,
+  "tags": {
+    "automated": "no",
+    "entrance": "yes",
+    "name": "Bedford Road Entrance",
+    "operator": "Beford Road Entrance",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5262723001,
+  "lat": 43.6679432,
+  "lon": -79.3984285,
+  "tags": {
+    "automated": "yes",
+    "entrance": "yes",
+    "name": "OISE Entrance",
+    "network": "TTC",
+    "note": "In OISE",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 8805498993,
+  "lat": 43.6658579,
+  "lon": -79.3839266,
+  "tags": {
+    "entrance": "yes",
+    "name": "Dundonald Street",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 11223388485,
+  "lat": 43.6673068,
+  "lon": -79.4039743,
+  "tags": {
+    "colour": "green",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Spadina Road East Entrance",
+    "network": "TTC",
+    "operator": "Toronto Transit Commission",
+    "operator:short": "TTC",
+    "operator:wikidata": "Q17978",
+    "operator:wikipedia": "en:Toronto Transit Commission",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11267842959,
+  "lat": 43.6651907,
+  "lon": -79.3836932,
+  "tags": {
+    "entrance": "yes",
+    "name": "Wellesley Street East",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11275920886,
+  "lat": 43.6696981,
+  "lon": -79.3853622,
+  "tags": {
+    "entrance": "yes",
+    "name": "Hayden Street Entrance",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11275920887,
+  "lat": 43.6697832,
+  "lon": -79.3876128,
+  "tags": {
+    "entrance": "yes",
+    "name": "1 Bloor Street East Entrance",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11357007509,
+  "lat": 43.6692717,
+  "lon": -79.3921503,
+  "tags": {
+    "colour": "green",
+    "entrance": "yes",
+    "name": "80 Bloor Street West",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 11357007510,
+  "lat": 43.6697578,
+  "lon": -79.3900887,
+  "tags": {
+    "entrance": "yes",
+    "name": "80 Bloor Street West",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 12087434865,
+  "lat": 43.6654688,
+  "lon": -79.3927226,
+  "tags": {
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13062608573,
+  "lat": 43.6696570,
+  "lon": -79.3863760,
+  "tags": {
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13298086115,
+  "lat": 43.6561453,
+  "lon": -79.3810918,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Entrance from Eaton Centre L2 (via PATH)",
+    "note": "Dundas Station",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13298086132,
+  "lat": 43.6563381,
+  "lon": -79.3804562,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Sankofa Square Elevator",
+    "note": "Dundas Station",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13298409919,
+  "lat": 43.6524624,
+  "lon": -79.3798515,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "South Entrance from Eaton Centre (via PATH)",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13298501955,
+  "lat": 43.6535678,
+  "lon": -79.3799423,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "North Entrance from Eaton Centre (via PATH)",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13299958380,
+  "lat": 43.6522278,
+  "lon": -79.3796872,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "-1",
+    "name": "Entrance from Hudson's Bay (via PATH)",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13299991702,
+  "lat": 43.6526948,
+  "lon": -79.3792085,
+  "tags": {
+    "colour": "yellow",
+    "entrance": "yes",
+    "level": "0",
+    "name": "Yonge / Queen Northeast Corner",
+    "note": "Queen Station",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+}
+
+  ]
+}

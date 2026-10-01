@@ -1,0 +1,13 @@
+{
+  "name": "arc-tool",
+  "displayName": "Arc Tool",
+  "description": "Draw circular or elliptical arcs by clicking three points on the canvas",
+  "version": "1.0.0",
+  "publisher": "glae",
+  "author": { "name": "Glae Alejo" },
+  "contributes": {
+    "scripts": [
+      { "path": "./arc-tool.lua" }
+    ]
+  }
+}

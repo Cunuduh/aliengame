@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2spjyhmhonji"]
+[gd_scene format=3 uid="uid://c2spjyhmhonji"]
 
 [ext_resource type="Texture2D" uid="uid://dy16vcrhmgbwp" path="res://assets/sprites/maps/tilemap_test.png" id="1_a0oln"]
-[ext_resource type="PackedScene" uid="uid://cy7o8s575kcm7" path="res://assets/scenes/player.tscn" id="2_uhxvr"]
+[ext_resource type="PackedScene" uid="uid://cy7o8s575kcm7" path="res://assets/scenes/cora.tscn" id="2_uhxvr"]
 [ext_resource type="PackedScene" uid="uid://b4u7n8s6h7qkl" path="res://assets/scenes/test_npc.tscn" id="3_npc01"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uhxvr"]
@@ -285,15 +285,19 @@ terrain_set_1/terrain_0/name = "Sidewalk"
 terrain_set_1/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_uhxvr")
 
-[node name="TestingRoom" type="Node2D" groups=["world"]]
+[node name="TestingRoom" type="Node2D" unique_id=969555147 groups=["world"]]
 y_sort_enabled = true
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=492696552]
 position = Vector2(-1, 0)
 tile_set = SubResource("TileSet_52p2x")
 
-[node name="Player" parent="." instance=ExtResource("2_uhxvr")]
+[node name="Cora" parent="." unique_id=369327491 instance=ExtResource("2_uhxvr")]
 position = Vector2(78, 132)
 
-[node name="TestNPC" parent="." instance=ExtResource("3_npc01")]
+[node name="TestNPC" parent="." unique_id=1719332409 instance=ExtResource("3_npc01")]
 position = Vector2(200, 132)
+
+[node name="ChoiceNPC" parent="." instance=ExtResource("3_npc01")]
+position = Vector2(248, 132)
+dialogue_id = "choice_npc"

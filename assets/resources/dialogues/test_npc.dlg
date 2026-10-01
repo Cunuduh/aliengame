@@ -1,0 +1,9 @@
+# Test NPC dialogue for testing_room.tscn.
+# Lines are translation keys resolved via assets/localization/dialogue.csv;
+# literal text works too. ":" with no speaker id = narration.
+test: DLG_TEST_NPC_01
+test: DLG_TEST_NPC_02
+test: DLG_TEST_NPC_03
+test: DLG_TEST_NPC_04
+: DLG_TEST_NPC_NARRATE
+test: DLG_TEST_NPC_05

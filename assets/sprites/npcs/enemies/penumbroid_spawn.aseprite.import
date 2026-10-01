@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cw2a3jgs76jb7"
+path="res://.godot/imported/penumbroid_spawn.aseprite-f45350fb7cd3ce49f4363b0b6df8e385.res"
+
+[deps]
+
+source_file="res://assets/sprites/npcs/enemies/penumbroid_spawn.aseprite"
+dest_files=["res://.godot/imported/penumbroid_spawn.aseprite-f45350fb7cd3ce49f4363b0b6df8e385.res"]
+
+[params]
+

@@ -1,8 +1,9 @@
-[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://di1os64fl3uvw"]
+[gd_resource type="LabelSettings" format=3 uid="uid://di1os64fl3uvw"]
 
-[ext_resource type="FontFile" uid="uid://clucto1evpsr2" path="res://assets/fonts/CG pixel 4x5.ttf" id="1_ybrqi"]
+[ext_resource type="FontFile" uid="uid://dthx7l0pqel3o" path="res://assets/fonts/cozy-quill-bold.otf" id="1_skvyp"]
 
 [resource]
 line_spacing = 1.0
-font = ExtResource("1_ybrqi")
+font = ExtResource("1_skvyp")
 font_size = 5
+font_color = Color(0, 0, 0, 1)

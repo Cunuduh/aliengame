@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b71jho1svkbcq"
+path="res://.godot/imported/hime.aseprite-5188b607a2a565fb7d038eddabf17bae.res"
+
+[deps]
+
+source_file="res://assets/sprites/characters/hime.aseprite"
+dest_files=["res://.godot/imported/hime.aseprite-5188b607a2a565fb7d038eddabf17bae.res"]
+
+[params]
+

@@ -1,0 +1,62 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://assets/scripts/battle/member_card.gd" id="1_script"]
+[ext_resource type="FontFile" uid="uid://cqxt1vg7vcy05" path="res://assets/fonts/cozy-quill.otf" id="2_quill"]
+[ext_resource type="FontFile" uid="uid://dthx7l0pqel3o" path="res://assets/fonts/cozy-quill-bold.otf" id="3_quillb"]
+[ext_resource type="LabelSettings" uid="uid://dnywnibxjc6xv" path="res://assets/resources/cozy_quill_bold.tres" id="5_lbl"]
+[ext_resource type="Texture2D" uid="uid://ts4ogpek0rli" path="res://assets/sprites/ui/battle/party/member_health_bar_background.png" id="6_barbg"]
+[ext_resource type="Texture2D" uid="uid://fmdpiyl3fbg2" path="res://assets/sprites/ui/battle/party/member_health_bar_foreground_ghost.png" id="7_barghost"]
+[ext_resource type="Texture2D" uid="uid://dvxa0tancfcs8" path="res://assets/sprites/ui/battle/party/member_health_bar_foreground.png" id="8_barfg"]
+
+[node name="MemberCard" type="Control"]
+custom_minimum_size = Vector2(72, 19)
+script = ExtResource("1_script")
+
+[node name="Name" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 14.0
+offset_bottom = 10.0
+theme_override_fonts/normal_font = ExtResource("2_quill")
+theme_override_fonts/bold_font = ExtResource("3_quillb")
+theme_override_font_sizes/normal_font_size = 9
+theme_override_font_sizes/bold_font_size = 9
+theme_override_font_sizes/bold_italics_font_size = 9
+theme_override_font_sizes/italics_font_size = 9
+theme_override_font_sizes/mono_font_size = 9
+bbcode_enabled = true
+text = "MC"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 2
+
+[node name="HP" type="Label" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 1.0
+offset_right = 72.0
+offset_bottom = 10.0
+theme_override_fonts/font = ExtResource("3_quillb")
+theme_override_font_sizes/font_size = 13
+text = "100/100"
+label_settings = ExtResource("5_lbl")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="HPBarGhost" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_top = 11.0
+offset_right = 72.0
+offset_bottom = 19.0
+nine_patch_stretch = true
+texture_under = ExtResource("6_barbg")
+texture_progress = ExtResource("7_barghost")
+
+[node name="HPBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_top = 11.0
+offset_right = 72.0
+offset_bottom = 19.0
+nine_patch_stretch = true
+texture_progress = ExtResource("8_barfg")

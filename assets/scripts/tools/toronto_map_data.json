@@ -1,0 +1,210 @@
+{
+ "width": 205,
+ "height": 151,
+ "tile": 16,
+ "streets": {
+  "bloor": {
+   "orient": "EW",
+   "width": 8,
+   "pos": 8,
+   "start": 0,
+   "end": 205
+  },
+  "sussex": {
+   "orient": "EW",
+   "width": 4,
+   "pos": 38,
+   "start": 4,
+   "end": 54
+  },
+  "harbord": {
+   "orient": "EW",
+   "width": 4,
+   "pos": 63,
+   "start": 4,
+   "end": 54
+  },
+  "hoskin": {
+   "orient": "EW",
+   "width": 4,
+   "pos": 63,
+   "start": 48,
+   "end": 105
+  },
+  "willcocks": {
+   "orient": "EW",
+   "width": 4,
+   "pos": 90,
+   "start": 4,
+   "end": 34
+  },
+  "ursula_franklin": {
+   "orient": "EW",
+   "width": 4,
+   "pos": 115,
+   "start": 17,
+   "end": 54
+  },
+  "college": {
+   "orient": "EW",
+   "width": 8,
+   "pos": 143,
+   "start": 0,
+   "end": 205
+  },
+  "charles": {
+   "orient": "EW",
+   "width": 4,
+   "pos": 32,
+   "start": 111,
+   "end": 200
+  },
+  "st_mary": {
+   "orient": "EW",
+   "width": 4,
+   "pos": 43,
+   "start": 141,
+   "end": 200
+  },
+  "st_joseph": {
+   "orient": "EW",
+   "width": 4,
+   "pos": 72,
+   "start": 125,
+   "end": 200
+  },
+  "irwin": {
+   "orient": "EW",
+   "width": 4,
+   "pos": 64,
+   "start": 164,
+   "end": 200
+  },
+  "wellesley": {
+   "orient": "EW",
+   "width": 4,
+   "pos": 91,
+   "start": 125,
+   "end": 200
+  },
+  "breadalbane": {
+   "orient": "EW",
+   "width": 4,
+   "pos": 107,
+   "start": 164,
+   "end": 200
+  },
+  "grosvenor": {
+   "orient": "EW",
+   "width": 4,
+   "pos": 120,
+   "start": 125,
+   "end": 200
+  },
+  "grenville": {
+   "orient": "EW",
+   "width": 4,
+   "pos": 134,
+   "start": 143,
+   "end": 170
+  },
+  "spadina": {
+   "orient": "NS",
+   "width": 8,
+   "pos": 8,
+   "start": 0,
+   "end": 151
+  },
+  "huron": {
+   "orient": "NS",
+   "width": 4,
+   "pos": 32,
+   "start": 4,
+   "end": 147
+  },
+  "st_george": {
+   "orient": "NS",
+   "width": 6,
+   "pos": 51,
+   "start": 4,
+   "end": 147
+  },
+  "devonshire": {
+   "orient": "NS",
+   "width": 4,
+   "pos": 68,
+   "start": 4,
+   "end": 65
+  },
+  "queens_park_n": {
+   "orient": "NS",
+   "width": 8,
+   "pos": 115,
+   "start": 4,
+   "end": 63
+  },
+  "qp_cres_w": {
+   "orient": "NS",
+   "width": 6,
+   "pos": 102,
+   "start": 61,
+   "end": 147
+  },
+  "qp_cres_e": {
+   "orient": "NS",
+   "width": 6,
+   "pos": 128,
+   "start": 63,
+   "end": 147
+  },
+  "university": {
+   "orient": "NS",
+   "width": 10,
+   "pos": 115,
+   "start": 139,
+   "end": 151
+  },
+  "st_thomas": {
+   "orient": "NS",
+   "width": 4,
+   "pos": 150,
+   "start": 4,
+   "end": 34
+  },
+  "bay": {
+   "orient": "NS",
+   "width": 6,
+   "pos": 167,
+   "start": 4,
+   "end": 147
+  },
+  "st_nicholas": {
+   "orient": "NS",
+   "width": 4,
+   "pos": 187,
+   "start": 30,
+   "end": 93
+  },
+  "yonge": {
+   "orient": "NS",
+   "width": 6,
+   "pos": 197,
+   "start": 0,
+   "end": 151
+  },
+  "kings_college": {
+   "orient": "NS",
+   "width": 4,
+   "pos": 80,
+   "start": 125,
+   "end": 147
+  },
+  "qp_link": {
+   "orient": "EW",
+   "width": 6,
+   "pos": 63,
+   "start": 99,
+   "end": 131
+  }
+ }
+}

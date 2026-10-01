@@ -5,10 +5,10 @@ uniform float noise_tiling = 2;
 uniform float progress : hint_range(0, 1);
 uniform float edge_thickness = 0.01;
 uniform vec4 edge_colour : source_color;
-uniform vec2 texture_size; // Uniform for the texture size
 
 void fragment()
 {
+    vec2 texture_size = 1.0 / TEXTURE_PIXEL_SIZE;
     vec4 original_texture = texture(TEXTURE, UV);
     vec2 quantized_UV = floor(UV * texture_size) / texture_size;
     vec4 dissolve_noise = texture(noise_texture, quantized_UV * noise_tiling);

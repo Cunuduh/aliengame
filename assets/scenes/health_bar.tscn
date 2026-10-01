@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dubxn8mte4dpk"]
+
+[ext_resource type="Texture2D" uid="uid://ts4ogpek0rli" path="res://assets/sprites/ui/battle/party/member_health_bar_background.png" id="1_3p6ta"]
+[ext_resource type="Texture2D" uid="uid://dvxa0tancfcs8" path="res://assets/sprites/ui/battle/party/member_health_bar_foreground.png" id="2_7l8j4"]
+[ext_resource type="FontFile" uid="uid://dthx7l0pqel3o" path="res://assets/fonts/cozy-quill-bold.otf" id="3_3p6ta"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7l8j4"]
+line_spacing = 0.0
+font = ExtResource("3_3p6ta")
+font_size = 9
+font_color = Color(0, 0, 0, 1)
+
+[node name="HealthBar" type="TextureProgressBar" unique_id=810214661]
+offset_right = 52.0
+offset_bottom = 8.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_3p6ta")
+texture_progress = ExtResource("2_7l8j4")
+tint_progress = Color(0.75, 0.75, 0.75, 1)
+
+[node name="Percentage" type="Label" parent="." unique_id=2008915914]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 18.0
+offset_bottom = 9.0
+text = "100"
+label_settings = SubResource("LabelSettings_7l8j4")
+horizontal_alignment = 1

@@ -1,0 +1,350 @@
+[gd_scene format=3 uid="uid://b15237syoh7fu"]
+
+[ext_resource type="Material" uid="uid://bj8dqtl8lcr6x" path="res://assets/resources/outline_material.tres" id="1_1hlu1"]
+[ext_resource type="LabelSettings" uid="uid://brsa3jx24dlqj" path="res://assets/resources/cozy_quill.tres" id="2_co86x"]
+[ext_resource type="Texture2D" uid="uid://c2ojg1qov7cx2" path="res://assets/sprites/ui/battle/party/fight_button.png" id="2_f15rl"]
+[ext_resource type="Theme" uid="uid://bk27uogicxbh4" path="res://assets/themes/default_theme.tres" id="2_wxhx2"]
+[ext_resource type="Texture2D" uid="uid://cd3lf1uf1ued5" path="res://assets/sprites/ui/battle/party/ability_button.png" id="3_ag3ro"]
+[ext_resource type="LabelSettings" uid="uid://dnywnibxjc6xv" path="res://assets/resources/cozy_quill_bold.tres" id="4_12gxu"]
+[ext_resource type="Texture2D" uid="uid://drkj2g076c6gb" path="res://assets/sprites/ui/battle/party/item_button.png" id="4_qnhjl"]
+[ext_resource type="Texture2D" uid="uid://csxkf12xadilp" path="res://assets/sprites/ui/battle/party/turn_button.png" id="5_qnhjl"]
+[ext_resource type="Texture2D" uid="uid://ba6f4smwydi0c" path="res://assets/sprites/ui/battle/party/check_button.png" id="5_sy2jm"]
+[ext_resource type="Texture2D" uid="uid://ce23cr8nifuwa" path="res://assets/sprites/ui/battle/en_bar_under.png" id="11_ehqn4"]
+[ext_resource type="FontFile" uid="uid://cqxt1vg7vcy05" path="res://assets/fonts/cozy-quill.otf" id="11_mu8il"]
+[ext_resource type="Texture2D" uid="uid://c7cun16bv8c10" path="res://assets/sprites/ui/battle/en_bar_progress.png" id="12_6tix3"]
+[ext_resource type="FontFile" uid="uid://dthx7l0pqel3o" path="res://assets/fonts/cozy-quill-bold.otf" id="12_12gxu"]
+[ext_resource type="Texture2D" uid="uid://d2pbl726ajc4d" path="res://assets/sprites/ui/battle/en_bar_progress_tween.png" id="13_6tix3"]
+[ext_resource type="FontFile" uid="uid://crthqsswb35ge" path="res://assets/fonts/cozy-quill-italic.otf" id="13_8sv61"]
+[ext_resource type="Texture2D" uid="uid://bv6tr8g380g1i" path="res://assets/sprites/ui/battle/scroll_down.png" id="16_u82mx"]
+[ext_resource type="Texture2D" uid="uid://dm8lrt5qjt3vl" path="res://assets/sprites/ui/battle/en_bar_over.png" id="21_8sv61"]
+[ext_resource type="Script" uid="uid://cygm4tupihf0p" path="res://assets/scripts/battle/battle_ui.gd" id="22_bui"]
+[ext_resource type="Script" uid="uid://bc0fcb7oamlbb" path="res://assets/scripts/battle/turn_track.gd" id="23_trk"]
+[ext_resource type="Texture2D" uid="uid://dxa5df1edlagp" path="res://assets/sprites/ui/battle/party/caret.png" id="24_crt"]
+[ext_resource type="Texture2D" uid="uid://b4usqy835y15o" path="res://assets/sprites/ui/battle/caret_small.png" id="25_crts"]
+[ext_resource type="Texture2D" uid="uid://bv3d852edjjva" path="res://assets/sprites/effects/dissolve_particle.png" id="26_spill"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ns7w"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.105882354, 0.105882354, 1)
+corner_detail = 1
+
+[sub_resource type="Gradient" id="Gradient_spill"]
+offsets = PackedFloat32Array(0, 0.6, 1)
+colors = PackedColorArray(0.968627, 0.552941, 0.070588, 1, 0.968627, 0.552941, 0.070588, 1, 0.968627, 0.552941, 0.070588, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_spill"]
+gradient = SubResource("Gradient_spill")
+width = 3
+
+[sub_resource type="Curve" id="Curve_qgxc8"]
+_data = [Vector2(0, 0.50561804), 0.0, 6.3745313, 0, 0, Vector2(0.12318839, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.49438208), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_qgxc8"]
+curve = SubResource("Curve_qgxc8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_spill"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(10, 1, 1)
+direction = Vector3(1, -1, 0)
+spread = 20.0
+initial_velocity_min = 50.0
+initial_velocity_max = 80.0
+gravity = Vector3(0, 120, 0)
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_qgxc8")
+color_ramp = SubResource("GradientTexture1D_spill")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_spill2"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(10, 1, 1)
+direction = Vector3(1, -1, 0)
+spread = 20.0
+initial_velocity_min = 50.0
+initial_velocity_max = 80.0
+gravity = Vector3(0, 120, 0)
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_qgxc8")
+color_ramp = SubResource("GradientTexture1D_spill")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_spill3"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(10, 1, 1)
+direction = Vector3(1, -1, 0)
+spread = 20.0
+initial_velocity_min = 50.0
+initial_velocity_max = 80.0
+gravity = Vector3(0, 120, 0)
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_qgxc8")
+color_ramp = SubResource("GradientTexture1D_spill")
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1009033185]
+script = ExtResource("22_bui")
+
+[node name="UIBackground" type="Panel" parent="." unique_id=267795469]
+offset_top = 137.0
+offset_right = 320.0
+offset_bottom = 240.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3ns7w")
+
+[node name="E" type="Label" parent="." unique_id=764867921]
+material = ExtResource("1_1hlu1")
+offset_left = 14.0
+offset_top = 43.0
+offset_right = 20.0
+offset_bottom = 52.0
+text = "E"
+label_settings = ExtResource("2_co86x")
+horizontal_alignment = 1
+
+[node name="N" type="Label" parent="." unique_id=1301662156]
+material = ExtResource("1_1hlu1")
+offset_left = 13.0
+offset_top = 51.0
+offset_right = 21.0
+offset_bottom = 60.0
+text = "N"
+label_settings = ExtResource("2_co86x")
+horizontal_alignment = 1
+
+[node name="EnergyValue" type="Label" parent="." unique_id=555438600]
+material = ExtResource("1_1hlu1")
+offset_left = 9.0
+offset_top = 61.0
+offset_right = 26.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("12_12gxu")
+theme_override_font_sizes/font_size = 13
+text = "100"
+label_settings = ExtResource("4_12gxu")
+horizontal_alignment = 1
+
+[node name="SeparatorBar" type="ColorRect" parent="." unique_id=481342057]
+modulate = Color(0.2, 0.2, 0.2, 1)
+material = ExtResource("1_1hlu1")
+offset_left = 12.0
+offset_top = 71.0
+offset_right = 21.0
+offset_bottom = 72.0
+
+[node name="EnergyMax" type="Label" parent="." unique_id=1128136290]
+modulate = Color(0.2, 0.2, 0.2, 1)
+material = ExtResource("1_1hlu1")
+offset_left = 9.0
+offset_top = 74.0
+offset_right = 25.0
+offset_bottom = 83.0
+theme_override_fonts/font = ExtResource("11_mu8il")
+theme_override_font_sizes/font_size = 6
+text = "100"
+label_settings = ExtResource("2_co86x")
+horizontal_alignment = 1
+
+[node name="ActionContainer" type="VBoxContainer" parent="." unique_id=201412905]
+offset_left = 16.0
+offset_top = 166.0
+offset_right = 77.0
+offset_bottom = 227.0
+theme_override_constants/separation = 4
+
+[node name="ATTK" type="TextureRect" parent="ActionContainer" unique_id=675537660]
+layout_mode = 2
+texture = ExtResource("2_f15rl")
+stretch_mode = 3
+
+[node name="ABIL" type="TextureRect" parent="ActionContainer" unique_id=1906871203]
+layout_mode = 2
+texture = ExtResource("3_ag3ro")
+stretch_mode = 3
+
+[node name="ITEM" type="TextureRect" parent="ActionContainer" unique_id=963876371]
+layout_mode = 2
+texture = ExtResource("4_qnhjl")
+stretch_mode = 3
+
+[node name="TURN" type="TextureRect" parent="ActionContainer" unique_id=264172499]
+layout_mode = 2
+texture = ExtResource("5_qnhjl")
+stretch_mode = 3
+
+[node name="CHEK" type="TextureRect" parent="ActionContainer" unique_id=133895556]
+layout_mode = 2
+texture = ExtResource("5_sy2jm")
+stretch_mode = 3
+
+[node name="TextBox" type="Panel" parent="." unique_id=470666749]
+offset_left = 80.0
+offset_top = 162.0
+offset_right = 308.00003
+offset_bottom = 232.0
+theme = ExtResource("2_wxhx2")
+
+[node name="HPLabel" type="Label" parent="TextBox" unique_id=104515218]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.00003
+offset_top = 6.0
+offset_right = -36.00003
+offset_bottom = 15.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("12_12gxu")
+theme_override_font_sizes/font_size = 13
+text = "HP%"
+label_settings = ExtResource("4_12gxu")
+horizontal_alignment = 2
+
+[node name="ScrollDown" type="TextureRect" parent="TextBox" unique_id=782969627]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("16_u82mx")
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="TextBox" unique_id=742201653]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 12
+
+[node name="Text" type="RichTextLabel" parent="TextBox/MarginContainer" unique_id=1741652939]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("11_mu8il")
+theme_override_fonts/bold_font = ExtResource("12_12gxu")
+theme_override_fonts/italics_font = ExtResource("13_8sv61")
+theme_override_font_sizes/normal_font_size = 9
+theme_override_font_sizes/bold_font_size = 9
+theme_override_font_sizes/bold_italics_font_size = 9
+theme_override_font_sizes/italics_font_size = 9
+theme_override_font_sizes/mono_font_size = 9
+bbcode_enabled = true
+scroll_active = false
+
+[node name="CardContainer" type="HBoxContainer" parent="." unique_id=169461753]
+offset_left = 80.0
+offset_top = 140.0
+offset_right = 308.0
+offset_bottom = 159.0
+alignment = 1
+
+[node name="TURN" type="Label" parent="." unique_id=126220044]
+material = ExtResource("1_1hlu1")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -43.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 12.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("11_mu8il")
+theme_override_font_sizes/font_size = 10
+text = "TURN ORDER"
+label_settings = ExtResource("2_co86x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TurnOrderContainer" type="HBoxContainer" parent="." unique_id=992860335]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -159.0
+offset_top = 13.0
+offset_right = 159.0
+offset_bottom = 25.0
+grow_horizontal = 2
+theme_override_constants/separation = 5
+alignment = 1
+script = ExtResource("23_trk")
+
+[node name="EnergyBarGhost" type="TextureProgressBar" parent="." unique_id=2109951801]
+offset_left = 27.0
+offset_top = 24.0
+offset_right = 43.0
+offset_bottom = 129.0
+fill_mode = 3
+texture_under = ExtResource("11_ehqn4")
+texture_progress = ExtResource("13_6tix3")
+
+[node name="EnergyBar" type="TextureProgressBar" parent="." unique_id=2022949903]
+offset_left = 27.0
+offset_top = 24.0
+offset_right = 43.0
+offset_bottom = 129.0
+fill_mode = 3
+texture_over = ExtResource("21_8sv61")
+texture_progress = ExtResource("12_6tix3")
+
+[node name="UICaret" type="Sprite2D" parent="." unique_id=1462773301]
+visible = false
+z_index = 50
+texture = ExtResource("24_crt")
+
+[node name="TurnCaret" type="Sprite2D" parent="." unique_id=1462773302]
+visible = false
+z_index = 50
+texture = ExtResource("25_crts")
+
+[node name="EnSpill" type="GPUParticles2D" parent="." unique_id=1462773303]
+position = Vector2(35.000004, 34.000004)
+rotation = -0.7853982
+emitting = false
+amount = 128
+texture = ExtResource("26_spill")
+one_shot = true
+explosiveness = 0.5
+randomness = 1.0
+use_fixed_seed = true
+seed = 67
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_spill")
+
+[node name="EnSpill2" type="GPUParticles2D" parent="." unique_id=1462773304]
+position = Vector2(35.000004, 34.000004)
+rotation = -0.7853982
+emitting = false
+amount = 128
+texture = ExtResource("26_spill")
+one_shot = true
+explosiveness = 0.5
+randomness = 1.0
+use_fixed_seed = true
+seed = 68
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_spill2")
+
+[node name="EnSpill3" type="GPUParticles2D" parent="." unique_id=1462773305]
+position = Vector2(35.000004, 34.000004)
+rotation = -0.7853982
+emitting = false
+amount = 128
+texture = ExtResource("26_spill")
+one_shot = true
+explosiveness = 0.5
+randomness = 1.0
+use_fixed_seed = true
+seed = 69
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_spill3")

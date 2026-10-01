@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://d1r2nj42kghfa"
+path="res://.godot/imported/cora_old.aseprite-bf0959ff569fd61694e00d42a4cdd9ba.res"
+
+[deps]
+
+source_file="res://assets/sprites/characters/cora_old.aseprite"
+dest_files=["res://.godot/imported/cora_old.aseprite-bf0959ff569fd61694e00d42a4cdd9ba.res"]
+
+[params]
+

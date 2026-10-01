@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://3ghi8pmd75ti"]
+
+[ext_resource type="Texture2D" uid="uid://cpu5qjnh714af" path="res://assets/sprites/ui/battle/link_panel.png" id="1_hukqg"]
+
+[node name="LinkPanel" type="NinePatchRect" unique_id=524742733]
+custom_minimum_size = Vector2(11, 11)
+offset_right = 11.0
+offset_bottom = 11.0
+texture = ExtResource("1_hukqg")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3

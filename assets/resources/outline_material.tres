@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bj8dqtl8lcr6x"]
+
+[ext_resource type="Shader" uid="uid://dsihfapvsaawy" path="res://assets/shaders/outline.gdshader" id="1_w3wjp"]
+
+[resource]
+shader = ExtResource("1_w3wjp")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/diagonals = false

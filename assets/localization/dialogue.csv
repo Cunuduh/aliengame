@@ -1,0 +1,16 @@
+keys,en,fr_CA
+SPK_TEST,Crewmate,Coéquipier
+DLG_TEST_NPC_01,"Hello there, Cora!","Allô, Cora!"
+DLG_TEST_NPC_02,Welcome to the testing room.{pause=0.4} It's quiet today.,Bienvenue dans la salle de test.{pause=0.4} C'est tranquille aujourd'hui.
+DLG_TEST_NPC_03,"I heard about Cora.{pause=0.5} She is kind of a big deal...{pause=0.4} or so she thinks.","J'ai entendu parler de Cora.{pause=0.5} Elle se prend pour une grosse affaire...{pause=0.4} enfin, c'est ce qu'elle pense."
+DLG_TEST_NPC_04,"Text can be [b]bold[/b],{pause=0.3} [i]italic[/i],{pause=0.3} [color=#7fd4ff]colorful[/color],{pause=0.3} or {speed=0.35}painfully slow.{speed=1}","Le texte peut être [b]gras[/b],{pause=0.3} [i]italique[/i],{pause=0.3} [color=#7fd4ff]coloré[/color],{pause=0.3} ou {speed=0.35}péniblement lent.{speed=1}"
+DLG_TEST_NPC_NARRATE,The crewmate stares off into the distance.,Le coéquipier fixe l'horizon.
+DLG_TEST_NPC_05,Anyway.{pause=0.4} Hope you're enjoying the game!,Bref.{pause=0.4} J'espère que tu aimes le jeu!
+DLG_CHOICE_INTRO,"Oh, Cora!{pause=0.4} Got a minute to test some choices?","Oh, Cora!{pause=0.4} T'as une minute pour tester des choix?"
+DLG_CHOICE_OPT_NICE,Be nice,Être gentille
+DLG_CHOICE_OPT_MEAN,Be mean,Être méchante
+DLG_CHOICE_OPT_BYE,Walk away,S'en aller
+DLG_CHOICE_NICE,"Aw, thanks.{pause=0.4} See?{pause=0.3} Branching works.","Ah, merci.{pause=0.4} Tu vois?{pause=0.3} Les embranchements fonctionnent."
+DLG_CHOICE_MEAN,"Wow.{pause=0.4} Rude.{pause=0.4} I'm telling the dev.","Wow.{pause=0.4} Impoli.{pause=0.4} Je vais le dire à la dev."
+DLG_CHOICE_AGAIN,Want to pick again?,Tu veux choisir encore?
+DLG_CHOICE_BYE,"Fine, fine.{pause=0.4} Off you go.","Bon, bon.{pause=0.4} Vas-y."

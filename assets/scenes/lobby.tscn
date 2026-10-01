@@ -2,12 +2,9 @@
 
 [ext_resource type="Shader" uid="uid://dlqmftebtvtws" path="res://assets/shaders/space_effect.gdshader" id="1_td76n"]
 [ext_resource type="Texture2D" uid="uid://bm0f5injvb83i" path="res://assets/sprites/backgrounds/planet.png" id="2_01cdn"]
-[ext_resource type="PackedScene" uid="uid://cy7o8s575kcm7" path="res://assets/scenes/player.tscn" id="2_fbo41"]
-[ext_resource type="Script" uid="uid://bsm1p7h4p5i3q" path="res://assets/scripts/player/abilities/ability.gd" id="4_6ddyr"]
-[ext_resource type="Script" uid="uid://oykae3gjh2nd" path="res://assets/scripts/player/abilities/fireball.gd" id="5_g4tfb"]
-[ext_resource type="Script" uid="uid://nrlsmxv85h1f" path="res://assets/scripts/player/abilities/dash.gd" id="6_7wgpu"]
-[ext_resource type="Script" uid="uid://dynfyet10ksbt" path="res://assets/scripts/player/abilities/basic_ability_1.gd" id="7_g4tfb"]
-[ext_resource type="PackedScene" uid="uid://bjptk35p5s344" path="res://assets/scenes/robot_enemy.tscn" id="8_g4tfb"]
+[ext_resource type="PackedScene" uid="uid://cy7o8s575kcm7" path="res://assets/scenes/cora.tscn" id="2_fbo41"]
+[ext_resource type="PackedScene" uid="uid://b8jt8dmy21e" path="res://assets/scenes/penumbroid.tscn" id="9_6ddyr"]
+[ext_resource type="Script" uid="uid://b1738v6osljts" path="res://assets/scripts/world/station_entrance.gd" id="10_statn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sjlfm"]
 shader = ExtResource("1_td76n")
@@ -37,18 +34,11 @@ b = Vector2(480, 244)
 a = Vector2(0, 270)
 b = Vector2(320, 270)
 
-[sub_resource type="Resource" id="Resource_x4l06"]
-script = ExtResource("5_g4tfb")
-
-[sub_resource type="Resource" id="Resource_q8pmi"]
-script = ExtResource("6_7wgpu")
-metadata/_custom_type_script = "uid://cwns6ni7kinlh"
-
-[sub_resource type="Resource" id="Resource_0bskb"]
-script = ExtResource("7_g4tfb")
-metadata/_custom_type_script = "uid://dynfyet10ksbt"
+[sub_resource type="CircleShape2D" id="CircleShape2D_statn"]
+radius = 18.0
 
 [node name="Lobby" type="Control" unique_id=1716468418 groups=["world"]]
+y_sort_enabled = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -82,9 +72,25 @@ shape = SubResource("SegmentShape2D_ypipq")
 position = Vector2(0, -29)
 shape = SubResource("SegmentShape2D_bpnd8")
 
-[node name="Player" parent="." unique_id=434888561 instance=ExtResource("2_fbo41")]
+[node name="Cora" parent="." unique_id=434888561 instance=ExtResource("2_fbo41")]
 position = Vector2(61, 137)
-abilities = Array[ExtResource("4_6ddyr")]([SubResource("Resource_x4l06"), SubResource("Resource_q8pmi"), SubResource("Resource_0bskb")])
 
-[node name="RobotEnemy" parent="." unique_id=1177118878 instance=ExtResource("8_g4tfb")]
-position = Vector2(136, 157)
+[node name="Penumbroid" parent="." unique_id=1144701218 instance=ExtResource("9_6ddyr")]
+position = Vector2(210, 184)
+
+[node name="Penumbroid2" parent="." unique_id=548261739 instance=ExtResource("9_6ddyr")]
+position = Vector2(110, 187)
+
+[node name="Penumbroid3" parent="." unique_id=1753452053 instance=ExtResource("9_6ddyr")]
+position = Vector2(110, 187)
+
+[node name="Penumbroid4" parent="." unique_id=1577964621 instance=ExtResource("9_6ddyr")]
+position = Vector2(110, 187)
+
+[node name="StationEntrance" type="Area2D" parent="." unique_id=1148792850]
+position = Vector2(280, 120)
+monitorable = false
+script = ExtResource("10_statn")
+
+[node name="Shape" type="CollisionShape2D" parent="StationEntrance" unique_id=37902992]
+shape = SubResource("CircleShape2D_statn")

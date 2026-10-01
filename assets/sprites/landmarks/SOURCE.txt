@@ -1,0 +1,4 @@
+﻿Placeholder aerial crops of the real buildings (Esri World Imagery tiles, z20),
+rotated 16.94 deg to the game's axis-aligned grid and Lanczos-downscaled by
+scratchpad build_landmark_sprites.py. Placeholder reference art - replace with
+hand-drawn versions before shipping.
